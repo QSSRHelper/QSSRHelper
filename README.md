@@ -5,7 +5,7 @@ A mathematica package for symbolic calculation of some type of Feynman diagrams 
 To use QSRHelper, you need FeynCalc 9.3.1, the requirement of the version of Mathematica haven't been test(it constructed on Mathematica 12.0). 
 
 # installation
-To install this package, put it in the $UserBaseDirectory of Mathematica
+To install this package, put it in the $UserBaseDirectory of Mathematica,
 usually at C:\Users\usrname\AppData\Roaming\Mathematica\Applications for Windows or /home/username/.Mathmatica/Applicatons for Linux.
 
 # usage
