@@ -5,4 +5,4 @@ QSRHelper require FeynCalc 9.3.1.
 
 
 
-Note the construction about this package is far from complete, I put it here is because it used in my paper(haven't publised), so 
+Note the construction about this package is far from complete. I put it here is because it used in my paper(haven't publised), and I think it's better to publish the code so that it give a way to check the correctness.
