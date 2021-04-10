@@ -12,7 +12,7 @@ usually at C:\Users\usrname\AppData\Roaming\Mathematica\Applications for Windows
 Please load FeynCalc before load QSRHelper.
 For baisc usuage and simple example, see usuage.nb and exmaple.nb
 
-# Note
+# Notice
 The construction about this package is far from complete. I put it here is because it used in my paper(haven't publised), and I think it's better to publish the code so that it give a way to check the correctness.
 
 # license
