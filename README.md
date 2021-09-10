@@ -1,4 +1,4 @@
-# QSRHelper
+# QSSRHelper
 A mathematica package for symbolic calculation of some type of Feynman diagrams which usually encountered in QCD Sum Rules calculation.
 
 # Requirements
