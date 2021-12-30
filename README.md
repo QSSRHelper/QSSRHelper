@@ -11,6 +11,7 @@ usually at `C:\Users\usrname\AppData\Roaming\Mathematica\Applications` for Windo
 # usage
 Load this Package by
 ><<QSSRHelper`
+
 For baisc usuage and simple example, see Documentation.
 
 # license
