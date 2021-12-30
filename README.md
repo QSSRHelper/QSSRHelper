@@ -2,15 +2,15 @@
 A mathematica package for symbolic calculation of some type of Feynman diagrams which usually encountered in QCD Sum Rules calculation.
 
 # Requirements
-To use QSSRHelper, you need FeynCalc 9.3.1, the requirement of the version of Mathematica haven't been test(it constructed on Mathematica 12.0). 
+To use QSSRHelper, you need FeynCalc 9.3.0, the requirement of the version of Mathematica haven't been test(it constructed on Mathematica 12.0). 
 
 # installation
-To install this package, put it in the $UserBaseDirectory of Mathematica,
-usually at C:\Users\usrname\AppData\Roaming\Mathematica\Applications for Windows or /home/username/.Mathmatica/Applicatons for Linux.
+To install this package, put the folder `QSSRHelper` in the `$UserBaseDirectory` of Mathematica,
+usually at `C:\Users\usrname\AppData\Roaming\Mathematica\Applications` for Windows or `/home/username/.Mathmatica/Applicatons` for Ubuntu.
 
 # usage
-Please load FeynCalc before load QSSRHelper.
-For baisc usuage and simple example, see usuage.nb and exmaple.nb
+`<<QSSRHelper`` to Load this Package.
+For baisc usuage and simple example, see Documentation.
 
 # license
 This software is covered by the GNU General Public License 3.
