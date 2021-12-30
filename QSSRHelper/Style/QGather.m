@@ -202,7 +202,14 @@ If[FreeQ[tmp,Momentum[p,___]],
 	tmp=tmp/.{null1->Identity,log->Log,Pair[Momentum[p,D],LorentzIndex[nulllor,D]]->1};
 	
 	(* collect the terms only differ by the tensor structure *)
-	Flatten[Gather[tmp,(Expand[Plus@@(#1[[2]]+#2[[2]])]===0)||(Expand[Plus@@(#1[[2]]-#2[[2]])]===0)&],1]
+	tmp=Flatten[Gather[tmp,(Expand[Plus@@(#1[[2]]+#2[[2]])]===0)||(Expand[Plus@@(#1[[2]]-#2[[2]])]===0)&],1];
+	
+	
+	If[Length[tmp]==1&&NumberQ[tmp[[1,1]]],
+		Plus@@tmp[[1,2]](* if just a scalar *)
+	,
+		tmp
+	]
 	
 	
 ]
