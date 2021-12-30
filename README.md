@@ -14,7 +14,7 @@ Global`$LoadAddOns = {"TARCER"};
 << FeynCalc`
 <<QSSRHelper`
 ```
-For basic usuage and simple example, search "QSSRHelper" in Help Center of Mathematica.
+For basic usuage and simple example, search "QSSRHelper" in Documentation Center of Mathematica.
 
 # license
 This software is covered by the GNU General Public License 3.
