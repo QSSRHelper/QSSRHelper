@@ -9,7 +9,8 @@ To install this package, put the folder `QSSRHelper` in the `$UserBaseDirectory`
 usually at `C:\Users\usrname\AppData\Roaming\Mathematica\Applications` for Windows or `/home/username/.Mathmatica/Applicatons` for Ubuntu.
 
 # usage
-`<<QSSRHelper`` to Load this Package.
+Load this Package by
+><<QSSRHelper`
 For baisc usuage and simple example, see Documentation.
 
 # license
