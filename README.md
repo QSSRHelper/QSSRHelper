@@ -15,7 +15,7 @@ Load FeynCalc before load QSSRHelper (the [TARCER](https://arxiv.org/pdf/hep-ph/
 
 ><<QSSRHelper`
 
-For basic usuage and simple example, search QSSRHelper in the Documentation of Mathematica.
+For basic usuage and simple example, search QSSRHelper in Help Center of Mathematica.
 
 # license
 This software is covered by the GNU General Public License 3.
