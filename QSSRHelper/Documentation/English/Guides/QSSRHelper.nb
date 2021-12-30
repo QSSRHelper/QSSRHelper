@@ -1,0 +1,644 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21000,        635]
+NotebookOptionsPosition[     15377,        527]
+NotebookOutlinePosition[     16918,        566]
+CellTagsIndexPosition[     16875,        563]
+WindowTitle->QSSRHelper
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["Q S S R HELPER GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"AGamma\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/AGamma"], "\<\"AGammaD\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/AGammaD"], "\<\"Borel\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/Borel"], "\<\"Condensate\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/Condensate"], "\<\"FourierPX\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/FourierPX"], "\<\"FourierXP\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/FourierXP"], "\<\"IntegrateLog\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/IntegrateLog"], "\<\"IntegrateP\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/IntegrateP"], "\<\"IntegrateX\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/IntegrateX"], "\<\"QAverage\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QAverage"], "\<\"QContract\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QContract"], "\<\"QDimension\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QDimension"], "\<\"QEvaluate\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QEvaluate"], "\<\"QExpand\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QExpand"], "\<\"QExpand2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QExpand2"], "\<\"qfact1\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/qfact1"], "\<\"qfact2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/qfact2"], "\<\"qGamma\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/qGamma"], "\<\"QGather\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QGather"], "\<\"QSimplify2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QSimplify2"], "\<\"QSymmetry\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QSymmetry"], "\<\"qTFI\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/qTFI"], "\<\"TryReduce\"\>":>
+       Documentation`HelpLookup["paclet:QSSRHelper/ref/TryReduce"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Evaluation by Fourier Transformation\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/tutorial/Evaluation by Fourier Transformation"], \
+"\<\"Evaluation by loop integral\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/tutorial/Evaluation by loop integral"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideTutorial"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper/guide/QSSRHelper\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["QSSRHelper/guide/QSSRHelper"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/QSSRHelper/guide/\
+QSSRHelper.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$6484], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "QSSRHelper/guide/QSSRHelper", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["QSSRHelper", "GuideTitle",
+ CellID->942062912],
+
+Cell["QSSRHelper is a package used for QCD Sum Rules calculations.", \
+"GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Simple Symbols"
+}], "GuideFunctionsSection",
+ CellID->1866139230],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AGamma"]], "paclet:QSSRHelper/ref/AGamma"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Generate antisymmetry \[Gamma]-matrices"
+}], "GuideText",
+ CellID->19075552],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["AGammaD"]], "paclet:QSSRHelper/ref/AGammaD"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Generate D-dimensional antisymmetry \[Gamma]-matrices"
+}], "GuideText",
+ CellID->203374175],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Condensate"]], "paclet:QSSRHelper/ref/Condensate"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " The symbol of condensate."
+}], "GuideText",
+ CellID->213467098],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact1"]], "paclet:QSSRHelper/ref/qfact1"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Parenthesis symbol used in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QSimplify2"]], "paclet:QSSRHelper/ref/QSimplify2"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "."
+}], "GuideText",
+ CellID->56594855],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact2"]], "paclet:QSSRHelper/ref/qfact2"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Parenthesis symbol used in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QSimplify2"]], "paclet:QSSRHelper/ref/QSimplify2"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "."
+}], "GuideText",
+ CellID->58989860],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qGamma"]], "paclet:QSSRHelper/ref/qGamma"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " \[CapitalGamma]-function symbol."
+}], "GuideText",
+ CellID->258650276],
+
+Cell[TextData[{
+ ButtonBox["qTFI",
+  BaseStyle->"Link",
+  ButtonData->"paclet:QSSRHelper/ref/qTFI"],
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " A symbol used in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["TryReduce"]], "paclet:QSSRHelper/ref/TryReduce"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ "."
+}], "GuideText",
+ CellID->314841956],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Evaluation"
+}], "GuideFunctionsSection",
+ CellID->136202695],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Borel"]], "paclet:QSSRHelper/ref/Borel"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Borel (Laplace) transformation."
+}], "GuideText",
+ CellID->99320704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["FourierPX"]], "paclet:QSSRHelper/ref/FourierPX"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " D-dimensional Fourier Transformation from momentum space to coordinate \
+space."
+}], "GuideText",
+ CellID->5506112],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["FourierXP"]], "paclet:QSSRHelper/ref/FourierXP"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " D-dimensional Fourier Transformation from coordinate space to momentum \
+space."
+}], "GuideText",
+ CellID->352901624],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IntegrateLog"]], "paclet:QSSRHelper/ref/IntegrateLog"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " A special version of Integrate to deal with expression involve polynomial \
+of Log functions."
+}], "GuideText",
+ CellID->430123833],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IntegrateP"]], "paclet:QSSRHelper/ref/IntegrateP"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Integral over loop momentum."
+}], "GuideText",
+ CellID->494024502],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IntegrateX"]], "paclet:QSSRHelper/ref/IntegrateX"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Integral over a certain coordinate. "
+}], "GuideText",
+ CellID->112142594],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QEvaluate"]], "paclet:QSSRHelper/ref/QEvaluate"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Expand the expression to Laurent series about \[Epsilon]."
+}], "GuideText",
+ CellID->3747640],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["TryReduce"]], "paclet:QSSRHelper/ref/TryReduce"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Detect whether a loop integral can be reduced."
+}], "GuideText",
+ CellID->352597485],
+
+Cell["", "SectionFooterSpacer"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Auxiliary functions"
+}], "GuideFunctionsSection",
+ CellID->122160770],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QAverage"]], "paclet:QSSRHelper/ref/QAverage"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Average Lorentz vectors to scalar product with metric tensor."
+}], "GuideText",
+ CellID->268712033],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QContract"]], "paclet:QSSRHelper/ref/QContract"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " A special version of Contract."
+}], "GuideText",
+ CellID->370261375],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QDimension"]], "paclet:QSSRHelper/ref/QDimension"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Change the dimension D in expression but keep all D-dimensional object \
+unchanged."
+}], "GuideText",
+ CellID->316409159],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QExpand"]], "paclet:QSSRHelper/ref/QExpand"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Uncontract and expand."
+}], "GuideText",
+ CellID->242986815],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QExpand2"]], "paclet:QSSRHelper/ref/QExpand2"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Uncontract and expand."
+}], "GuideText",
+ CellID->51097945],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QGather"]], "paclet:QSSRHelper/ref/QGather"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Collect the expression to a table by Lorentz structure."
+}], "GuideText",
+ CellID->106949541],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QSimplify2"]], "paclet:QSSRHelper/ref/QSimplify2"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Some simplification."
+}], "GuideText",
+ CellID->246388600],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QSymmetry"]], "paclet:QSSRHelper/ref/QSymmetry"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Symmetrize the Lorentz indices in expression."
+}], "GuideText",
+ CellID->62763693]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"QSSRHelper",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2021, 12, 28, 19, 43, 51.2163861}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Q S S R Helper Guide", "language" -> "en", "paclet" -> "QSSRHelper", 
+    "status" -> "None", "summary" -> 
+    "QSSRHelper is a package used for QCD Sum Rules calculations.", 
+    "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$6392, "title" -> 
+    "QSSRHelper", "titlemodifier" -> "", "windowtitle" -> "QSSRHelper", 
+    "type" -> "Guide", "uri" -> "QSSRHelper/guide/QSSRHelper"}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 5867, 135, 70, "AnchorBarGrid",ExpressionUUID->"1f999320-a442-4650-a95e-a39c357e78d9",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[6474, 160, 52, 1, 70, "GuideTitle",ExpressionUUID->"d8e56d24-c2b3-437e-b72f-2545cc0c370f",
+ CellID->942062912],
+Cell[6529, 163, 108, 2, 70, "GuideAbstract",ExpressionUUID->"1ee482c6-8d84-449a-a937-56eca0f16055",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6674, 170, 134, 6, 70, "GuideFunctionsSection",ExpressionUUID->"515aefa7-bb4b-426c-94b6-82baced5c957",
+ CellID->1866139230],
+Cell[6811, 178, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"ae5a080d-d208-475e-84fc-f56b78af28e0"],
+Cell[6845, 180, 311, 10, 70, "GuideText",ExpressionUUID->"72a8017e-01de-4ff0-b657-4bd43df0e341",
+ CellID->19075552],
+Cell[7159, 192, 328, 10, 70, "GuideText",ExpressionUUID->"1d4129ed-0f65-40a1-a8a7-d65a1d459ce3",
+ CellID->203374175],
+Cell[7490, 204, 312, 11, 70, "GuideText",ExpressionUUID->"3a1d571b-f74c-40e1-a350-e9078c6328f0",
+ CellID->213467098],
+Cell[7805, 217, 488, 17, 70, "GuideText",ExpressionUUID->"db40a724-3331-4cb5-9dca-ae4715018c83",
+ CellID->56594855],
+Cell[8296, 236, 494, 18, 70, "GuideText",ExpressionUUID->"13fa3b23-a6fb-4802-a47d-8471b8f4e46c",
+ CellID->58989860],
+Cell[8793, 256, 311, 11, 70, "GuideText",ExpressionUUID->"4b297829-6be4-4d22-9c52-31bee653e954",
+ CellID->258650276],
+Cell[9107, 269, 387, 14, 70, "GuideText",ExpressionUUID->"4e40760a-79cf-4c2b-aea5-a5bbe5741495",
+ CellID->314841956],
+Cell[9497, 285, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"7a09caf1-d362-465a-aa3d-1f1296ed8d9e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9565, 290, 129, 6, 70, "GuideFunctionsSection",ExpressionUUID->"8a4e6b62-bb61-408b-b278-deb3e9ffa5c4",
+ CellID->136202695],
+Cell[9697, 298, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"1ea049b4-dd5a-4dda-9441-effe0d1eec52"],
+Cell[9731, 300, 301, 10, 70, "GuideText",ExpressionUUID->"fd6d4de2-6c59-408c-be3a-a69cd2354362",
+ CellID->99320704],
+Cell[10035, 312, 356, 11, 70, "GuideText",ExpressionUUID->"aa7d93de-39ab-4dbe-a5e4-37e820e2e746",
+ CellID->5506112],
+Cell[10394, 325, 358, 11, 70, "GuideText",ExpressionUUID->"ab5dde97-a73e-4351-ba9f-9441b616b27e",
+ CellID->352901624],
+Cell[10755, 338, 384, 12, 70, "GuideText",ExpressionUUID->"3e6b5115-1947-4810-850d-b4bc6440da59",
+ CellID->430123833],
+Cell[11142, 352, 315, 11, 70, "GuideText",ExpressionUUID->"a3a8717e-c8a0-422a-943d-eca1aabfb031",
+ CellID->494024502],
+Cell[11460, 365, 323, 11, 70, "GuideText",ExpressionUUID->"d4bda254-61e9-43be-b741-0fc642cb93a6",
+ CellID->112142594],
+Cell[11786, 378, 340, 11, 70, "GuideText",ExpressionUUID->"2d2dd230-929b-49fc-aa58-2902f34344e5",
+ CellID->3747640],
+Cell[12129, 391, 331, 11, 70, "GuideText",ExpressionUUID->"59601baf-b6de-4f8e-ab3f-505e351feec5",
+ CellID->352597485],
+Cell[12463, 404, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"7fb05686-f1d0-444e-878f-d288e5132a6d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12531, 409, 138, 6, 70, "GuideFunctionsSection",ExpressionUUID->"9f5f4033-c2d7-4703-a06f-4e54b929e7bb",
+ CellID->122160770],
+Cell[12672, 417, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"2519cf01-1987-4bcb-937a-3cd674264bdd"],
+Cell[12706, 419, 344, 11, 70, "GuideText",ExpressionUUID->"61ce32d8-9a6a-45da-a76a-1b7b36dc9e56",
+ CellID->268712033],
+Cell[13053, 432, 315, 11, 70, "GuideText",ExpressionUUID->"7f121e2c-1679-4eec-ae08-8321d4b65c44",
+ CellID->370261375],
+Cell[13371, 445, 370, 12, 70, "GuideText",ExpressionUUID->"b4dcb1e4-fb17-4e5d-8e89-e016ef7676c6",
+ CellID->316409159],
+Cell[13744, 459, 303, 11, 70, "GuideText",ExpressionUUID->"da53a1e6-30d3-45be-b4fa-cc2c27a8c588",
+ CellID->242986815],
+Cell[14050, 472, 304, 11, 70, "GuideText",ExpressionUUID->"a13a1f9b-18c3-4706-8006-0c4c7a4b3ec8",
+ CellID->51097945],
+Cell[14357, 485, 336, 11, 70, "GuideText",ExpressionUUID->"b3251d72-93c4-4a58-968a-58dfe0c77870",
+ CellID->106949541],
+Cell[14696, 498, 307, 11, 70, "GuideText",ExpressionUUID->"43710582-d60b-4b0f-8fa8-05a7c42f9d95",
+ CellID->246388600],
+Cell[15006, 511, 329, 11, 70, "GuideText",ExpressionUUID->"129a9f56-999a-4aae-a022-63f1c3cf1f34",
+ CellID->62763693]
+}, Open  ]],
+Cell[15350, 525, 23, 0, 70, "FooterCell",ExpressionUUID->"7deb38ff-3f72-47e7-9193-95627b46c68d"]
+}
+]
+*)
+
+(* End of internal cache information *)

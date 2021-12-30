@@ -1,0 +1,724 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23819,        714]
+NotebookOptionsPosition[     18635,        596]
+NotebookOutlinePosition[     20883,        654]
+CellTagsIndexPosition[     20798,        649]
+WindowTitle->Condensate
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["Q S S R HELPER SYMBOL", "PacletNameCell",ExpressionUUID->
+     "df2ede41-534a-449a-926e-70b97102982f"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"276578d7-16b7-421b-ae53-413a4e679792"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"qGamma\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/qGamma"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "72c2d725-18bd-4b74-b9db-f32de884f83a"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"cd724f9e-e674-4677-b929-4be15a09dc47"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/guide/QSSRHelper"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "ba0a08f4-e193-48b8-9382-8d84876fa9d9"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"c08e62ef-a713-4415-80de-ec9511b305b2"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper/ref/Condensate\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["QSSRHelper/ref/Condensate"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/QSSRHelper/ref/\
+Condensate.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9286], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "QSSRHelper/ref/Condensate", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "abdd589c-804b-4bf0-a01c-ad3314d824c8"]
+    }], "AnchorBar",ExpressionUUID->"85ddcda8-577e-42f7-b7a5-a027c1884ff9"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"578b4211-0fe3-4f48-a099-122203047398"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["Condensate", "ObjectName",ExpressionUUID->
+  "fb444d1d-27f0-42b2-a0f1-ec8c83f707f1"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"fa20b74d-4eb9-4b74-bbbb-e71fd69c080a"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "2ee08ef4-ede0-4977-ab40-cbc36e78bc39"]
+}], "ObjectNameGrid",ExpressionUUID->"a852df11-f72d-4817-b10e-ad68ae7e31aa"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"Condensate", "[", 
+       StyleBox["condensate", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+      "2ce109d7-8501-4bf9-aeb4-40c410b24b3c"],
+     " \[LineSeparator]Give the symbol of ",
+     StyleBox["condensate", "TI"],
+     "."
+    }],ExpressionUUID->"d1c3cab2-1d2a-46b0-a1aa-71ff262ed651"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436,ExpressionUUID->"827dc273-9e74-4f2d-baa5-76ace7b7cf2d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"30041e48-510f-4cc7-af56-972e7fb69a52"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "b33faa44-2f30-4a3a-9361-e083a1d843d6"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->396982324,ExpressionUUID->"03f444bc-a772-44b6-83f6-124edb6599b7"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "930bc0e9-7fa9-4901-87cd-69ad57259a01"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->183202563,ExpressionUUID->"d1526d3f-0bbb-44d4-a4ec-0061cdad4fcc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Condensate", "[", "qq", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->368557406,ExpressionUUID->"57fa6ccd-c5a2-4551-9b60-ccc786e2d52b"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[
+   TagBox[
+    FormBox[
+     RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+      OverscriptBox["q", "_"], "q", "\[ThinSpace]", "\[RightAngleBracket]"}],
+     TraditionalForm],
+    TraditionalForm,
+    Editable->True],
+   DisplayForm], TraditionalForm]], "Output",
+ CellLabel->"Out[1]//DisplayForm=",
+ CellID->20058478,ExpressionUUID->"38ae1c0f-bd39-4f29-93f2-c6a2639f5131"]
+}, Open  ]],
+
+Cell["\<\
+For input given in below list, Condensate[] will show it as condensate:\
+\>", "Text",
+ CellID->303800977,ExpressionUUID->"e4f28603-98c3-407b-b48e-0e3dda076a38"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"clist", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "d3", ",", "qq", ",", "ss", ",", "mqq", ",", "msqq", ",", "mss", ",", 
+     "qgq", ",", "sgs", ",", "d6", ",", "qq2", ",", "ss2", ",", "d4", ",", 
+     "gg", ",", "g2", ",", "g3", ",", "ggg", ",", "d8", ",", "qqqgq", ",", 
+     "q2qgq", ",", "qq3"}], "}"}]}], ";"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->100425347,ExpressionUUID->"ade86d8a-5583-4fa1-a898-d892c94d0f61"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"clist", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Condensate", "[", "#", "]"}], "&"}], "/@", "clist"}]}], "}"}], 
+  "//", "Transpose"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->35223384,ExpressionUUID->"92c53cf6-448a-436f-bc5a-ff2030687350"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"d3", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["q", "_"], "q", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"qq", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["q", "_"], "q", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"ss", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["s", "_"], "s", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"mqq", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"m", "\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["q", "_"], "q", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"msqq", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{
+          SubscriptBox["m", "s"], "\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["q", "_"], "q", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"mss", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{
+          SubscriptBox["m", "s"], "\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["s", "_"], "s", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"qgq", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["q", "_"], "G", "q", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"sgs", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["s", "_"], "G", "s", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"d6", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["q", "_"], "q", 
+          SuperscriptBox["\[RightAngleBracket]", "2"]}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"qq2", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["q", "_"], "q", 
+          SuperscriptBox["\[RightAngleBracket]", "2"]}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"ss2", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["s", "_"], "s", 
+          SuperscriptBox["\[RightAngleBracket]", "2"]}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"d4", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "\[ThinSpace]", "G", "G", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"gg", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "\[ThinSpace]", "G", "G", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"g2", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{
+         "\[LeftAngleBracket]", "\[ThinSpace]", "G", "G", "\[ThinSpace]", 
+          "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"g3", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", 
+          RowBox[{"\<\"\"\>", " ", 
+           SuperscriptBox["G", "3"]}], "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"ggg", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", 
+          RowBox[{"\<\"\"\>", " ", 
+           SuperscriptBox["G", "3"]}], "\[RightAngleBracket]"}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"d8", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{
+          RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+           RowBox[{
+            OverscriptBox["q", "_"], "q"}], "\[RightAngleBracket]"}], 
+          RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+           RowBox[{
+            OverscriptBox["q", "_"], "G", "q"}], "\[ThinSpace]", 
+           "\[RightAngleBracket]"}]}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"qqqgq", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{
+          RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+           RowBox[{
+            OverscriptBox["q", "_"], "q"}], "\[RightAngleBracket]"}], 
+          RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+           RowBox[{
+            OverscriptBox["q", "_"], "G", "q"}], "\[ThinSpace]", 
+           "\[RightAngleBracket]"}]}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"q2qgq", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{
+          RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+           RowBox[{
+            OverscriptBox["q", "_"], "q"}], "\[RightAngleBracket]"}], 
+          RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+           RowBox[{
+            OverscriptBox["q", "_"], "G", "q"}], "\[ThinSpace]", 
+           "\[RightAngleBracket]"}]}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]},
+     {"qq3", 
+      TagBox[
+       TagBox[
+        FormBox[
+         RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+          OverscriptBox["q", "_"], "q", 
+          SuperscriptBox["\[RightAngleBracket]", "3"]}],
+         TraditionalForm],
+        TraditionalForm,
+        Editable->True],
+       DisplayForm]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}], TraditionalForm]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->227692316,ExpressionUUID->"87fae6ca-7b0e-4f32-8e8e-979c285fd411"]
+}, Open  ]],
+
+Cell["\<\
+For input not list in above clist, Condensate[] just bracket the input:\
+\>", "Text",
+ CellID->575907732,ExpressionUUID->"e66d6534-8577-4be6-80c2-0bca8aa7630f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Condensate", "[", "it", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->20417007,ExpressionUUID->"677d3d48-ffa8-4cfc-87a0-70feb43117e0"],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[
+   TagBox[
+    FormBox[
+     RowBox[{
+     "\[LeftAngleBracket]", "\[ThinSpace]", "it", "\[RightAngleBracket]"}],
+     TraditionalForm],
+    TraditionalForm,
+    Editable->True],
+   DisplayForm], TraditionalForm]], "Output",
+ CellLabel->"Out[4]//DisplayForm=",
+ CellID->143278610,ExpressionUUID->"aa937768-6e5a-4eef-a453-3136ad798bbc"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Condensate[a,b,...] ",
+ StyleBox["=", "TI"],
+ " Condensate[a]Condensate[b]..."
+}], "Text",
+ CellID->27040579,ExpressionUUID->"dd48e1c4-eb29-49fa-87a6-0c3f0a6bfc86"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Condensate", "[", 
+  RowBox[{"qq", ",", "gg"}], "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->9932962,ExpressionUUID->"ee308bb2-22b8-42c9-bbbe-456a690fb0f5"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   TagBox[
+    TagBox[
+     FormBox[
+      RowBox[{
+      "\[LeftAngleBracket]", "\[ThinSpace]", "G", "G", "\[ThinSpace]", 
+       "\[RightAngleBracket]"}],
+      TraditionalForm],
+     TraditionalForm,
+     Editable->True],
+    DisplayForm], " ", 
+   TagBox[
+    TagBox[
+     FormBox[
+      RowBox[{"\[LeftAngleBracket]", "\[ThinSpace]", 
+       OverscriptBox["q", "_"], "q", "\[ThinSpace]", "\[RightAngleBracket]"}],
+      TraditionalForm],
+     TraditionalForm,
+     Editable->True],
+    DisplayForm]}], TraditionalForm]], "Output",
+ CellLabel->"Out[5]=",
+ CellID->452294407,ExpressionUUID->"48324543-4ebc-4d33-a093-fcef10abc2fe"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"a7e1d2d6-771b-4715-b27d-b2721f6a3f6d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"cd06b0b1-edca-476c-b454-203236f88487"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"beb304d1-7abb-4322-8b4a-180ce33ee8f1"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["qGamma"]], "paclet:QSSRHelper/ref/qGamma"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> 
+    "Verdana"}]], \
+"InlineFormula",ExpressionUUID->"20f393a6-5673-4855-b0ac-1cc372043b90"]], \
+"SeeAlso",
+ CellID->929782353,ExpressionUUID->"93b7c006-66b2-4718-9fec-b1ac5447371a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"fe5f0161-b553-4a4d-a9c8-1aa3be808433"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"879414fc-91ad-473c-963c-ae3636bc822c"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"22620123-f2e8-4a89-8bfd-5a380153bf29"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["QSSRHelper"]], "paclet:QSSRHelper/guide/QSSRHelper"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->167072718,ExpressionUUID->"571644a5-223c-40e1-867d-a9317f05e462"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"fd25e0c5-6034-4f3e-a964-595202c09d35"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{724.8, 750.},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Condensate",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "QSSRHelper", ButtonData -> "paclet:QSSRHelper/guide/QSSRHelper", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2021, 12, 28, 19, 43, 54.3778049}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Q S S R Helper Symbol", "language" -> "en", "paclet" -> "QSSRHelper", 
+    "status" -> "None", "summary" -> 
+    "Condensate[condensate] Give the symbol of condensate.", "synonyms" -> {},
+     "tabletags" -> {}, "title" -> "Condensate", "titlemodifier" -> "", 
+    "windowtitle" -> "Condensate", "type" -> "Symbol", "uri" -> 
+    "QSSRHelper/ref/Condensate", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "12.1 for Microsoft Windows (64-bit) (June 9, 2020)", StyleDefinitions -> 
+  "Default.nb"],
+ExpressionUUID->"a91995f4-600a-4aaa-88f0-f8bd46f9eea4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5667, 147, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"03f444bc-a772-44b6-83f6-124edb6599b7",
+   CellTags->"PrimaryExamplesSection",
+   CellID->396982324]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 20600, 642}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 4072, 93, 54, "AnchorBarGrid",ExpressionUUID->"578b4211-0fe3-4f48-a099-122203047398",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4679, 118, 395, 9, 54, "ObjectNameGrid",ExpressionUUID->"a852df11-f72d-4817-b10e-ad68ae7e31aa"],
+Cell[5077, 129, 553, 13, 111, "Usage",ExpressionUUID->"827dc273-9e74-4f2d-baa5-76ace7b7cf2d",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5667, 147, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"03f444bc-a772-44b6-83f6-124edb6599b7",
+ CellTags->"PrimaryExamplesSection",
+ CellID->396982324],
+Cell[CellGroupData[{
+Cell[6127, 162, 308, 7, 30, "ExampleSection",ExpressionUUID->"d1526d3f-0bbb-44d4-a4ec-0061cdad4fcc",
+ CellID->183202563],
+Cell[CellGroupData[{
+Cell[6460, 173, 162, 3, 25, "Input",ExpressionUUID->"57fa6ccd-c5a2-4551-9b60-ccc786e2d52b",
+ CellID->368557406],
+Cell[6625, 178, 409, 12, 34, "Output",ExpressionUUID->"38ae1c0f-bd39-4f29-93f2-c6a2639f5131",
+ CellID->20058478]
+}, Open  ]],
+Cell[7049, 193, 170, 3, 36, "Text",ExpressionUUID->"e4f28603-98c3-407b-b48e-0e3dda076a38",
+ CellID->303800977],
+Cell[7222, 198, 457, 10, 41, "Input",ExpressionUUID->"ade86d8a-5583-4fa1-a898-d892c94d0f61",
+ CellID->100425347],
+Cell[CellGroupData[{
+Cell[7704, 212, 301, 9, 25, "Input",ExpressionUUID->"92c53cf6-448a-436f-bc5a-ff2030687350",
+ CellID->35223384],
+Cell[8008, 223, 7314, 250, 374, "Output",ExpressionUUID->"87fae6ca-7b0e-4f32-8e8e-979c285fd411",
+ CellID->227692316]
+}, Open  ]],
+Cell[15337, 476, 170, 3, 70, "Text",ExpressionUUID->"e66d6534-8577-4be6-80c2-0bca8aa7630f",
+ CellID->575907732],
+Cell[CellGroupData[{
+Cell[15532, 483, 161, 3, 70, "Input",ExpressionUUID->"677d3d48-ffa8-4cfc-87a0-70feb43117e0",
+ CellID->20417007],
+Cell[15696, 488, 369, 12, 47, "Output",ExpressionUUID->"aa937768-6e5a-4eef-a453-3136ad798bbc",
+ CellID->143278610]
+}, Open  ]],
+Cell[16080, 503, 182, 5, 70, "Text",ExpressionUUID->"dd48e1c4-eb29-49fa-87a6-0c3f0a6bfc86",
+ CellID->27040579],
+Cell[CellGroupData[{
+Cell[16287, 512, 184, 4, 70, "Input",ExpressionUUID->"ee308bb2-22b8-42c9-bbbe-456a690fb0f5",
+ CellID->9932962],
+Cell[16474, 518, 668, 23, 34, "Output",ExpressionUUID->"48324543-4ebc-4d33-a093-fcef10abc2fe",
+ CellID->452294407]
+}, Open  ]]
+}, Open  ]],
+Cell[17169, 545, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"a7e1d2d6-771b-4715-b27d-b2721f6a3f6d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17292, 550, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"beb304d1-7abb-4322-8b4a-180ce33ee8f1",
+ CellID->1255426704],
+Cell[17555, 559, 354, 10, 70, "SeeAlso",ExpressionUUID->"93b7c006-66b2-4718-9fec-b1ac5447371a",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17946, 574, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"879414fc-91ad-473c-963c-ae3636bc822c",
+ CellID->38303248],
+Cell[18215, 583, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"22620123-f2e8-4a89-8bfd-5a380153bf29"],
+Cell[18304, 585, 234, 6, 70, "MoreAbout",ExpressionUUID->"571644a5-223c-40e1-867d-a9317f05e462",
+ CellID->167072718]
+}, Open  ]],
+Cell[18553, 594, 78, 0, 70, "FooterCell",ExpressionUUID->"fd25e0c5-6034-4f3e-a964-595202c09d35"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
