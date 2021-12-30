@@ -18,5 +18,5 @@ This software is covered by the GNU General Public License 3.
 Copyright (C) 2021 ShuangHong Li
 
 # Notice
-The construction of this package is far from complete; but it already has been used in the paper , so I put it here.
+The construction of this package is far from complete; but it already has been used in [arXiv:2111.13897](https://arxiv.org/abs/2111.13897), so I put it here.
 
