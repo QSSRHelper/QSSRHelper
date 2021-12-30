@@ -2,7 +2,7 @@
 A mathematica package for QCD Sum Rules calculation.
 
 # Requirements
-The QSSRHelper require FeynCalc (at least 9.3.0) and Mathematica 12.0+.
+The QSSRHelper require FeynCalc 9.3.0+ and Mathematica 12.0+.
 
 # installation
 To install this package, put the folder `QSSRHelper` in the `$UserBaseDirectory` of Mathematica, which
