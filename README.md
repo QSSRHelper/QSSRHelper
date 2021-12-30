@@ -11,7 +11,9 @@ usually are `C:\Users\usrname\AppData\Roaming\Mathematica\Applications` for Wind
 # usage
 Load FeynCalc before load QSSRHelper (the [TARCER](https://arxiv.org/pdf/hep-ph/9801383.pdf) is needed):
 >Global`$LoadAddOns = {"TARCER"};
+
 ><< FeynCalc`
+
 ><<QSSRHelper`
 
 For baisc usuage and simple example, search QSSRHelper in the Documentation of Mathematica.
