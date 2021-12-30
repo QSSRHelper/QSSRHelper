@@ -9,12 +9,11 @@ To install this package, put the folder `QSSRHelper` in the `$UserBaseDirectory`
 
 # usage
 Load FeynCalc before load QSSRHelper (the [TARCER](https://arxiv.org/pdf/hep-ph/9801383.pdf) is needed):
->Global`$LoadAddOns = {"TARCER"};
-
-><< FeynCalc`
-
-><<QSSRHelper`
-
+```
+Global`$LoadAddOns = {"TARCER"};
+<< FeynCalc`
+<<QSSRHelper`
+```
 For basic usuage and simple example, search QSSRHelper in Help Center of Mathematica.
 
 # license
