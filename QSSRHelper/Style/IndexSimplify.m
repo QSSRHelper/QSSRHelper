@@ -1,5 +1,11 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
+
 IndexSimplify::usage =
 	"IndexSimplify[expr] simplify the dummy Lorentz index in \[Gamma]-matrices"	
 	

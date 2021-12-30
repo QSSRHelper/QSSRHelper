@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 Borel::usage = 
 	"Borel[expr,{momentum,parameter}] is Borel transformation"
 

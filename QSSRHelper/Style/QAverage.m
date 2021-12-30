@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 QAverage::usage = 
 	"QAverage[expr,p] is a function which average momentum vectors to scalar product with metrices tensor"
 	

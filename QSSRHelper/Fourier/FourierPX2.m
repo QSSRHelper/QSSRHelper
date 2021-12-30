@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 FourierPX2::usage =
 "FourierPX2[n,{x,indexlist}] generate inverse Fourier Transformation and it's derivative";
 

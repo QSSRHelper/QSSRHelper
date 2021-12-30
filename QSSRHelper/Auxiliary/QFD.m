@@ -1,5 +1,8 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
 
 QFD::usage =
 	"qFD[expr_,p_] evaluate the FourDivergence on a in a_ qfact1, which short the time of evaluation"	

@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 FourierPX::usage =
 "FourierPX[expr,{p,x}] id D-dimensional Fourier Transformation from
 momentum space {p} to coordinate space {x}. 

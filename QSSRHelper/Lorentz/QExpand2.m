@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 QExpand2::usage = 
 	"QExpand2[expr_] extract gamma matrices from terms mixed with commutative and noncommutative terms"	
 

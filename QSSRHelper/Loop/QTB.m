@@ -1,5 +1,11 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
+
 QTB::usage= "QTB[dim_,p_,{v1_Integer,v3_Integer}] evaluate the TBI give the result as a propagatr ~ (p^2)^..."
 
 

@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 QExpand::usage = 
 	"QExpand[expr_,p_] seprate commute and noncommute part, expand Lorentz sturcture involved with p."
 	

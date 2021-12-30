@@ -2,6 +2,13 @@
 
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
+
+
 QSimplify2::usage= "QSimplify2[expr_,ruless___] is a function to combine same Lorentz structure and simplify the accompany Gamma functions";
 
 

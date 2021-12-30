@@ -1,5 +1,9 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
 
 
 QTFI::usage="QTFI[expr_] is a function evaluate the TFI (give result as a proapgator) in expr."

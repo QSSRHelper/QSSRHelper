@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 QEvaluate::usage = 
 "QEvaluate[expr,p,Order->0] expand expr to \[Epsilon]-Series, for large input expr, QEvaluate automatically use Parallelize evaluation "
 

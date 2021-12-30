@@ -1,5 +1,8 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
 
 AGammaD::usage =
 	"AGammaD[expr] generate normalized D-dimensional gamma matrices with antisymmetry indices"

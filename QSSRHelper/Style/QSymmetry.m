@@ -1,5 +1,11 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
+
 QSymmetry::usage = 
 	"QSymmetry[expr_,{indices__},Normalize->False] symmytrilize the expr by the indices"	
 	

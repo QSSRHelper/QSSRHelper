@@ -2,6 +2,12 @@
 
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
+
 IntegrateX::usage = 
 	"IntegrateX[expr,x] is a simple feyman integral in coordinate space for two feynman parameters"
 	

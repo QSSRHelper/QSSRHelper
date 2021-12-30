@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 QTV::usage= "QTV[dim_,p_,{v5_Integer,v2_Integer,v3_Integer,v4_Integer}] evaluate the TVI give the result as a propagatr ~ (p^2)^..."
 
 Begin["`Private`QTV`"]

@@ -2,6 +2,10 @@
 
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
 
 TryReduce::usage =
 	"TryReduce[expr_,momentums_List] is a function to check whether a feynman integral is reducible;

@@ -1,5 +1,10 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
 QDimension::usage = 
 "QDimension[expr,dim] set dimension D -> dim in power and qGamma";
 

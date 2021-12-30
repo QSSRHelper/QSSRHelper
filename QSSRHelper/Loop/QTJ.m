@@ -1,5 +1,11 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
+
 QTJ::usage= "QTJ[dim_,p_,{v1_Integer,v5_Integer,v4_Integer}] evaluate the TJI give the result as a propagatr ~ (p^2)^..."
 
 

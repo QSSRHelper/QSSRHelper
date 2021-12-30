@@ -2,6 +2,7 @@
 
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
 
 
 

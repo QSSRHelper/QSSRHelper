@@ -1,5 +1,9 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
 
 FourierXP2::usage =
 "FourierXP2[n,{p,indexlist}] generate Fourier Transformation and it's derivative";

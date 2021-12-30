@@ -1,5 +1,11 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
+
+
 QTF0::usage= "QTF0[dim_,p_,uvrst___List,{v1_Integer,v2_Integer,v3_Integer,v4_Integer,v5_Integer}] evaluate the TFI with at least one of v1,v2,v3,v4,v5 = 0, and give the result as a propagatr ~ (p^2)^..."
 
 

@@ -1,5 +1,9 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
 
 QContract::usage =
 	"QContract[expr_] Contract terms not in qfact1[], which short the time of evaluation"

@@ -1,5 +1,9 @@
 (* Wolfram Language package *)
 
+(* Author: ShungHong Li *)
+
+
+
 GContract::usage = 
 	"GContract[expr] is a function which turn \!\(\*SubscriptBox[SuperscriptBox[\(G\), \(a\)], 
 \(\(\[Mu]\[Nu]\)\(\\\ \)\)]\)\!\(\*SubscriptBox[SuperscriptBox[\(G\), \(b\)], \(\[Rho]\[Sigma]\)]\) to \!\(\*SuperscriptBox[\(\[Delta]\),
