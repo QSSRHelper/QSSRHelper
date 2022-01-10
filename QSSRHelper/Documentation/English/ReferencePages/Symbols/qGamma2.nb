@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6812,        195]
+NotebookDataLength[      6811,        195]
 NotebookOptionsPosition[      4495,        139]
-NotebookOutlinePosition[      6258,        186]
-CellTagsIndexPosition[      6215,        183]
+NotebookOutlinePosition[      6257,        186]
+CellTagsIndexPosition[      6214,        183]
 WindowTitle->qGamma2
 WindowFrame->Normal*)
 
@@ -79,7 +79,7 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
            URL[
             StringJoin[
              If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$18950], 
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$19184], 
               "http://reference.wolfram.com/system-modeler/", 
               "http://reference.wolfram.com/language/"], 
              "QSSRHelper/ref/qGamma2", ".html"]], None}]}]},
@@ -152,7 +152,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2021, 12, 30, 15, 21, 25.2525489}", 
+   "built" -> "{2022, 1, 10, 14, 33, 13.4640347}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -185,9 +185,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[579, 21, 3008, 74, 70, "AnchorBarGrid",ExpressionUUID->"cae15415-1a1c-47c1-b727-2c8f445412e4",
+Cell[579, 21, 3008, 74, 70, "AnchorBarGrid",ExpressionUUID->"93a8d93f-fe78-4e4d-8b6a-85f37d06e1f5",
  CellID->1],
-Cell[3590, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"0ba5c108-5955-4e04-a40f-e700afece241"],
+Cell[3590, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"4dc192dc-904b-43d5-8d55-9e6900d3a620"],
 Cell[3757, 105, 283, 9, 70, "Usage",ExpressionUUID->"c70ac3d5-911e-4b90-9046-7705125adbaa",
  CellID->982511436],
 Cell[CellGroupData[{
@@ -196,7 +196,7 @@ Cell[4065, 118, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"311693b1-97fc-4c44
 Cell[4218, 127, 235, 7, 70, "SeeAlso",ExpressionUUID->"45d95a6a-2f56-4f9f-b1ad-b666ebe5dd2a",
  CellID->929782353]
 }, Open  ]],
-Cell[4468, 137, 23, 0, 70, "FooterCell",ExpressionUUID->"02337053-76db-4462-9533-a5f00927815d"]
+Cell[4468, 137, 23, 0, 70, "FooterCell",ExpressionUUID->"229c7847-a493-416d-bda2-f99e61979944"]
 }
 ]
 *)
