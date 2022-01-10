@@ -153,7 +153,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2022, 1, 10, 14, 37, 56.1079750}", 
+   "built" -> "{2022, 1, 10, 14, 58, 51.8361487}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -186,19 +186,19 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[579, 21, 3032, 74, 70, "AnchorBarGrid",ExpressionUUID->"20d69447-36ed-492b-8e6b-2b65bd4de04d",
+Cell[579, 21, 3032, 74, 70, "AnchorBarGrid",ExpressionUUID->"29a09122-969c-4198-a4b3-4c3db3f7eb2e",
  CellID->1],
-Cell[3614, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"49193eea-ba70-47a5-b13a-5ca6ce0723c8"],
-Cell[3781, 105, 283, 9, 70, "Usage",ExpressionUUID->"c3b9a75b-e7cf-4856-9c07-bb295df22358",
+Cell[3614, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"d6292b04-a43c-4075-aa13-c0dd3598dc3f"],
+Cell[3781, 105, 283, 9, 70, "Usage",ExpressionUUID->"282905d3-88fd-4847-aa7b-284180500d46",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[4089, 118, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"7707ae96-ac3b-40da-9fd2-86434b7093c5",
+Cell[4089, 118, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"bffe03c9-5087-425e-99e1-e6e6c4171c8e",
  CellID->38303248],
-Cell[4248, 127, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"7afb481c-0317-4bf7-8621-8007d8d51462"],
-Cell[4282, 129, 171, 6, 70, "MoreAbout",ExpressionUUID->"83f18251-0b6e-47fd-9198-a989ee1b4866",
+Cell[4248, 127, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"1eafe588-28ca-4345-aa54-f4b1ace14feb"],
+Cell[4282, 129, 171, 6, 70, "MoreAbout",ExpressionUUID->"90ecde1c-6eec-43b1-b949-b111b91c4298",
  CellID->1]
 }, Open  ]],
-Cell[4468, 138, 23, 0, 70, "FooterCell",ExpressionUUID->"34ffe4be-2c65-4d59-84b7-dcf3598918e6"]
+Cell[4468, 138, 23, 0, 70, "FooterCell",ExpressionUUID->"b3bdbe42-ffb5-4e0b-9409-9497e66ee22d"]
 }
 ]
 *)
