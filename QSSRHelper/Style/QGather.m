@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Wolfram Language package *)
 
 (* Author: ShungHong Li *)
@@ -114,7 +116,8 @@ If[FreeQ[tmp,Momentum[p,___]],
 
 	(* to separate transverse and longitudinal part,
 	first MTD[a,b]-> MTD[a,b] + FVD[p,a]FVD[p,b]/SPD[p], then MTD[a,b]-> MTD[a,b]- FVD[p,a]FVD[p,b]/SPD[p] in the end *)
-	(* times a vector so that below can also act on scalar input *)
+	
+	(* times a vector so that below can also deal with scalar input *)
 	tmp=tmp Pair[Momentum[p,D],LorentzIndex[nulllor,D]];
 	
 	If[separate==True,tmp=tmp/.Pair[LorentzIndex[a_,dim___],LorentzIndex[b_,dim___]]:>
@@ -171,45 +174,35 @@ If[FreeQ[tmp,Momentum[p,___]],
 
 
 (*-------------------------Simplify PolyGamma--------------------------------*)
-		If[!FreeQ[list,PolyGamma],list=list//FullSimplify];
-			(*If[!FreeQ[list,PolyGamma],
+	If[!FreeQ[list,PolyGamma],list=list//FullSimplify];
+			
 
-			list=list//Expand;
-			list=(fact[Cases[#,aa_ PolyGamma[bb_,cc_]|aa_ Power[PolyGamma[bb_,cc_],power_]|PolyGamma[bb_,cc_]|Power[PolyGamma[bb_,cc_],power_]|
-								aa_ Zeta[bb_]|aa_ Power[Zeta[bb_],power_]|Zeta[bb_]|Power[Zeta[bb_],power_]]]+(#/.{PolyGamma[___]->0,Zeta[___]->0}))&/@list;
-			list=list/.fact[aa_]:>FullSimplify[Plus@@aa+null]/.null->0;
-			];*)
+	(* simplify each term *)		
+    For[i=1,i<Length[list]+1,i++,
+        list[[i,2]]=Simplify[list[[i,2]]]
+    ];			
+			
 	
+	(*-----------------------------------------------------------------------*)
+	tmp=list/.{null1->Identity,log->Log,Pair[Momentum[p,D],LorentzIndex[nulllor,D]]->1};
 	
-	
-	If[tf==True,
-	  For[i=1,i<Length[list]+1,i++,
-          list[[i,2]]=Simplify[list[[i,2]]]];
-      tmp=list,
-  
-		(* expand to different power of Epsilon; add null1 to isolate Epsilon and other terms to avoid expand them *)
-		list=Collect[Epsilon^null0 list,Epsilon]/. a_ Power[Epsilon,b_]:>null1[a//Simplify]Power[Epsilon,b - null0];
-		tmp=Total[#]&/@list[[;;,2]];
-		tmp=Collect[Total[tmp list[[;;,1]]],Epsilon]/.null0->0;
-	
+
+	If[Length[tmp]==1&&NumberQ[tmp[[1,1]]],
+		tf=False(* if just a scalar, not show as table *)
+	,
+		(* collect the terms only differ by the tensor structure *)
+		tmp=Flatten[Gather[tmp,(Expand[Plus@@(#1[[2]]+#2[[2]])]===0)||(Expand[Plus@@(#1[[2]]-#2[[2]])]===0)&],1]
 	];
 	
 	
-	(*If[FreeQ[tmp],Log[aa_]/;!FreeQ[aa,Momentum[p,___]]&&spdfad,
-		tmp=tmp/.Power[Pair[Momentum[p,dim___],Momentum[p,dim___]],po_Integer]/;Negative[po]\[RuleDelayed]FAD[{p,0-po}]
-	];*)
 	
-	tmp=tmp/.{null1->Identity,log->Log,Pair[Momentum[p,D],LorentzIndex[nulllor,D]]->1};
-	
-	(* collect the terms only differ by the tensor structure *)
-	tmp=Flatten[Gather[tmp,(Expand[Plus@@(#1[[2]]+#2[[2]])]===0)||(Expand[Plus@@(#1[[2]]-#2[[2]])]===0)&],1];
-	
-	
-	If[Length[tmp]==1&&NumberQ[tmp[[1,1]]],
-		Plus@@tmp[[1,2]](* if just a scalar *)
+	(*------ whether show as a table ------*)
+	If[tf==True,
+ 	   tmp
 	,
-		tmp
+		Plus@@(#[[1]]Plus@@(#[[2]])&/@tmp)
 	]
+	
 	
 	
 ]

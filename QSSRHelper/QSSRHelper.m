@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Wolfram Language Package *)
 
 
@@ -87,8 +89,8 @@ Condensate[xx__]:=Times@@(Condensate[#]&/@List[xx])
 
 
 
-Condensate[x_]:=Block[{expr,tmp,list},
-expr=ToString[x];
+
+Condensate/: MakeBoxes[Condensate[x_],TraditionalForm]:=Block[{xx=ToString[x],list,list1,list2},
 
 list={{"qq",RowBox[{"\[LeftAngleBracket]","\[ThinSpace]",OverscriptBox["q", "_"],"q","\[ThinSpace]","\[RightAngleBracket]"}]},
 	{"d3",RowBox[{"\[LeftAngleBracket]","\[ThinSpace]",OverscriptBox["q", "_"],"q","\[ThinSpace]","\[RightAngleBracket]"}]},
@@ -112,14 +114,20 @@ list={{"qq",RowBox[{"\[LeftAngleBracket]","\[ThinSpace]",OverscriptBox["q", "_"]
 	{"qq3",RowBox[{"\[LeftAngleBracket]","\[ThinSpace]",OverscriptBox["q", "_"],"q",SuperscriptBox["\[RightAngleBracket]", "3"]}]}};
 	
 	
-	If[!FreeQ[list,expr],
-		tmp=Position[list,expr][[1,1]];
-		DisplayForm[TraditionalForm[list[[tmp,2]]]]
-		,
-		DisplayForm[TraditionalForm[RowBox[{"\[LeftAngleBracket]","\[ThinSpace]",expr,"","\[RightAngleBracket]"}]]]
-	]
+list1=Transpose[list][[1]];
+list2=Transpose[list][[2]];
 
+
+(* -------------------- *)
+If[!FreeQ[list1,xx],
+	xx=Position[list1,xx][[1,1]];
+	list2[[xx]]
+	,
+	RowBox[{"\[LeftAngleBracket]","\[ThinSpace]",xx,"","\[RightAngleBracket]"}]
 ]
+	
+	
+];
 
 
 (*-------------------------------------------------------------------------------------------*)

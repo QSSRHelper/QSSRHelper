@@ -73,7 +73,7 @@ If[ToString[Head[tmp]]=="Plus",
 
 ,*)
 	If[Or@@(FreeQ[tmp,#]&/@pp),
-		Print["Check input!"];
+		If[tmp=!=0,Print["Check input!"]];
 		tmp
 
 	,
