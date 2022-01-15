@@ -85,7 +85,7 @@ qfact1[xx_Rational]:=xx
 
 (*-------------------------------------------------------------------------------------------*)
 
-Condensate[xx__]:=Times@@(Condensate[#]&/@List[xx])
+Condensate[xx1_,xx2__]:=Condensate[xx1]Condensate[xx2]
 
 
 
