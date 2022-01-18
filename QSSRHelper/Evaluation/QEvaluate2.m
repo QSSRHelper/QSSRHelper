@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Wolfram Language package *)
 
 (* Author: ShungHong Li *)
@@ -141,14 +143,14 @@ If[FreeQ[tmp,Momentum[p,___]],
 	(* -------------------------isolate Log[-p^2/4\[Pi]\[Mu]^2] for later Simplify ----------------------------*)
 			If[ToLowerCase[ToString[subtract]]=="msbar",
 				list=list/.{Log[k_ Pair[Momentum[p,di___],Momentum[p,di___]]]:>	
-						log[-SPD[p]/(ScaleMu^2)] +Log[-k]+2 Log[2]+ 2 Log[ScaleMu]+Log[Pi]-EulerGamma,		
+						log[-Pair[Momentum[p,D],Momentum[p,D]]/(ScaleMu^2)] +Log[-k]+2 Log[2]+ 2 Log[ScaleMu]+Log[Pi]-EulerGamma,		
 					Log[Pair[Momentum[p,di___],Momentum[p,di___]]]:>
-						log[-SPD[p]/(ScaleMu^2)] - Pi I +2 Log[2]+ 2 Log[ScaleMu]+Log[Pi]-EulerGamma};
+						log[-Pair[Momentum[p,D],Momentum[p,D]]/(ScaleMu^2)] - Pi I +2 Log[2]+ 2 Log[ScaleMu]+Log[Pi]-EulerGamma};
 			,
 				list=list/.{Log[k_ Pair[Momentum[p,di___],Momentum[p,di___]]]:>	
-						log[-SPD[p]/(4 Pi ScaleMu^2)]+Log[-k]+2 Log[2]+2 Log[ScaleMu]+Log[Pi],		
+						log[-Pair[Momentum[p,D],Momentum[p,D]]/(4 Pi ScaleMu^2)]+Log[-k]+2 Log[2]+2 Log[ScaleMu]+Log[Pi],		
 					Log[Pair[Momentum[p,di___],Momentum[p,di___]]]:>
-						log[-SPD[p]/(4 Pi ScaleMu^2)]- Pi I +2 Log[2]+2 Log[ScaleMu]+Log[Pi]};
+						log[-Pair[Momentum[p,D],Momentum[p,D]]/(4 Pi ScaleMu^2)]- Pi I +2 Log[2]+2 Log[ScaleMu]+Log[Pi]};
 			];(* sign of Pi I in later term is because mathematica take Log[-1]= Pi by default *)
 	
 			
