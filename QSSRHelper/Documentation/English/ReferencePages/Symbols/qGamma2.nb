@@ -152,7 +152,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2022, 1, 14, 21, 17, 46.2474085}", 
+   "built" -> "{2022, 1, 18, 18, 44, 16.7529512}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -185,9 +185,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[579, 21, 3008, 74, 70, "AnchorBarGrid",ExpressionUUID->"326fcb9e-e5a8-452a-885b-46ec7113da69",
+Cell[579, 21, 3008, 74, 70, "AnchorBarGrid",ExpressionUUID->"40aeacd3-37b9-41a1-8fc7-2fb5cf835134",
  CellID->1],
-Cell[3590, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"f07a8ee6-359d-49a1-ab4f-9cb4e1d6ab20"],
+Cell[3590, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"e6fd4afe-29ad-4a0f-ac67-3513b285b2a1"],
 Cell[3757, 105, 283, 9, 70, "Usage",ExpressionUUID->"c70ac3d5-911e-4b90-9046-7705125adbaa",
  CellID->982511436],
 Cell[CellGroupData[{
@@ -196,7 +196,7 @@ Cell[4065, 118, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"311693b1-97fc-4c44
 Cell[4218, 127, 235, 7, 70, "SeeAlso",ExpressionUUID->"45d95a6a-2f56-4f9f-b1ad-b666ebe5dd2a",
  CellID->929782353]
 }, Open  ]],
-Cell[4468, 137, 23, 0, 70, "FooterCell",ExpressionUUID->"5e9ac101-8ea6-421d-87f4-3d4ba29398c1"]
+Cell[4468, 137, 23, 0, 70, "FooterCell",ExpressionUUID->"7821790f-6f97-490e-897d-292f9ad0baaf"]
 }
 ]
 *)

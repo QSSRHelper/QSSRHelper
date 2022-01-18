@@ -90,7 +90,7 @@ If[FreeQ[tmp,Momentum[p,___]],
 			tmp=(tmp//Expand)/.null->0;
 			
 			
-			tmp=QGather[tmp,p,Subtract->OptionValue[Subtract],SelectD->True];
+			tmp=QGather[tmp,p,Subtract->OptionValue[Subtract],SelectD->True,Table->"ForcetoTable"];
 			
 		(*  MTD[a,b]\[Rule] MTD[a,b] + FVD[p,a]FVD[p,b]/SPD[p], then MTD[a,b]\[Rule] MTD[a,b]- FVD[p,a]FVD[p,b]/SPD[p] in the end *)
 			tmp=tmp/.Pair[LorentzIndex[x_,dim___],LorentzIndex[y_,dim___]]:>
