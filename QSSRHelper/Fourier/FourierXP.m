@@ -83,7 +83,7 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 (* if involve constant terms *)
 	tmpc=List@@(null Momentum[x,D]+null^2 Momentum[x,D]+Expand[tmp]);	
 	tmpcc=FreeQ[#,Momentum[x,D]]&/@tmpc;
-	Print[tmpcc,tmp];
+
 	If[Or@@tmpcc, Print["Constant terms involved, which will be set to 0, make sure the input is correct!"];If[showsteps,Print["There are:\n",DeleteCases[Boole[tmpcc]tmpc,0]]]];
 
 (*-----------------------------------------------------*)

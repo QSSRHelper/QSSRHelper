@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6811,        195]
+NotebookDataLength[      6810,        195]
 NotebookOptionsPosition[      4495,        139]
-NotebookOutlinePosition[      6257,        186]
-CellTagsIndexPosition[      6214,        183]
+NotebookOutlinePosition[      6256,        186]
+CellTagsIndexPosition[      6213,        183]
 WindowTitle->qGamma2
 WindowFrame->Normal*)
 
@@ -152,7 +152,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2022, 1, 21, 19, 58, 44.6486732}", 
+   "built" -> "{2022, 1, 21, 20, 1, 17.7730524}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -185,9 +185,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[579, 21, 3008, 74, 70, "AnchorBarGrid",ExpressionUUID->"87524cad-7c10-4d20-b8ac-05311c3813a7",
+Cell[579, 21, 3008, 74, 70, "AnchorBarGrid",ExpressionUUID->"f2ec57c0-9f31-4c02-86de-48af1acfba98",
  CellID->1],
-Cell[3590, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"7d8434c3-b429-41c4-9a22-855e8c4d7f88"],
+Cell[3590, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"e42a620e-37da-4157-8619-da2275eb904c"],
 Cell[3757, 105, 283, 9, 70, "Usage",ExpressionUUID->"c70ac3d5-911e-4b90-9046-7705125adbaa",
  CellID->982511436],
 Cell[CellGroupData[{
@@ -196,7 +196,7 @@ Cell[4065, 118, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"311693b1-97fc-4c44
 Cell[4218, 127, 235, 7, 70, "SeeAlso",ExpressionUUID->"45d95a6a-2f56-4f9f-b1ad-b666ebe5dd2a",
  CellID->929782353]
 }, Open  ]],
-Cell[4468, 137, 23, 0, 70, "FooterCell",ExpressionUUID->"e99ba5df-8ce9-436e-95f1-5684d25a2e0e"]
+Cell[4468, 137, 23, 0, 70, "FooterCell",ExpressionUUID->"36ed9f0c-06ca-415b-9992-beff234798c2"]
 }
 ]
 *)
