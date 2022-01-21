@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Wolfram Language package *)
 
 (* Author: ShungHong Li *)
@@ -20,14 +22,15 @@ Options[FourierPX]={
 	TrueGamma->Integer,
 	Dimension->"AsIs",
 	Simplify->True,
-	Parallelize->"Auto"};
+	Parallelize->"Auto",
+	ShowSteps->False};
 	
 	
 	
 	
 FourierPX[expr_,{x_,p_},OptionsPattern[]]:=Block[{option=OptionValue[TrueGamma],dim=OptionValue[Dimension]},
 
-	FourierXP[expr,{x,p},TrueGamma->option,Dimension->dim,Inverse->True,Simplify->OptionValue[Simplify]]
+	FourierXP[expr,{x,p},TrueGamma->option,Dimension->dim,Inverse->True,Simplify->OptionValue[Simplify],ShowSteps->OptionValue[ShowSteps]]
 ]
 	
 	

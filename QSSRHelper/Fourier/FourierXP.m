@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Wolfram Language package *)
 
 (* Author: ShungHong Li *)
@@ -18,7 +20,8 @@ Options[FourierXP]={
 	Dimension->"AsIs",
 	Inverse->False,
 	Simplify->True,
-	Parallelize->"Auto"};
+	Parallelize->"Auto",
+	ShowSteps->False};
 	
 	
 	
@@ -28,8 +31,8 @@ then do fourier transformation term by term *)
  (*---------------------------------------------------------------------*)
 
 FourierXP[expr_,{x_,pp_},OptionsPattern[]]:=Block[
-{tmp,tmp2,test,rule1,dindex,findex,f,fco,result=0,tempresult,opt=OptionValue[TrueGamma],
-inverse=OptionValue[Inverse],sign=-1,null2,null4,null5,nulllo,nullpo,nullindx,Flist={},lorindx={},times,li,wrong,i,j,k,p,parall=OptionValue[Parallelize]},
+{tmp,tmp2,tmpc,tmpcc,test,rule1,dindex,findex,f,fco,result=0,tempresult,opt=OptionValue[TrueGamma],
+inverse=OptionValue[Inverse],sign=-1,null2,null,null5,nulllo,nullpo,nullindx,Flist={},lorindx={},times,li,wrong,i,j,k,p,parall=OptionValue[Parallelize],showsteps=OptionValue[ShowSteps]},
 
 tmp=expr//FCI;
 
@@ -75,7 +78,13 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 		tmp=Collect[tmp,Pair[Momentum[x,D],LorentzIndex[_,D]]];
 		tmp=tmp/.Power[Pair[Momentum[x,D],LorentzIndex[lor_,D]],2]:>Pair[Momentum[x,D],Momentum[x,D]]
 	];
-
+	
+(*-------------------------------*)
+(* if involve constant terms *)
+	tmpc=List@@(null Momentum[x,D]+null^2 Momentum[x,D]+Expand[tmp]);	
+	tmpcc=FreeQ[#,Momentum[x,D]]&/@tmpc;
+	Print[tmpcc,tmp];
+	If[Or@@tmpcc, Print["Constant terms involved, which will be set to 0, make sure the input is correct!"];If[showsteps,Print["There are:\n",DeleteCases[Boole[tmpcc]tmpc,0]]]];
 
 (*-----------------------------------------------------*)
 
@@ -91,12 +100,14 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 (*-------------------------------*)
 	tmp=tmp//Expand;
 	
+	
 	If[tmp===0,
 		0
 	,
 		If[Head[tmp]===Plus,
 			tmp=List@@tmp;
-	
+			
+			
 			tmp=(nulllo@@Cases[#,Pair[Momentum[x,D],LorentzIndex[lor_,D]]:>lor,Infinity])(nullpo@@Cases[#,Power[Pair[Momentum[x,D],Momentum[x,D]],por_]:>por,Infinity])#&/@tmp;
 	
 			tmp=tmp/.{Pair[Momentum[x,D],LorentzIndex[lor_,D]]->1,Power[Pair[Momentum[x,D],Momentum[x,D]],por_]->1};
