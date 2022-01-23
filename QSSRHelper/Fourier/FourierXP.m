@@ -180,7 +180,7 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 
 (*--------------------------------------------------------------------------*)
 
-getfourier[d_,n_,x_,p_,inver_]:=Block[{findex=-d,dindex={},sign=-1,factor=1,fco,f,co1,co2,null3,tmp,ii,jj,res},
+getfourier[d_,n_,x_,p_,inver_]:=Block[{findex=-d,tmp2,tmp3,dindex={},sign=-1,factor=1,fco,f,co1,co2,null3,tmp,ii,jj,res},
 
 (*If[(d===0)&&(n===0),
 	{0,0}
@@ -188,8 +188,14 @@ getfourier[d_,n_,x_,p_,inver_]:=Block[{findex=-d,dindex={},sign=-1,factor=1,fco,
 	If[inver==True,sign=1;factor=(2Pi)^(-D)];
 	If[d==0,Print["terms with no ",SuperscriptBox[x,2]//DisplayForm," involved, please make sure the input is correct!"]];
 
-	co2=(-1)^Quotient[4((-D/2+findex)/.D->0),4]I^(Quotient[Mod[4((-D/2+findex)/.D->0),4],2])(-1)^Expand[(-D/2+findex)-((-D/2+findex)/.D->0)+Mod[Mod[4((-D/2+findex))/.D->0 ,4],2]/4];
-	co1=(-1)^Quotient[4((findex+1/2)/.D->0),4]I^(Quotient[Mod[4((findex+1/2)/.D->0),4],2])(-1)^Expand[(findex+1/2)-((findex+1/2)/.D->0)+Mod[Mod[4((findex+1/2))/.D->0 ,4],2]/4];
+	(*  simplify (-1)^n i^m *)
+	tmp2=Expand[findex]/.D->0/.bb_+aa_/;NumberQ[aa]:>bb;
+	tmp2=Boole[!NumberQ[tmp2]]tmp2;(* collect symbols neither numerical nor involve D *)
+	
+	tmp3=findex-tmp2//Expand;
+	co2=(-1)^tmp2(-1)^Quotient[4((-D/2+tmp3)/.D->0),4]I^(Quotient[Mod[4((-D/2+tmp3)/.D->0),4],2])(-1)^Expand[(-D/2+tmp3)-((-D/2+tmp3)/.D->0)+Mod[Mod[4((-D/2+tmp3))/.D->0 ,4],2]/4];
+	co1=(-1)^tmp2(-1)^Quotient[4((tmp3+1/2)/.D->0),4]I^(Quotient[Mod[4((tmp3+1/2)/.D->0),4],2])(-1)^Expand[(tmp3+1/2)-((tmp3+1/2)/.D->0)+Mod[Mod[4((tmp3+1/2))/.D->0 ,4],2]/4];
+	(*-----------------------------------*)
 
 	fco=sign factor co1 2^(D-2findex) Pi^(D/2) qGamma[D/2 - findex]/qGamma[findex];
 	f=co2 Pair[Momentum[p,D],Momentum[p,D]]^null3[-D/2+findex];

@@ -41,7 +41,7 @@ IntegrateX[expr_,x_,y__/;FreeQ[{y},Rule],opts___Rule]:=IntegrateX[IntegrateX[exp
 (*-----------------------------------------------------------*)
 
 IntegrateX[expr_,x_,OptionsPattern[]]:=Block[
-{tmp,tmp2,result=0,list,listlor,tmplist,glist,g,tmpg,i=1,j=1,n=1,k=1,null0,null1,null2,null5,nullx,tempresult,nullpo,nullpo2,nulllo,nulllo2,nullindx,lorindx,Ilist,
+{tmp,tmp2,tmp3,tmp4,result=0,list,listlor,tmplist,glist,g,tmpg,i=1,j=1,n=1,k=1,null0,null1,null2,null5,nullx,tempresult,nullpo,nullpo2,nulllo,nulllo2,nullindx,lorindx,Ilist,
 li,times,plus,mdim,momentum,pair2,test,wrong,pair,tttmp,rulem11,rulem12,fact,idp=OptionValue[dp],tmpdim,tmpxx},
 
 
@@ -131,12 +131,21 @@ tmp=tmp/.{Power[factor__ Pair[Momentum[x+z__,dim___],Momentum[x+z__,dim___]],pow
 			Power[factor__ Pair[Momentum[x,dim___],Momentum[x,dim___]],power__]:>
 			If[FreeQ[factor,-1],factor^power,(-1)^power(-factor)^power]  Pair[Momentum[x,dim],Momentum[x,dim]]^power};
 
-(* avoid mathematica take (-1)^(-1/2 D) as i^D, simplify (-1)^n since there are many term only differ by a sign*)
-
+(* avoid mathematica take (-1)^(-1/2 D) as i^D; simplify (-1)^n since there are many term only differ by a sign*)
+	
 tmp=tmp/.{Power[factor__ Pair[Momentum[x+z__,dim___],Momentum[x+z__,dim___]],power__]:>
-			If[FreeQ[factor,-1],factor^power,(-1)^Quotient[4(power/.D->0),4]I^(Quotient[Mod[4(power/.D->0),4],2])(-1)^Expand[power-(power/.D->0)+Mod[Mod[4(power)/.D->0,4],2]/4]](-factor)^power Pair[Momentum[x+z,dim],Momentum[x+z,dim]]^power,	
+			(tmp3=Expand[power]/.D->0/.bb_+aa_/;NumberQ[aa]:>bb;
+			tmp3=Boole[!NumberQ[tmp3]]tmp3;(* collect symbols neither numerical nor involve D *)
+			tmp4=power-tmp3;
+			If[FreeQ[factor,-1],factor^power,(-1)^tmp3(-1)^Quotient[4(tmp4/.D->0),4]I^(Quotient[Mod[4(tmp4/.D->0),4],2])(-1)^Expand[tmp4-(tmp4/.D->0)+Mod[Mod[4(tmp4)/.D->0,4],2]/4](-factor)^power]
+			 Pair[Momentum[x+z,dim],Momentum[x+z,dim]]^power)
+			,	
 			Power[factor__ Pair[Momentum[x,dim___],Momentum[x,dim___]],power__]:>
-			If[FreeQ[factor,-1],factor^power,(-1)^Quotient[4(power/.D->0),4]I^(Quotient[Mod[4(power/.D->0),4],2])(-1)^Expand[power-(power/.D->0)+Mod[Mod[4(power)/.D->0,4],2]/4]] (-factor)^power  Pair[Momentum[x,dim],Momentum[x,dim]]^power};
+			(tmp3=Expand[power]/.D->0/.bb_+aa_/;NumberQ[aa]:>bb;
+			tmp3=Boole[!NumberQ[tmp3]]tmp3;(* collect symbols neither numerical nor involve D *)
+			tmp4=power-tmp3;
+			If[FreeQ[factor,-1],factor^power,(-1)^tmp3(-1)^Quotient[4(tmp4/.D->0),4]I^(Quotient[Mod[4(tmp4/.D->0),4],2])(-1)^Expand[tmp4-(tmp4/.D->0)+Mod[Mod[4(tmp4)/.D->0,4],2]/4](-factor)^power] 
+			 Pair[Momentum[x,dim],Momentum[x,dim]]^power)};
 
 
 
@@ -259,7 +268,8 @@ result=If[Length[null0+result/.{qGamma[1]->1,qGamma[2]->1,qGamma[3]->2}]==Length
 
 
 
-getintegral[list_,nn_,x_,dp_]:=Block[{result=0,tmp,tmp3,tmp4,tmp5,tmpg,listlor,tmplist,lln=Length[nn],x1,x2,i=1,j=1,k=1,n=1,l=1,nnl,times,p1,p2,pp1,pp2,listlo,loo,null0,lloo,numerator,fpower,fmomentum,s1,s2,nx,momentum,co1,rule1},
+getintegral[list_,nn_,x_,dp_]:=Block[{result=0,tmp,tmp3,tmp4,tmp5,tmpg,listlor,tmplist,lln=Length[nn],x1,x2,i=1,j=1,k=1,n=1,l=1,nnl,times,
+p1,p2,pp1,pp2,listlo,loo,null0,lloo,numerator,fpower,tmp6,tmp7,fmomentum,s1,s2,nx,momentum,co1,rule1},
 
 fpower=list[[1,2]]+list[[2,2]];
 fmomentum=list[[1,1]]-list[[2,1]];
@@ -345,11 +355,21 @@ If[numerator=!={0},
 		If[dp,
 			pp1=fpower-n;(* since (z^2)^n/(z^2+x^2)^(fpower)>>>(-1)^(fpower-n) (-z^2)^(n)/(-z^2-x^2)^(fpower)  >>>wick rotation)>>> (-1)^(fpower-n) |z^2|^(n)/(|z^2|-x^2)^(fpower) *)
 			pp2=-fpower+n+D/2;
-			co1=(-1)^Quotient[4(pp1+pp2+1/2/.D->0),4]I^(Quotient[Mod[4(pp1+pp2+1/2/.D->0),4],2])(-1)^Expand[pp1+pp2-(pp1+pp2/.D->0)+Mod[Mod[4(pp1+pp2+1/2)/.D->0,4],2]/4](1/(2Pi)^D);
+			
+			tmp6=Expand[pp1+pp2]/.D->0/.bb_+aa_/;NumberQ[aa]:>bb;
+			tmp6=Boole[!NumberQ[tmp6]]tmp6;(* collect symbols neither numerical nor involve D *)
+			tmp7=pp1+pp2-tmp6;
+			
+			co1=(-1)^tmp6(-1)^Quotient[4(tmp7+1/2/.D->0),4]I^(Quotient[Mod[4(tmp7+1/2/.D->0),4],2])(-1)^Expand[tmp7-(tmp7/.D->0)+Mod[Mod[4(tmp7+1/2)/.D->0,4],2]/4](1/(2Pi)^D);
 		,
 			pp1= 1+fpower-n;
 			pp2= -fpower+n+D/2;
-			co1=(-1)^Quotient[4(pp1+pp2+1/2/.D->0),4]I^(Quotient[Mod[4(pp1+pp2+1/2/.D->0),4],2])(-1)^Expand[pp1+pp2-(pp1+pp2/.D->0)+Mod[Mod[4(pp1+pp2+1/2)/.D->0,4],2]/4];
+			
+			tmp6=Expand[pp1+pp2]/.D->0/.bb_+aa_/;NumberQ[aa]:>bb;
+			tmp6=Boole[!NumberQ[tmp6]]tmp6;(* collect symbols neither numerical nor involve D *)
+			tmp7=pp1+pp2-tmp6;
+			
+			co1=(-1)^tmp6(-1)^Quotient[4(tmp7+1/2/.D->0),4]I^(Quotient[Mod[4(tmp7+1/2/.D->0),4],2])(-1)^Expand[tmp7-(tmp7/.D->0)+Mod[Mod[4(tmp7+tmp7+1/2)/.D->0,4],2]/4];
 		];
 
 		tmp5=tmp5  co1 Pi^(D/2)  qGamma[fpower-n-D/2]qGamma[n+D/2]/(qGamma[fpower]qGamma[D/2])Pair[Momentum[fmomentum,D],Momentum[fmomentum,D]]^pp2 ;
