@@ -137,14 +137,14 @@ tmp=tmp/.{Power[factor__ Pair[Momentum[x+z__,dim___],Momentum[x+z__,dim___]],pow
 			(tmp3=Expand[power]/.D->0/.bb_+aa_/;NumberQ[aa]:>bb;
 			tmp3=Boole[!NumberQ[tmp3]]tmp3;(* collect symbols neither numerical nor involve D *)
 			tmp4=power-tmp3;
-			If[FreeQ[factor,-1],factor^power,(-1)^tmp3(-1)^Quotient[4(tmp4/.D->0),4]I^(Quotient[Mod[4(tmp4/.D->0),4],2])(-1)^Expand[tmp4-(tmp4/.D->0)+Mod[Mod[4(tmp4)/.D->0,4],2]/4](-factor)^power]
+			If[FreeQ[factor,-1,1],factor^power,(-1)^tmp3(-1)^Quotient[4(tmp4/.D->0),4]I^(Quotient[Mod[4(tmp4/.D->0),4],2])(-1)^Expand[tmp4-(tmp4/.D->0)+Mod[Mod[4(tmp4)/.D->0,4],2]/4](-factor)^power]
 			 Pair[Momentum[x+z,dim],Momentum[x+z,dim]]^power)
 			,	
 			Power[factor__ Pair[Momentum[x,dim___],Momentum[x,dim___]],power__]:>
 			(tmp3=Expand[power]/.D->0/.bb_+aa_/;NumberQ[aa]:>bb;
 			tmp3=Boole[!NumberQ[tmp3]]tmp3;(* collect symbols neither numerical nor involve D *)
 			tmp4=power-tmp3;
-			If[FreeQ[factor,-1],factor^power,(-1)^tmp3(-1)^Quotient[4(tmp4/.D->0),4]I^(Quotient[Mod[4(tmp4/.D->0),4],2])(-1)^Expand[tmp4-(tmp4/.D->0)+Mod[Mod[4(tmp4)/.D->0,4],2]/4](-factor)^power] 
+			If[FreeQ[factor,-1,1],factor^power,(-1)^tmp3(-1)^Quotient[4(tmp4/.D->0),4]I^(Quotient[Mod[4(tmp4/.D->0),4],2])(-1)^Expand[tmp4-(tmp4/.D->0)+Mod[Mod[4(tmp4)/.D->0,4],2]/4](-factor)^power] 
 			 Pair[Momentum[x,dim],Momentum[x,dim]]^power)};
 
 
