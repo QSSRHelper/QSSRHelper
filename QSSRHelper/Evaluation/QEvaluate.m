@@ -67,6 +67,8 @@ If[FreeQ[tmp,Momentum[p,___]],
 		tmp=QGather[tmp,p,Table->False]
 	,
 		
+		
+		
 		(*-------weather or not use parallelize evaluation--------*)
 		If[((Length[tmp2]>500)&&(ToString[Head[tmp]]=="Plus")&&(ToLowerCase[ToString[parall]]=="auto"))||(ToLowerCase[ToString[parall]]=="true"),
 		
@@ -83,6 +85,12 @@ If[FreeQ[tmp,Momentum[p,___]],
 				tmp={ord,#}&/@(List@@Expand[tmp/.qfact2->Identity])
 			,
 				tmp=({ord,#}&/@(List@@tmp))/.qfact2->Identity;			
+			];
+			
+			
+			(* if involve qdelta, take the limit before Series[] *)
+			If[!FreeQ[tmp,qdelta],
+				tmp={#[[1]],Limit[#[[2]],qdelta->0]}&/@tmp;
 			];
 			
 			

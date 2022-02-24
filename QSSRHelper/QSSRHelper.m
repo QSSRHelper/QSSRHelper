@@ -46,10 +46,11 @@ qGamma::usage =
 
 
 
-qTFI::usuage = "qTFI[{u_,v_,r_,s_,t_},{v1_,v2_,v3_,v4_,v5_},{k1_,k2_,p_,{Rules___}}] not do any evalutaiton;
+qTFI::usage = "qTFI[{u_,v_,r_,s_,t_},{v1_,v2_,v3_,v4_,v5_},{k1_,k2_,p_,{Rules___}}] not do any evalutaiton;
  it keep the {k1_,k2_,p_,{Rules___}} to indicate where the 2-loop comes form."
 
-	
+
+qdelta::usage = "Delta symbol used in FourierXP, FourierPX, QNormal, and QEvaluate."
 
 (*-------------------------------------------------------------------------------------------*)
 
@@ -208,10 +209,8 @@ qTFI[list1_,list2_,{k1_,k2_,p_,rules_List}]/;!FreeQ[rules,List,{2}]:=
 qTFI[aa_,{k1_,k2_,p_,{}}]:=qTFI[aa,{k1,k2,p}]
 
 
-
-
 (*-------------------------------------------------------------------------------------------*)
-
+qdelta/: MakeBoxes[qdelta,TraditionalForm]="\[Delta]"
 
 
 

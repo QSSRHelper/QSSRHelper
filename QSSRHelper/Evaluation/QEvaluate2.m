@@ -88,7 +88,18 @@ If[FreeQ[tmp,Momentum[p,___]],
 	,
 			
 		tmp=tmp/.{qGamma->Gamma,qfact1->Identity,qfact2->Identity};
+		
+		(* if involve qdelta, take the limit before Series[] *)
+		If[!FreeQ[tmp,qdelta],
+			tmp=Limit[tmp,qdelta->0]//Expand;
+		];
+		
+		
 		tmp=tmp+null2+null2^2;
+		
+		
+		
+(*---------------------------------------------------------------------------------------------------------------*)
 		
 	(*   Do not Expand[tmp] before Series[]! It's quit strange that Expand tmp before evaluate Series will cause problem some time, 
 		e.g. antisymmetrize expr before apply this function, if Expand[] the expression before Series[], the symmetry part will appear in some case.

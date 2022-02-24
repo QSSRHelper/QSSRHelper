@@ -21,7 +21,8 @@ Options[FourierXP]={
 	Inverse->False,
 	Simplify->True,
 	Parallelize->"Auto",
-	ShowSteps->False};
+	ShowSteps->False,
+	Continue->False};
 	
 	
 	
@@ -84,7 +85,14 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 	tmpc=List@@(null Momentum[x,D]+null^2 Momentum[x,D]+Expand[tmp]);	
 	tmpcc=FreeQ[#,Momentum[x,D]]&/@tmpc;
 
-	If[Or@@tmpcc, Print["Constant terms involved, which will be set to 0, make sure the input is correct!"];If[showsteps,Print["There are:\n",DeleteCases[Boole[tmpcc]tmpc,0]]]];
+
+	If[(Or@@tmpcc)&&(ToLowerCase[ToString[OptionValue[Continue]]]==="false"), 
+		Print["Constant terms involved, which will be set to 0 by default, make sure the input is correct!"];
+		(* ~0 since 1/Gamma[0] = 0 *)
+		If[showsteps,
+			Print["There are:\n",DeleteCases[Boole[tmpcc]tmpc,0]]
+		]
+	];
 
 (*-----------------------------------------------------*)
 
@@ -104,6 +112,13 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 	If[tmp===0,
 		0
 	,
+		(*multiply 1/p^delta to avoid, e.g. transform constant terms as 0, which should transform to Delta[] *)
+		
+		If[ToLowerCase[ToString[OptionValue[Continue]]]==="true",
+			tmp=Expand[tmp/Pair[Momentum[x,D],Momentum[x,D]]^qdelta];
+		];
+		(*-------------------------------*)
+		
 		If[Head[tmp]===Plus,
 			tmp=List@@tmp;
 			
