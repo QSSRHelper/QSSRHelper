@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8185,        245]
-NotebookOptionsPosition[      5644,        186]
-NotebookOutlinePosition[      7490,        234]
-CellTagsIndexPosition[      7447,        231]
+NotebookDataLength[      8210,        245]
+NotebookOptionsPosition[      5670,        186]
+NotebookOutlinePosition[      7515,        234]
+CellTagsIndexPosition[      7472,        231]
 WindowTitle->qdelta
 WindowFrame->Normal*)
 
@@ -60,7 +60,7 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15362], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15819], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "QSSRHelper/ref/qdelta", ".html"]], None}]}]},
@@ -177,7 +177,7 @@ Cell[TextData[{
  " respectively and take the limit ",
  Cell[BoxData[
   RowBox[{"\[Delta]", "\[Rule]", "0"}]]],
- " can avoid this problem."
+ " at the end of calculation can avoid this problem."
 }], "Notes",
  CellID->1067943069]
 }, Closed]],
@@ -199,7 +199,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2022, 2, 24, 16, 23, 48.5426515}", 
+   "built" -> "{2022, 2, 24, 18, 9, 44.1051462}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -233,20 +233,20 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[578, 21, 2282, 54, 70, "AnchorBarGrid",ExpressionUUID->"c9af016d-7059-41ea-aa5a-fdf2837013de",
+Cell[578, 21, 2282, 54, 70, "AnchorBarGrid",ExpressionUUID->"4372ba7e-d7e2-4d27-a50a-a2e4b376ba4b",
  CellID->1],
-Cell[2863, 77, 163, 6, 70, "ObjectNameGrid",ExpressionUUID->"1fe21c20-7aa6-452c-8f8d-83f14ede40b0"],
+Cell[2863, 77, 163, 6, 70, "ObjectNameGrid",ExpressionUUID->"1123e76f-3d7b-4023-8fbc-8f5c65de6841"],
 Cell[3029, 85, 370, 10, 70, "Usage",ExpressionUUID->"426ca7ae-6a19-47ca-a659-a931a9742219",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[3424, 99, 621, 19, 70, "NotesSection",ExpressionUUID->"a5a3343b-c000-48e7-a31f-f6a3cadf4a86",
+Cell[3424, 99, 621, 19, 70, "NotesSection",ExpressionUUID->"fa96f21c-59a5-4f0f-853b-201bd8e1737a",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1],
-Cell[4048, 120, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"a34e57a2-a53d-44d8-a35e-431e2322d89b"],
-Cell[4082, 122, 1520, 59, 70, "Notes",ExpressionUUID->"7657c294-cad5-44bf-adf1-b872e079b327",
+Cell[4048, 120, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"bdc0bbca-9380-4458-90ff-f928e5ccf0dc"],
+Cell[4082, 122, 1546, 59, 70, "Notes",ExpressionUUID->"7657c294-cad5-44bf-adf1-b872e079b327",
  CellID->1067943069]
 }, Closed]],
-Cell[5617, 184, 23, 0, 70, "FooterCell",ExpressionUUID->"14b739e1-43c6-438c-85dd-ae1bb29523e8"]
+Cell[5643, 184, 23, 0, 70, "FooterCell",ExpressionUUID->"57bee8a6-c2b8-4adb-b779-cb9d0ad33428"]
 }
 ]
 *)
