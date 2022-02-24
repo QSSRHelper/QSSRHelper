@@ -1,0 +1,3668 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    115315,       3658]
+NotebookOptionsPosition[    109162,       3520]
+NotebookOutlinePosition[    111405,       3578]
+CellTagsIndexPosition[    111318,       3573]
+WindowTitle->QGather
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["Q S S R HELPER SYMBOL", "PacletNameCell",ExpressionUUID->
+     "7a1adb3b-835a-44af-863b-8566a50f3880"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"cecf80b1-3225-4c8b-b04a-f8d5dfa787b8"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QEvaluate\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QEvaluate"], "\<\"QSimplify2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QSimplify2"], "\<\"QSymmetry\"\>":>
+       Documentation`HelpLookup["paclet:QSSRHelper/ref/QSymmetry"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "1f16fac0-524d-4535-a1ef-ab4bbba56d66"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"c085e1ee-ecfb-4040-8275-fec9e3551dff"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/guide/QSSRHelper"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "9784b587-32f7-4de9-887f-d4e9e3fc7f55"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"fd43dcb5-cbae-4396-a019-b7f13bb8395a"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper/ref/QGather\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["QSSRHelper/ref/QGather"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/QSSRHelper/ref/QGather.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$20770], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "QSSRHelper/ref/QGather", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "7e5531cc-42bd-402f-841f-724cb0c1863b"]
+    }], "AnchorBar",ExpressionUUID->"f38b56af-68ad-4b03-9237-de1451a9ef19"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"ba0c02c8-939d-4353-8a5e-a3544b73db62"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["QGather", "ObjectName",ExpressionUUID->
+  "c754db3c-4607-4e70-b9b9-05c3b0445e2c"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"1beaa25f-54dd-4d29-ad58-b2a12de23bbe"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "e722c578-acb1-4d7d-8bc9-3087ae510744"]
+}], "ObjectNameGrid",ExpressionUUID->"e74697ce-089b-4aa8-9642-69e06dce5d70"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"QGather", "[", 
+       RowBox[{
+        StyleBox["expr", "TI"], ",", 
+        StyleBox["p", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "c3e94518-5153-48b0-9f50-ff47d6f36fc5"],
+     " \[LineSeparator]Collect the ",
+     StyleBox["expr", "TI"],
+     " by the Lorentz structure."
+    }],ExpressionUUID->"7984495e-3d60-42bc-8d16-656d5f926b0a"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436,ExpressionUUID->"267c762e-ba40-407d-b876-7ffa8ee53196"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"afc787e1-13ce-4bcf-a0ca-efee0ace0e01"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "94155590-a3de-4eb7-9adb-36774351a958"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->226191571,ExpressionUUID->"af16c3e6-df10-4479-9493-8ed883e5dd11"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "b398b28a-a298-4869-8283-f0f6d719efdf"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->98458925,ExpressionUUID->"03e7883b-d592-4e68-a4f9-965e44c25e3e"],
+
+Cell["Simple example:", "Text",
+ CellID->852031461,ExpressionUUID->"f2a53613-b3cb-4fef-b85f-079cef79e937"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tmp", "=", 
+   RowBox[{"IntegrateP", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"FVD", "[", 
+       RowBox[{"k", ",", "\[Mu]"}], "]"}], 
+      RowBox[{"FVD", "[", 
+       RowBox[{"k", ",", "\[Nu]"}], "]"}], 
+      RowBox[{"FAD", "[", 
+       RowBox[{
+        RowBox[{"{", "k", "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"p", "+", "k"}], "}"}]}], "]"}]}], ",", "k"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"result", "=", 
+   RowBox[{"QEvaluate", "[", 
+    RowBox[{
+     RowBox[{"I", " ", 
+      RowBox[{"ScaleMu", "^", 
+       RowBox[{"(", 
+        RowBox[{"4", "-", "D"}], ")"}]}], "tmp"}], ",", "p"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->478245450,ExpressionUUID->"d6a1c0a6-32a0-4573-868b-ff74d980246a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QGather", "[", 
+  RowBox[{"result", ",", "p"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->104290908,ExpressionUUID->"3953e7b2-9549-43a4-b714-93372ed2ae33"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["1", 
+          RowBox[{"64", " ", 
+           SuperscriptBox["\[Pi]", "2"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"log", "(", 
+           RowBox[{"-", 
+            FractionBox[
+             SuperscriptBox[
+              FormBox[
+               FormBox["p",
+                TraditionalForm],
+               TraditionalForm], "2"], 
+             RowBox[{"4", " ", "\[Pi]", " ", 
+              SuperscriptBox["\[Mu]", "2"]}]]}], ")"}], "+", 
+          TagBox["\[DoubledGamma]",
+           Function[{}, EulerGamma]], "-", "2"}], 
+         RowBox[{"64", " ", 
+          SuperscriptBox["\[Pi]", "2"]}]]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox["g", 
+        RowBox[{
+         FormBox[
+          FormBox["\[Mu]",
+           TraditionalForm],
+          TraditionalForm], 
+         FormBox[
+          FormBox["\[Nu]",
+           TraditionalForm],
+          TraditionalForm]}]], "-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], 
+          FormBox[
+           FormBox["\[Mu]",
+            TraditionalForm],
+           TraditionalForm]], " ", 
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], 
+          FormBox[
+           FormBox["\[Nu]",
+            TraditionalForm],
+           TraditionalForm]]}], 
+        SuperscriptBox[
+         FormBox[
+          FormBox["p",
+           TraditionalForm],
+          TraditionalForm], "2"]]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"192", " ", 
+          SuperscriptBox["\[Pi]", "2"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"3", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+             RowBox[{"3", " ", 
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]]}], "-", "8"}], ")"}]}], 
+          RowBox[{"576", " ", 
+           SuperscriptBox["\[Pi]", "2"]}]]}]}], "}"}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}], TraditionalForm]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->651447801,ExpressionUUID->"99500f9a-12bf-4a10-8d08-7eee9568dad9"]
+}, Open  ]],
+
+Cell["Complex example:", "Text",
+ CellID->62975738,ExpressionUUID->"7741ccec-a3c0-46e3-811e-a947edbee669"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tmp1", "=", 
+   RowBox[{"IntegrateP", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"FVD", "[", 
+       RowBox[{"k1", ",", "\[Mu]"}], "]"}], 
+      RowBox[{"FVD", "[", 
+       RowBox[{"k2", ",", "\[Nu]"}], "]"}], 
+      RowBox[{"FVD", "[", 
+       RowBox[{"k1", ",", "\[Alpha]"}], "]"}], 
+      RowBox[{"FVD", "[", 
+       RowBox[{"k2", ",", "\[Beta]"}], "]"}], 
+      RowBox[{"FAD", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"k1", "+", "k2"}], "}"}], ",", 
+        RowBox[{"{", "k1", "}"}], ",", 
+        RowBox[{"{", "k2", "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k2", "+", "p"}], "}"}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k1", ",", "k2"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->489715423,ExpressionUUID->"39fc47d6-de7f-4dfe-86d2-deaa91a29f7d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"result2", "=", 
+   RowBox[{"QEvaluate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ScaleMu", "^", 
+       RowBox[{"(", 
+        RowBox[{"2", 
+         RowBox[{"(", 
+          RowBox[{"4", "-", "D"}], ")"}]}], ")"}]}], "tmp1"}], ",", "p"}], 
+    "]"}]}], ";"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->157677221,ExpressionUUID->"3ce9ad7a-795a-4e2c-a129-7feda71ddaaf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QGather", "[", 
+  RowBox[{"result2", ",", "p"}], "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->234601115,ExpressionUUID->"742e3749-3a52-43cf-86cd-d0e073aa1b6b"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Alpha]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Beta]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["1", 
+          RowBox[{"24576", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           SuperscriptBox[
+            TagBox["\[CurlyEpsilon]",
+             TraditionalForm], "2"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"20", " ", 
+           RowBox[{"log", "(", 
+            RowBox[{"-", 
+             FractionBox[
+              SuperscriptBox[
+               FormBox[
+                FormBox["p",
+                 TraditionalForm],
+                TraditionalForm], "2"], 
+              RowBox[{"4", " ", "\[Pi]", " ", 
+               SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+          RowBox[{"20", " ", 
+           TagBox["\[DoubledGamma]",
+            Function[{}, EulerGamma]]}], "-", "27"}], 
+         RowBox[{"245760", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           RowBox[{"600", " ", 
+            RowBox[{
+             SuperscriptBox["log", "2"], "(", 
+             RowBox[{"-", 
+              FractionBox[
+               SuperscriptBox[
+                FormBox[
+                 FormBox["p",
+                  TraditionalForm],
+                 TraditionalForm], "2"], 
+               RowBox[{"4", " ", "\[Pi]", " ", 
+                SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+           RowBox[{"60", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"20", " ", 
+               TagBox["\[DoubledGamma]",
+                Function[{}, EulerGamma]]}], "-", "27"}], ")"}], " ", 
+            RowBox[{"log", "(", 
+             RowBox[{"-", 
+              FractionBox[
+               SuperscriptBox[
+                FormBox[
+                 FormBox["p",
+                  TraditionalForm],
+                 TraditionalForm], "2"], 
+               RowBox[{"4", " ", "\[Pi]", " ", 
+                SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "-", 
+           RowBox[{"50", " ", 
+            SuperscriptBox["\[Pi]", "2"]}], "+", 
+           RowBox[{"600", " ", 
+            SuperscriptBox[
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]], "2"]}], "-", 
+           RowBox[{"1620", " ", 
+            TagBox["\[DoubledGamma]",
+             Function[{}, EulerGamma]]}], "+", "1161"}], 
+          RowBox[{"7372800", " ", 
+           SuperscriptBox["\[Pi]", "4"]}]]}]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Alpha]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Beta]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"120", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+             RowBox[{"120", " ", 
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]]}], "-", "367"}], ")"}]}], 
+          RowBox[{"4423680", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"7200", " ", 
+             RowBox[{
+              SuperscriptBox["log", "2"], "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"120", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"120", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "367"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "-", 
+            RowBox[{"600", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "+", 
+            RowBox[{"7200", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "-", 
+            RowBox[{"44040", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "+", "93187"}], ")"}]}], 
+         RowBox[{"265420800", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Beta]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"120", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+             RowBox[{"120", " ", 
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]]}], "-", "367"}], ")"}]}], 
+          RowBox[{"4423680", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"7200", " ", 
+             RowBox[{
+              SuperscriptBox["log", "2"], "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"120", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"120", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "367"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "-", 
+            RowBox[{"600", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "+", 
+            RowBox[{"7200", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "-", 
+            RowBox[{"44040", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "+", "93187"}], ")"}]}], 
+         RowBox[{"265420800", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Alpha]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"120", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+             RowBox[{"120", " ", 
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]]}], "-", "367"}], ")"}]}], 
+          RowBox[{"4423680", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"7200", " ", 
+             RowBox[{
+              SuperscriptBox["log", "2"], "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"120", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"120", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "367"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "-", 
+            RowBox[{"600", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "+", 
+            RowBox[{"7200", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "-", 
+            RowBox[{"44040", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "+", "93187"}], ")"}]}], 
+         RowBox[{"265420800", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"120", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+             RowBox[{"120", " ", 
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]]}], "-", "367"}], ")"}]}], 
+          RowBox[{"4423680", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"7200", " ", 
+             RowBox[{
+              SuperscriptBox["log", "2"], "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"120", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"120", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "367"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "-", 
+            RowBox[{"600", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "+", 
+            RowBox[{"7200", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "-", 
+            RowBox[{"44040", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "+", "93187"}], ")"}]}], 
+         RowBox[{"265420800", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Alpha]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"60", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+             RowBox[{"60", " ", 
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]]}], "-", "191"}], ")"}]}], 
+          RowBox[{"2211840", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"900", " ", 
+             RowBox[{
+              SuperscriptBox["log", "2"], "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"30", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"60", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "191"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "-", 
+            RowBox[{"75", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "+", 
+            RowBox[{"900", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "-", 
+            RowBox[{"5730", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "+", "12539"}], ")"}]}], 
+         RowBox[{"33177600", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Beta]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"60", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+             RowBox[{"60", " ", 
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]]}], "-", "101"}], ")"}]}], 
+          RowBox[{"2211840", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"1800", " ", 
+             RowBox[{
+              SuperscriptBox["log", "2"], "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"60", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"60", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "101"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "-", 
+            RowBox[{"150", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "+", 
+            RowBox[{"1800", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "-", 
+            RowBox[{"6060", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "+", "5503"}], ")"}]}], 
+         RowBox[{"66355200", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], 
+          RowBox[{"368640", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           SuperscriptBox[
+            TagBox["\[CurlyEpsilon]",
+             TraditionalForm], "2"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"120", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"120", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "-", "451"}], ")"}]}], 
+         RowBox[{"22118400", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"7200", " ", 
+              RowBox[{
+               SuperscriptBox["log", "2"], "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}]}], "-", 
+            RowBox[{"120", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"120", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "451"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"600", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "-", 
+            RowBox[{"7200", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "+", 
+            RowBox[{"54120", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "-", "130711"}], ")"}]}], 
+         RowBox[{"1327104000", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], 
+          RowBox[{"368640", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           SuperscriptBox[
+            TagBox["\[CurlyEpsilon]",
+             TraditionalForm], "2"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"120", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"120", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "-", "451"}], ")"}]}], 
+         RowBox[{"22118400", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"7200", " ", 
+              RowBox[{
+               SuperscriptBox["log", "2"], "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}]}], "-", 
+            RowBox[{"120", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"120", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "451"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"600", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "-", 
+            RowBox[{"7200", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "+", 
+            RowBox[{"54120", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "-", "130711"}], ")"}]}], 
+         RowBox[{"1327104000", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], 
+          RowBox[{"368640", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           SuperscriptBox[
+            TagBox["\[CurlyEpsilon]",
+             TraditionalForm], "2"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"15", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"15", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "-", "47"}], ")"}]}], 
+         RowBox[{"2764800", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"3600", " ", 
+              RowBox[{
+               SuperscriptBox["log", "2"], "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 RowBox[{"4", " ", "\[Pi]", " ", 
+                  SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}]}], "-", 
+            RowBox[{"480", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"15", " ", 
+                TagBox["\[DoubledGamma]",
+                 Function[{}, EulerGamma]]}], "-", "47"}], ")"}], " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                RowBox[{"4", " ", "\[Pi]", " ", 
+                 SuperscriptBox["\[Mu]", "2"]}]]}], ")"}]}], "+", 
+            RowBox[{"300", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "-", 
+            RowBox[{"3600", " ", 
+             SuperscriptBox[
+              TagBox["\[DoubledGamma]",
+               Function[{}, EulerGamma]], "2"]}], "+", 
+            RowBox[{"22560", " ", 
+             TagBox["\[DoubledGamma]",
+              Function[{}, EulerGamma]]}], "-", "47543"}], ")"}]}], 
+         RowBox[{"663552000", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}], TraditionalForm]], "Output",
+ CellLabel->"Out[5]=",
+ CellID->55521427,ExpressionUUID->"d9a988eb-3935-4733-9f32-32648adbf05b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "297a4441-5af9-4ff9-a2c7-e6f1a59d2c88"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341,ExpressionUUID->"924f1424-c4c2-4ee5-8d8f-f704f7904556"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Subtract",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "4298995e-878e-4ea1-9c6e-31cc8eea97a6"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1295379749,ExpressionUUID->"7fd9adfb-a85e-4b5a-a4a1-2216ca81efca"],
+
+Cell["Subtract option works same as in QEvaluate:", "Text",
+ CellID->88741058,ExpressionUUID->"5a8d82b4-f525-4566-831f-f570ecb921d0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QGather", "[", 
+  RowBox[{"result", ",", "p", ",", 
+   RowBox[{"Subtract", "\[Rule]", "\"\<MSbar\>\""}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->431110715,ExpressionUUID->"8e2cd2a1-1752-4424-8597-3aece5e93031"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]]}], 
+      RowBox[{"{", 
+       FractionBox[
+        RowBox[{
+         RowBox[{"log", "(", 
+          RowBox[{"-", 
+           FractionBox[
+            SuperscriptBox[
+             FormBox[
+              FormBox["p",
+               TraditionalForm],
+              TraditionalForm], "2"], 
+            SuperscriptBox["\[Mu]", "2"]]}], ")"}], "-", "2"}], 
+        RowBox[{"64", " ", 
+         SuperscriptBox["\[Pi]", "2"]}]], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox["g", 
+        RowBox[{
+         FormBox[
+          FormBox["\[Mu]",
+           TraditionalForm],
+          TraditionalForm], 
+         FormBox[
+          FormBox["\[Nu]",
+           TraditionalForm],
+          TraditionalForm]}]], "-", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], 
+          FormBox[
+           FormBox["\[Mu]",
+            TraditionalForm],
+           TraditionalForm]], " ", 
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], 
+          FormBox[
+           FormBox["\[Nu]",
+            TraditionalForm],
+           TraditionalForm]]}], 
+        SuperscriptBox[
+         FormBox[
+          FormBox["p",
+           TraditionalForm],
+          TraditionalForm], "2"]]}], 
+      RowBox[{"{", 
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"3", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "8"}], ")"}]}], 
+         RowBox[{"576", " ", 
+          SuperscriptBox["\[Pi]", "2"]}]]}], "}"}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}], TraditionalForm]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->389634664,ExpressionUUID->"853bca5b-346b-4ddc-a1ab-2e449c2010d4"]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "3cb86e6b-3b9c-46a4-889a-6d844f4ff67f"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373,ExpressionUUID->"349c63eb-f722-4257-8a6c-0ea3a3a50755"],
+
+Cell[TextData[{
+ "When Log/\[Epsilon] involved, Subtract Option only replace \[Mu], e.g. ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"4", "\[Pi]", " ", 
+    SuperscriptBox["\[Mu]", "2"], " ", 
+    SuperscriptBox["e", 
+     RowBox[{"-", "\[Gamma]"}]]}], "->", 
+   SuperscriptBox["\[Mu]", "2"]}]],ExpressionUUID->
+  "55fc97d7-a7dc-4ced-bdd6-d5da0b2f7972"],
+ ", but keep all ",
+ StyleBox["\[Epsilon] ", "TI"],
+ "- pole:"
+}], "Text",
+ CellID->761567114,ExpressionUUID->"c3d113c3-7502-422e-ad41-8de0a822a0d2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QGather", "[", 
+  RowBox[{"result2", ",", "p", ",", 
+   RowBox[{"Subtract", "\[Rule]", "\"\<MSbar\>\""}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->173642098,ExpressionUUID->"ec997d15-9c34-460c-9bab-ce488f70c563"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Alpha]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Beta]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox["1", 
+          RowBox[{"24576", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           SuperscriptBox[
+            TagBox["\[CurlyEpsilon]",
+             TraditionalForm], "2"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"20", " ", 
+           RowBox[{"log", "(", 
+            RowBox[{"-", 
+             FractionBox[
+              SuperscriptBox[
+               FormBox[
+                FormBox["p",
+                 TraditionalForm],
+                TraditionalForm], "2"], 
+              SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "27"}], 
+         RowBox[{"245760", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"600", " ", 
+            RowBox[{
+             SuperscriptBox["log", "2"], "(", 
+             RowBox[{"-", 
+              FractionBox[
+               SuperscriptBox[
+                FormBox[
+                 FormBox["p",
+                  TraditionalForm],
+                 TraditionalForm], "2"], 
+               SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+          RowBox[{"1620", " ", 
+           RowBox[{"log", "(", 
+            RowBox[{"-", 
+             FractionBox[
+              SuperscriptBox[
+               FormBox[
+                FormBox["p",
+                 TraditionalForm],
+                TraditionalForm], "2"], 
+              SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+          RowBox[{"50", " ", 
+           SuperscriptBox["\[Pi]", "2"]}], "-", "1161"}], 
+         RowBox[{"7372800", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Alpha]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Beta]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"120", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "367"}], 
+            ")"}]}], 
+          RowBox[{"4423680", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"7200", " ", 
+               RowBox[{
+                SuperscriptBox["log", "2"], "(", 
+                RowBox[{"-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   FormBox[
+                    FormBox["p",
+                    TraditionalForm],
+                    TraditionalForm], "2"], 
+                  SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+             RowBox[{"44040", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+             RowBox[{"600", " ", 
+              SuperscriptBox["\[Pi]", "2"]}], "-", "93187"}], ")"}]}], 
+          RowBox[{"265420800", " ", 
+           SuperscriptBox["\[Pi]", "4"]}]]}]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Beta]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"120", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "367"}], 
+            ")"}]}], 
+          RowBox[{"4423680", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"7200", " ", 
+               RowBox[{
+                SuperscriptBox["log", "2"], "(", 
+                RowBox[{"-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   FormBox[
+                    FormBox["p",
+                    TraditionalForm],
+                    TraditionalForm], "2"], 
+                  SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+             RowBox[{"44040", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+             RowBox[{"600", " ", 
+              SuperscriptBox["\[Pi]", "2"]}], "-", "93187"}], ")"}]}], 
+          RowBox[{"265420800", " ", 
+           SuperscriptBox["\[Pi]", "4"]}]]}]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Alpha]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"120", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "367"}], 
+            ")"}]}], 
+          RowBox[{"4423680", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"7200", " ", 
+               RowBox[{
+                SuperscriptBox["log", "2"], "(", 
+                RowBox[{"-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   FormBox[
+                    FormBox["p",
+                    TraditionalForm],
+                    TraditionalForm], "2"], 
+                  SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+             RowBox[{"44040", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+             RowBox[{"600", " ", 
+              SuperscriptBox["\[Pi]", "2"]}], "-", "93187"}], ")"}]}], 
+          RowBox[{"265420800", " ", 
+           SuperscriptBox["\[Pi]", "4"]}]]}]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"120", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "367"}], 
+            ")"}]}], 
+          RowBox[{"4423680", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"7200", " ", 
+               RowBox[{
+                SuperscriptBox["log", "2"], "(", 
+                RowBox[{"-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   FormBox[
+                    FormBox["p",
+                    TraditionalForm],
+                    TraditionalForm], "2"], 
+                  SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+             RowBox[{"44040", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+             RowBox[{"600", " ", 
+              SuperscriptBox["\[Pi]", "2"]}], "-", "93187"}], ")"}]}], 
+          RowBox[{"265420800", " ", 
+           SuperscriptBox["\[Pi]", "4"]}]]}]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Alpha]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Mu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"60", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "191"}], 
+            ")"}]}], 
+          RowBox[{"2211840", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"900", " ", 
+               RowBox[{
+                SuperscriptBox["log", "2"], "(", 
+                RowBox[{"-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   FormBox[
+                    FormBox["p",
+                    TraditionalForm],
+                    TraditionalForm], "2"], 
+                  SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+             RowBox[{"5730", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+             RowBox[{"75", " ", 
+              SuperscriptBox["\[Pi]", "2"]}], "-", "12539"}], ")"}]}], 
+          RowBox[{"33177600", " ", 
+           SuperscriptBox["\[Pi]", "4"]}]]}]}], "}"}]},
+     {
+      RowBox[{
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Beta]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["p",
+          TraditionalForm],
+         TraditionalForm], 
+        FormBox[
+         FormBox["\[Nu]",
+          TraditionalForm],
+         TraditionalForm]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          FormBox[
+           FormBox["p",
+            TraditionalForm],
+           TraditionalForm], "2"], 
+         RowBox[{"73728", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          SuperscriptBox[
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm], "2"]}]], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"60", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "101"}], 
+            ")"}]}], 
+          RowBox[{"2211840", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           TagBox["\[CurlyEpsilon]",
+            TraditionalForm]}]]}], ",", 
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"1800", " ", 
+               RowBox[{
+                SuperscriptBox["log", "2"], "(", 
+                RowBox[{"-", 
+                 FractionBox[
+                  SuperscriptBox[
+                   FormBox[
+                    FormBox["p",
+                    TraditionalForm],
+                    TraditionalForm], "2"], 
+                  SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+             RowBox[{"6060", " ", 
+              RowBox[{"log", "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+             RowBox[{"150", " ", 
+              SuperscriptBox["\[Pi]", "2"]}], "-", "5503"}], ")"}]}], 
+          RowBox[{"66355200", " ", 
+           SuperscriptBox["\[Pi]", "4"]}]]}]}], "}"}]},
+     {
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], 
+          RowBox[{"368640", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           SuperscriptBox[
+            TagBox["\[CurlyEpsilon]",
+             TraditionalForm], "2"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"120", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "451"}], 
+           ")"}]}], 
+         RowBox[{"22118400", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"7200", " ", 
+              RowBox[{
+               SuperscriptBox["log", "2"], "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+            RowBox[{"54120", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+            RowBox[{"600", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "-", "130711"}], ")"}]}], 
+         RowBox[{"1327104000", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], 
+          RowBox[{"368640", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           SuperscriptBox[
+            TagBox["\[CurlyEpsilon]",
+             TraditionalForm], "2"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"120", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "451"}], 
+           ")"}]}], 
+         RowBox[{"22118400", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"7200", " ", 
+              RowBox[{
+               SuperscriptBox["log", "2"], "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+            RowBox[{"54120", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+            RowBox[{"600", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "-", "130711"}], ")"}]}], 
+         RowBox[{"1327104000", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]},
+     {
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Alpha]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Alpha]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Mu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Beta]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]], "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Beta]",
+              TraditionalForm],
+             TraditionalForm]], " ", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["p",
+              TraditionalForm],
+             TraditionalForm], 
+            FormBox[
+             FormBox["\[Nu]",
+              TraditionalForm],
+             TraditionalForm]]}], 
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "2"]]}], ")"}]}], 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], 
+          RowBox[{"368640", " ", 
+           SuperscriptBox["\[Pi]", "4"], " ", 
+           SuperscriptBox[
+            TagBox["\[CurlyEpsilon]",
+             TraditionalForm], "2"]}]]}], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"15", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "-", "47"}], 
+           ")"}]}], 
+         RowBox[{"2764800", " ", 
+          SuperscriptBox["\[Pi]", "4"], " ", 
+          TagBox["\[CurlyEpsilon]",
+           TraditionalForm]}]], ",", 
+        FractionBox[
+         RowBox[{
+          SuperscriptBox[
+           FormBox[
+            FormBox["p",
+             TraditionalForm],
+            TraditionalForm], "4"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"3600", " ", 
+              RowBox[{
+               SuperscriptBox["log", "2"], "(", 
+               RowBox[{"-", 
+                FractionBox[
+                 SuperscriptBox[
+                  FormBox[
+                   FormBox["p",
+                    TraditionalForm],
+                   TraditionalForm], "2"], 
+                 SuperscriptBox["\[Mu]", "2"]]}], ")"}]}]}], "+", 
+            RowBox[{"22560", " ", 
+             RowBox[{"log", "(", 
+              RowBox[{"-", 
+               FractionBox[
+                SuperscriptBox[
+                 FormBox[
+                  FormBox["p",
+                   TraditionalForm],
+                  TraditionalForm], "2"], 
+                SuperscriptBox["\[Mu]", "2"]]}], ")"}]}], "+", 
+            RowBox[{"300", " ", 
+             SuperscriptBox["\[Pi]", "2"]}], "-", "47543"}], ")"}]}], 
+         RowBox[{"663552000", " ", 
+          SuperscriptBox["\[Pi]", "4"]}]]}], "}"}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}], TraditionalForm]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->15091486,ExpressionUUID->"88b61e6a-7665-4ae7-a210-011d83205871"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Do not mix ",
+ Cell[BoxData[
+  RowBox[{"Log", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["p", "2"]}], "/", "4"}], 
+    SuperscriptBox["\[Pi]\[Mu]", "2"]}], "]"}]],ExpressionUUID->
+  "098839de-50e9-440d-85dc-f400fafbf485"],
+ " and ",
+ Cell[BoxData[
+  RowBox[{"Log", "[", 
+   RowBox[{
+    RowBox[{"-", 
+     SuperscriptBox["p", "2"]}], "/", 
+    SuperscriptBox["\[Mu]", "2"]}], "]"}]],ExpressionUUID->
+  "42f2de3a-3297-4315-87f9-ce4cd7b14392"],
+ "in the input, otherwise the QGather will not works properly."
+}], "Text",
+ CellID->179723564,ExpressionUUID->"cda5bcdf-86c6-4e56-9c6f-b8e1ce1d01f9"]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"5d218fa3-fab7-46fc-8026-cffcc5898d8e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"c24a04e3-d372-4294-8594-60ae25d92989"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"12cc17b9-d210-4b5e-b5b8-5d1b3abaabef"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QEvaluate"]], "paclet:QSSRHelper/ref/QEvaluate"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"ced68976-d2a2-4deb-b833-e5abdeeb46bf"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QSimplify2"]], "paclet:QSSRHelper/ref/QSimplify2"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"a499f82f-5676-4f6d-af09-ddd85a9d0fb8"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QSymmetry"]], "paclet:QSSRHelper/ref/QSymmetry"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"417585a3-a8c0-4eef-9ecc-e2ec2ea93141"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"da470e24-857a-4182-a565-16656c4b7f74"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"64c6738d-6310-4df7-97ee-2553bc8c90d9"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"6f369e0a-0cf2-4c21-a873-d1e235e5ab8d"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"22108f5f-ca36-4bfc-8614-82f6541cc512"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["QSSRHelper"]], "paclet:QSSRHelper/guide/QSSRHelper"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->139125723,ExpressionUUID->"26fea7c8-cebd-4228-9c65-c49923888b73"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"601d6d7e-6324-496f-86e8-cd0da5d5645d"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{724.8, 750.},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"QGather",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "QSSRHelper", ButtonData -> "paclet:QSSRHelper/guide/QSSRHelper", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 2, 24, 16, 23, 55.0063855}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Q S S R Helper Symbol", "language" -> "en", "paclet" -> "QSSRHelper", 
+    "status" -> "None", "summary" -> 
+    "QGather[expr, p] Collect the expr by the Lorentz structure.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "QGather", 
+    "titlemodifier" -> "", "windowtitle" -> "QGather", "type" -> "Symbol", 
+    "uri" -> "QSSRHelper/ref/QGather", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "12.1 for Microsoft Windows (64-bit) (June 9, 2020)", StyleDefinitions -> 
+  "Default.nb"],
+ExpressionUUID->"bcf4c85f-6095-4b18-bbf8-c9c745026324"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5902, 152, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"af16c3e6-df10-4479-9493-8ed883e5dd11",
+   CellTags->"PrimaryExamplesSection",
+   CellID->226191571]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 111120, 3566}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[579, 21, 4256, 96, 54, "AnchorBarGrid",ExpressionUUID->"ba0c02c8-939d-4353-8a5e-a3544b73db62",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4860, 121, 392, 9, 54, "ObjectNameGrid",ExpressionUUID->"e74697ce-089b-4aa8-9642-69e06dce5d70"],
+Cell[5255, 132, 610, 15, 111, "Usage",ExpressionUUID->"267c762e-ba40-407d-b876-7ffa8ee53196",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5902, 152, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"af16c3e6-df10-4479-9493-8ed883e5dd11",
+ CellTags->"PrimaryExamplesSection",
+ CellID->226191571],
+Cell[CellGroupData[{
+Cell[6362, 167, 307, 7, 30, "ExampleSection",ExpressionUUID->"03e7883b-d592-4e68-a4f9-965e44c25e3e",
+ CellID->98458925],
+Cell[6672, 176, 106, 1, 36, "Text",ExpressionUUID->"f2a53613-b3cb-4fef-b85f-079cef79e937",
+ CellID->852031461],
+Cell[6781, 179, 804, 26, 41, "Input",ExpressionUUID->"d6a1c0a6-32a0-4573-868b-ff74d980246a",
+ CellID->478245450],
+Cell[CellGroupData[{
+Cell[7610, 209, 186, 4, 25, "Input",ExpressionUUID->"3953e7b2-9549-43a4-b714-93372ed2ae33",
+ CellID->104290908],
+Cell[7799, 215, 3938, 132, 108, "Output",ExpressionUUID->"99500f9a-12bf-4a10-8d08-7eee9568dad9",
+ CellID->651447801]
+}, Open  ]],
+Cell[11752, 350, 106, 1, 36, "Text",ExpressionUUID->"7741ccec-a3c0-46e3-811e-a947edbee669",
+ CellID->62975738],
+Cell[11861, 353, 858, 25, 41, "Input",ExpressionUUID->"39fc47d6-de7f-4dfe-86d2-deaa91a29f7d",
+ CellID->489715423],
+Cell[12722, 380, 408, 13, 25, "Input",ExpressionUUID->"3ce9ad7a-795a-4e2c-a129-7feda71ddaaf",
+ CellID->157677221],
+Cell[CellGroupData[{
+Cell[13155, 397, 187, 4, 25, "Input",ExpressionUUID->"742e3749-3a52-43cf-86cd-d0e073aa1b6b",
+ CellID->234601115],
+Cell[13345, 403, 47258, 1496, 475, "Output",ExpressionUUID->"d9a988eb-3935-4733-9f32-32648adbf05b",
+ CellID->55521427]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60652, 1905, 302, 7, 70, "ExampleSection",ExpressionUUID->"924f1424-c4c2-4ee5-8d8f-f704f7904556",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[60979, 1916, 309, 7, 70, "ExampleSubsection",ExpressionUUID->"7fd9adfb-a85e-4b5a-a4a1-2216ca81efca",
+ CellID->1295379749],
+Cell[61291, 1925, 133, 1, 70, "Text",ExpressionUUID->"5a8d82b4-f525-4566-831f-f570ecb921d0",
+ CellID->88741058],
+Cell[CellGroupData[{
+Cell[61449, 1930, 245, 5, 70, "Input",ExpressionUUID->"8e2cd2a1-1752-4424-8597-3aece5e93031",
+ CellID->431110715],
+Cell[61697, 1937, 3054, 107, 106, "Output",ExpressionUUID->"853bca5b-346b-4ddc-a1ab-2e449c2010d4",
+ CellID->389634664]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[64812, 2051, 310, 7, 70, "ExampleSection",ExpressionUUID->"349c63eb-f722-4257-8a6c-0ea3a3a50755",
+ CellID->1305812373],
+Cell[65125, 2060, 500, 14, 70, "Text",ExpressionUUID->"c3d113c3-7502-422e-ad41-8de0a822a0d2",
+ CellID->761567114],
+Cell[CellGroupData[{
+Cell[65650, 2078, 246, 5, 70, "Input",ExpressionUUID->"ec997d15-9c34-460c-9bab-ce488f70c563",
+ CellID->173642098],
+Cell[65899, 2085, 40370, 1337, 465, "Output",ExpressionUUID->"88b61e6a-7665-4ae7-a210-011d83205871",
+ CellID->15091486]
+}, Open  ]],
+Cell[106284, 3425, 639, 20, 70, "Text",ExpressionUUID->"cda5bcdf-86c6-4e56-9c6f-b8e1ce1d01f9",
+ CellID->179723564]
+}, Closed]],
+Cell[106938, 3448, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"5d218fa3-fab7-46fc-8026-cffcc5898d8e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107061, 3453, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"12cc17b9-d210-4b5e-b5b8-5d1b3abaabef",
+ CellID->1255426704],
+Cell[107324, 3462, 1112, 31, 70, "SeeAlso",ExpressionUUID->"da470e24-857a-4182-a565-16656c4b7f74",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108473, 3498, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"6f369e0a-0cf2-4c21-a873-d1e235e5ab8d",
+ CellID->38303248],
+Cell[108742, 3507, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"22108f5f-ca36-4bfc-8614-82f6541cc512"],
+Cell[108831, 3509, 234, 6, 70, "MoreAbout",ExpressionUUID->"26fea7c8-cebd-4228-9c65-c49923888b73",
+ CellID->139125723]
+}, Open  ]],
+Cell[109080, 3518, 78, 0, 70, "FooterCell",ExpressionUUID->"601d6d7e-6324-496f-86e8-cd0da5d5645d"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

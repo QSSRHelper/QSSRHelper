@@ -1,0 +1,2079 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     71839,       2069]
+NotebookOptionsPosition[     65478,       1926]
+NotebookOutlinePosition[     67703,       1983]
+CellTagsIndexPosition[     67617,       1978]
+WindowTitle->QSimplify2
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["Q S S R HELPER SYMBOL", "PacletNameCell",ExpressionUUID->
+     "7a2c1aeb-3e83-40d0-bd49-081c4e1ec322"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"c88b337a-814d-4669-8c21-be16835d71a4"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"qfact1\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/qfact1"], "\<\"qfact2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/qfact2"], "\<\"IndexSimplify\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/IndexSimplify"], "\<\"QGather\"\>":>
+       Documentation`HelpLookup["paclet:QSSRHelper/ref/QGather"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "d78803bf-d15f-47ac-90b4-316ddf8d4323"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"1a96b999-3925-461e-961c-5f5ca646dbfd"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/guide/QSSRHelper"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "10f6ec0b-dfa6-4cd0-8955-0d5b792ea0df"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"4a320dad-8192-45e1-9a58-db3ce0025493"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper/ref/QSimplify2\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["QSSRHelper/ref/QSimplify2"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/QSSRHelper/ref/\
+QSimplify2.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$21980], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "QSSRHelper/ref/QSimplify2", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "2cd63786-167c-4a4e-aae3-8a90afd60311"]
+    }], "AnchorBar",ExpressionUUID->"4a0f72af-dbae-459d-bbfa-bf35d7b47897"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"d0afe970-3a2b-4f3d-92db-4e548cc34067"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["QSimplify2", "ObjectName",ExpressionUUID->
+  "e5406cad-60d8-472f-969d-80b05d77005c"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"cc58bc82-6224-4a96-ba97-f0e56d740c7c"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "4e8a1d47-42f0-469c-ae29-9d7404b59167"]
+}], "ObjectNameGrid",ExpressionUUID->"4e7a77ea-ae84-4a6a-b1bd-1e1f672cf364"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"QSimplify2", "[", 
+       StyleBox["expr", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+      "dbe676dc-858e-4c7b-95f7-4e1264be5247"],
+     " \[LineSeparator]Simplify the ",
+     StyleBox["expr", "TI"],
+     "."
+    }],ExpressionUUID->"607631f8-faf0-43d0-9e44-d6027e755b4c"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436,ExpressionUUID->"74dd7cba-440f-402d-afaf-0e352537f15a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"c1e13a69-9e7a-4731-8ef3-720d53ae2654"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "7c61db07-3787-4678-936a-e90b727ae886"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->168255566,ExpressionUUID->"6f1ebed6-5e69-4dc9-8a0d-01c576d7f9dd"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "3e07e8f9-c8ec-4ae1-90bb-bf0fa4538fa2"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->639478888,ExpressionUUID->"9771114a-5c55-4ba0-a75d-bb6d650b1373"],
+
+Cell["Simplify the qGamma (treat as Gamma):", "Text",
+ CellID->98899780,ExpressionUUID->"2cd1683e-e61a-42ba-86a7-694ed24ff2b6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tmp1", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"FVD", "[", 
+     RowBox[{"p", ",", "\[Mu]"}], "]"}], 
+    RowBox[{"qGamma", "[", 
+     RowBox[{"D", "-", "3"}], "]"}], 
+    RowBox[{
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "-", "2"}], "]"}], "/", 
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "-", "6"}], "]"}]}]}], "+", 
+   RowBox[{
+    RowBox[{"FVD", "[", 
+     RowBox[{"p", ",", "\[Mu]"}], "]"}], 
+    RowBox[{"qGamma", "[", 
+     RowBox[{"D", "-", "4"}], "]"}], 
+    RowBox[{
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "-", "2"}], "]"}], "/", 
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "-", "6"}], "]"}]}]}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->348000978,ExpressionUUID->"563f3f72-9f50-4ca6-9923-460f1ce52b75"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "4"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "2"}],
+       TraditionalForm], ")"}], " ", 
+     FormBox[
+      SuperscriptBox[
+       FormBox[
+        FormBox["p",
+         TraditionalForm],
+        TraditionalForm], 
+       FormBox[
+        FormBox["\[Mu]",
+         TraditionalForm],
+        TraditionalForm]],
+      TraditionalForm]}], 
+    RowBox[{"\[CapitalGamma]", "(", 
+     FormBox[
+      RowBox[{"D", "-", "6"}],
+      TraditionalForm], ")"}]], "+", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "3"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "2"}],
+       TraditionalForm], ")"}], " ", 
+     FormBox[
+      SuperscriptBox[
+       FormBox[
+        FormBox["p",
+         TraditionalForm],
+        TraditionalForm], 
+       FormBox[
+        FormBox["\[Mu]",
+         TraditionalForm],
+        TraditionalForm]],
+      TraditionalForm]}], 
+    RowBox[{"\[CapitalGamma]", "(", 
+     FormBox[
+      RowBox[{"D", "-", "6"}],
+      TraditionalForm], ")"}]]}], TraditionalForm]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->893615701,ExpressionUUID->"9c0a9732-65a4-45f5-8d72-65958572bc2c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QSimplify2", "[", "tmp1", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->163624946,ExpressionUUID->"ab4a8157-2fc0-405a-8e1d-408858c0df80"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"(", 
+    FormBox[
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        FormBox[
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"D", "-", "4"}], ")"}], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"D", "-", "3"}], ")"}], "2"]}],
+         TraditionalForm], ")"}], " ", 
+       SuperscriptBox[
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox[
+          RowBox[{"D", "-", "4"}],
+          TraditionalForm], ")"}], "2"]}], 
+      RowBox[{"\[CapitalGamma]", "(", 
+       FormBox[
+        RowBox[{"D", "-", "6"}],
+        TraditionalForm], ")"}]],
+     TraditionalForm], ")"}], " ", 
+   SuperscriptBox[
+    FormBox[
+     FormBox["p",
+      TraditionalForm],
+     TraditionalForm], 
+    FormBox[
+     FormBox["\[Mu]",
+      TraditionalForm],
+     TraditionalForm]]}], TraditionalForm]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->277417448,ExpressionUUID->"ac9136c4-67b5-4e78-9921-c96a61e5942f"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The output of QSimplify2 have the form: other_factor  * ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact1"]], "paclet:QSSRHelper/ref/qfact1"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "517ebac5-e2d9-424a-bbc0-3e2db4698a9e"],
+ "[ ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact2"]], "paclet:QSSRHelper/ref/qfact2"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "384e939f-9094-4e62-9491-f10e3f4da3bf"],
+ "[] * Rational function about ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qGamma"]], "paclet:QSSRHelper/ref/qGamma"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "987fbf25-3e3f-4621-9e8b-71956991187d"],
+ "[] ]:"
+}], "Text",
+ CellID->283113598,ExpressionUUID->"6f2dab66-8db0-4938-ae3d-f757b3b3e01c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QSimplify2", "[", "tmp1", "]"}], "//", "TreeForm"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->534673808,ExpressionUUID->"40b4b697-a781-4e80-ac05-c4e57e8ebfed"],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   GraphicsBox[
+    TagBox[GraphicsComplexBox[CompressedData["
+1:eJxTTMoPSmViYGBQAGIQ3S84j/W8PJvD3+w9T5cfFXJQalxopCT+wR5CCzjc
+CLs+Q7fkqn2fDu9/i4tcDgxQABFnhco/tYfxIep+wdVDxL/C5SHmMjjA+G4b
+v1awScHsFYDzUfWzYtAwc1DN+2oPsx/mLoi/mODuRHfXZsdP3puVODD8AfMn
+ur8zxTU27avnhavPfui5/5WMCNxdqOHIAOfD7JvwTY8nNU8Qh36Y/aJw/Yrb
+61W/VUrCzYe4VwIuD+PDzHc7k1JUcFoMbh6qfpj/peD6ARkV1fY=
+      "], {
+       {RGBColor[0.55, 0.45, 0.45], 
+        LineBox[{{1, 2}, {1, 9}, {2, 3}, {2, 6}, {3, 4}, {3, 5}, {6, 7}, {6, 
+         8}, {9, 10}, {10, 11}, {10, 21}, {10, 27}, {11, 12}, {12, 13}, {12, 
+         16}, {13, 14}, {13, 15}, {16, 17}, {16, 20}, {17, 18}, {17, 19}, {21,
+          22}, {21, 26}, {22, 23}, {23, 24}, {23, 25}, {27, 28}, {27, 32}, {
+         28, 29}, {29, 30}, {29, 31}}]}, {
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Times", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 1],
+          TagBox[
+           RowBox[{
+             SuperscriptBox[
+              RowBox[{
+                FormBox[
+                 FormBox["p", TraditionalForm], TraditionalForm]}], 
+              FormBox[
+               FormBox["\[Mu]", TraditionalForm], TraditionalForm]], " ", 
+             RowBox[{"(", 
+               FormBox[
+                FractionBox[
+                 RowBox[{
+                   RowBox[{"(", 
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "4"}], "+", "D"}], ")"}], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "3"}], "+", "D"}], ")"}], "2"]}], 
+                    TraditionalForm], ")"}], " ", 
+                   SuperscriptBox[
+                    RowBox[{"\[CapitalGamma]", "(", 
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"-", "4"}], "+", "D"}], TraditionalForm], ")"}], 
+                    "2"]}], 
+                 RowBox[{"\[CapitalGamma]", "(", 
+                   FormBox[
+                    RowBox[{
+                    RowBox[{"-", "6"}], "+", "D"}], TraditionalForm], ")"}]], 
+                TraditionalForm], ")"}]}], HoldForm]],
+         Annotation[#, 
+          HoldForm[FeynCalc`Pair[
+             FeynCalc`LorentzIndex[$CellContext`\[Mu], D], 
+             FeynCalc`Momentum[$CellContext`p, D]] 
+           QSSRHelper`qfact1[(QSSRHelper`qfact2[(-4 + D) (-3 + D)^2]/
+              QSSRHelper`qGamma[-6 + D]) QSSRHelper`qGamma[-4 + D]^2]], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Pair", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 2],
+          TagBox[
+           SuperscriptBox[
+            RowBox[{
+              FormBox[
+               FormBox["p", TraditionalForm], TraditionalForm]}], 
+            FormBox[
+             FormBox["\[Mu]", TraditionalForm], TraditionalForm]], HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           FeynCalc`Pair[
+            FeynCalc`LorentzIndex[$CellContext`\[Mu], D], 
+            FeynCalc`Momentum[$CellContext`p, D]]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["LorentzIndex", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 3],
+          TagBox[
+           FormBox["\[Mu]", TraditionalForm], HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           FeynCalc`LorentzIndex[$CellContext`\[Mu], D]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["\[Mu]",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 4],
+          TagBox["\[Mu]", HoldForm]],
+         Annotation[#, 
+          HoldForm[$CellContext`\[Mu]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["D",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 5],
+          TagBox["D", HoldForm]],
+         Annotation[#, 
+          HoldForm[D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Momentum", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 6],
+          TagBox[
+           FormBox["p", TraditionalForm], HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           FeynCalc`Momentum[$CellContext`p, D]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["p",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 7],
+          TagBox["p", HoldForm]],
+         Annotation[#, 
+          HoldForm[$CellContext`p], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["D",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 8],
+          TagBox["D", HoldForm]],
+         Annotation[#, 
+          HoldForm[D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["qfact1", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 9],
+          TagBox[
+           RowBox[{"(", 
+             FormBox[
+              FractionBox[
+               RowBox[{
+                 RowBox[{"(", 
+                   FormBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "4"}], "+", "D"}], ")"}], " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "3"}], "+", "D"}], ")"}], "2"]}], 
+                    TraditionalForm], ")"}], " ", 
+                 SuperscriptBox[
+                  RowBox[{"\[CapitalGamma]", "(", 
+                    FormBox[
+                    RowBox[{
+                    RowBox[{"-", "4"}], "+", "D"}], TraditionalForm], ")"}], 
+                  "2"]}], 
+               RowBox[{"\[CapitalGamma]", "(", 
+                 FormBox[
+                  RowBox[{
+                    RowBox[{"-", "6"}], "+", "D"}], TraditionalForm], ")"}]], 
+              TraditionalForm], ")"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           
+           QSSRHelper`qfact1[(QSSRHelper`qfact2[(-4 + D) (-3 + D)^2]/
+             QSSRHelper`qGamma[-6 + D]) QSSRHelper`qGamma[-4 + D]^2]], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Times", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 10],
+          TagBox[
+           FractionBox[
+            RowBox[{
+              RowBox[{"(", 
+                FormBox[
+                 RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "4"}], "+", "D"}], ")"}], " ", 
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "3"}], "+", "D"}], ")"}], "2"]}], 
+                 TraditionalForm], ")"}], " ", 
+              SuperscriptBox[
+               RowBox[{"\[CapitalGamma]", "(", 
+                 FormBox[
+                  RowBox[{
+                    RowBox[{"-", "4"}], "+", "D"}], TraditionalForm], ")"}], 
+               "2"]}], 
+            RowBox[{"\[CapitalGamma]", "(", 
+              FormBox[
+               RowBox[{
+                 RowBox[{"-", "6"}], "+", "D"}], TraditionalForm], ")"}]], 
+           HoldForm]],
+         Annotation[#, 
+          
+          HoldForm[(QSSRHelper`qfact2[(-4 + D) (-3 + D)^2]/
+            QSSRHelper`qGamma[-6 + D]) QSSRHelper`qGamma[-4 + D]^2], 
+          "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["qfact2", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 11],
+          TagBox[
+           RowBox[{"(", 
+             FormBox[
+              RowBox[{
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{"-", "4"}], "+", "D"}], ")"}], " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "3"}], "+", "D"}], ")"}], "2"]}], 
+              TraditionalForm], ")"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           QSSRHelper`qfact2[(-4 + D) (-3 + D)^2]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Times", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 12],
+          TagBox[
+           RowBox[{
+             RowBox[{"(", 
+               RowBox[{
+                 RowBox[{"-", "4"}], "+", "D"}], ")"}], " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+                RowBox[{
+                  RowBox[{"-", "3"}], "+", "D"}], ")"}], "2"]}], HoldForm]],
+         Annotation[#, 
+          HoldForm[(-4 + D) (-3 + D)^2], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Plus", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 13],
+          TagBox[
+           RowBox[{
+             RowBox[{"-", "4"}], "+", "D"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-4 + D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox[
+              RowBox[{"-", "4"}],
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 14],
+          TagBox[
+           RowBox[{"-", "4"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-4], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["D",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 15],
+          TagBox["D", HoldForm]],
+         Annotation[#, 
+          HoldForm[D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Power", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 16],
+          TagBox[
+           SuperscriptBox[
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{"-", "3"}], "+", "D"}], ")"}], "2"], HoldForm]],
+         Annotation[#, 
+          HoldForm[(-3 + D)^2], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Plus", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 17],
+          TagBox[
+           RowBox[{
+             RowBox[{"-", "3"}], "+", "D"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-3 + D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox[
+              RowBox[{"-", "3"}],
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 18],
+          TagBox[
+           RowBox[{"-", "3"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-3], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["D",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 19],
+          TagBox["D", HoldForm]],
+         Annotation[#, 
+          HoldForm[D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["2",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 20],
+          TagBox["2", HoldForm]],
+         Annotation[#, 
+          HoldForm[2], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Power", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 21],
+          TagBox[
+           FractionBox["1", 
+            RowBox[{"\[CapitalGamma]", "(", 
+              FormBox[
+               RowBox[{
+                 RowBox[{"-", "6"}], "+", "D"}], TraditionalForm], ")"}]], 
+           HoldForm]],
+         Annotation[#, 
+          HoldForm[QSSRHelper`qGamma[-6 + D]^(-1)], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["qGamma", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 22],
+          TagBox[
+           RowBox[{"\[CapitalGamma]", "(", 
+             FormBox[
+              RowBox[{
+                RowBox[{"-", "6"}], "+", "D"}], TraditionalForm], ")"}], 
+           HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           QSSRHelper`qGamma[-6 + D]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Plus", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 23],
+          TagBox[
+           RowBox[{
+             RowBox[{"-", "6"}], "+", "D"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-6 + D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox[
+              RowBox[{"-", "6"}],
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 24],
+          TagBox[
+           RowBox[{"-", "6"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-6], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["D",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 25],
+          TagBox["D", HoldForm]],
+         Annotation[#, 
+          HoldForm[D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox[
+              RowBox[{"-", "1"}],
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 26],
+          TagBox[
+           RowBox[{"-", "1"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-1], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Power", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 27],
+          TagBox[
+           SuperscriptBox[
+            RowBox[{"\[CapitalGamma]", "(", 
+              FormBox[
+               RowBox[{
+                 RowBox[{"-", "4"}], "+", "D"}], TraditionalForm], ")"}], 
+            "2"], HoldForm]],
+         Annotation[#, 
+          HoldForm[QSSRHelper`qGamma[-4 + D]^2], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["qGamma", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 28],
+          TagBox[
+           RowBox[{"\[CapitalGamma]", "(", 
+             FormBox[
+              RowBox[{
+                RowBox[{"-", "4"}], "+", "D"}], TraditionalForm], ")"}], 
+           HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           QSSRHelper`qGamma[-4 + D]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["Plus", "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 29],
+          TagBox[
+           RowBox[{
+             RowBox[{"-", "4"}], "+", "D"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-4 + D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox[
+              RowBox[{"-", "4"}],
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 30],
+          TagBox[
+           RowBox[{"-", "4"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[-4], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["D",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 31],
+          TagBox["D", HoldForm]],
+         Annotation[#, 
+          HoldForm[D], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["2",
+              HoldForm], "TraditionalForm", "Output",
+             StripOnInput->False,
+             FontSize->Scaled[0.032],
+             FontColor->GrayLevel[0],
+             $CellContext`LineColor -> GrayLevel[0],
+             $CellContext`FrontFaceColor -> GrayLevel[0],
+             $CellContext`BackFaceColor -> GrayLevel[0],
+             $CellContext`GraphicsColor -> GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 32],
+          TagBox["2", HoldForm]],
+         Annotation[#, 
+          HoldForm[2], "Tooltip"]& ]}}],
+     Annotation[#, VertexCoordinateRules -> CompressedData["
+1:eJxTTMoPSmViYGBQAGIQ3S84j/W8PJvD3+w9T5cfFXJQalxopCT+wR5CCzjc
+CLs+Q7fkqn2fDu9/i4tcDgxQABFnhco/tYfxIep+wdVDxL/C5SHmMjjA+G4b
+v1awScHsFYDzUfWzYtAwc1DN+2oPsx/mLoi/mODuRHfXZsdP3puVODD8AfMn
+ur8zxTU27avnhavPfui5/5WMCNxdqOHIAOfD7JvwTY8nNU8Qh36Y/aJw/Yrb
+61W/VUrCzYe4VwIuD+PDzHc7k1JUcFoMbh6qfpj/peD6ARkV1fY=
+       "]]& ],
+    AspectRatio->NCache[
+      Rational[4, 5], 0.8],
+    FormatType:>StandardForm,
+    FrameTicks->Automatic,
+    ImageSize->{Automatic, 574.6800000000002},
+    PlotRange->All,
+    PlotRangePadding->Scaled[0.1]],
+   TreeForm[FeynCalc`Pair[
+      FeynCalc`LorentzIndex[$CellContext`\[Mu], D], 
+      FeynCalc`Momentum[$CellContext`p, D]] 
+    QSSRHelper`qfact1[(QSSRHelper`qfact2[(-4 + D) (-3 + D)^2]/
+       QSSRHelper`qGamma[-6 + D]) QSSRHelper`qGamma[-4 + D]^2]],
+   Editable->False], TraditionalForm]], "Output",
+ CellLabel->"Out[3]//TreeForm=",
+ CellID->749141065,ExpressionUUID->"844869b1-af38-4de9-8f76-c4ed7f2e5db1"]
+}, Open  ]],
+
+Cell["\<\
+The QSimplify2 also gather the term with same Lorentz structure:\
+\>", "Text",
+ CellID->87750020,ExpressionUUID->"8a102157-bbdb-4ec0-86b1-d3f2ad6fd48e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"FVD", "[", 
+     RowBox[{"q", ",", "\[Mu]"}], "]"}], "/", 
+    RowBox[{"SPD", "[", 
+     RowBox[{"q", "+", "k"}], "]"}]}], 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FVD", "[", 
+      RowBox[{"q", ",", "\[Nu]"}], "]"}], "/", 
+     RowBox[{"SPD", "[", 
+      RowBox[{"q", "+", "l"}], "]"}]}], "/", 
+    RowBox[{"SPD", "[", "l", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"tmp2", "=", 
+  RowBox[{"IntegrateP", "[", 
+   RowBox[{"%", ",", "q", ",", "l", ",", 
+    RowBox[{"Simplify", "\[Rule]", "False"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[4]:=",
+ CellID->6734947,ExpressionUUID->"ca8c96a9-7ee9-453f-861b-6797849f7570"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[ImaginaryI]", 
+      RowBox[{
+       RowBox[{"2", " ", "D"}], "+", "2"}]], " ", 
+     SuperscriptBox["2", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"2", " ", "D"}]}], "-", "1"}]], " ", 
+     SuperscriptBox["\[Pi]", 
+      RowBox[{"-", "D"}]], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"2", "-", "D"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox["D", "2"], "-", "1"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "1"}],
+       TraditionalForm], ")"}], " ", 
+     SuperscriptBox[
+      RowBox[{"\[CapitalGamma]", "(", 
+       FormBox[
+        FractionBox["D", "2"],
+        TraditionalForm], ")"}], "2"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["k",
+          TraditionalForm],
+         TraditionalForm], "2"], ")"}], 
+      RowBox[{"D", "-", "2"}]], " ", 
+     SuperscriptBox["g", 
+      RowBox[{
+       FormBox[
+        FormBox["\[Mu]",
+         TraditionalForm],
+        TraditionalForm], 
+       FormBox[
+        FormBox["\[Nu]",
+         TraditionalForm],
+        TraditionalForm]}]]}], 
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox["D",
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox[
+         RowBox[{"3", " ", "D"}], "2"], "-", "2"}],
+       TraditionalForm], ")"}]}]], "+", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox["D",
+       TraditionalForm], ")"}]], 
+    RowBox[{
+     SuperscriptBox["\[ImaginaryI]", 
+      RowBox[{"D", "+", "1"}]], " ", 
+     SuperscriptBox["2", 
+      RowBox[{"-", "D"}]], " ", 
+     SuperscriptBox["\[Pi]", 
+      RowBox[{
+       RowBox[{"-", "D"}], "/", "2"}]], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"2", "-", 
+        FractionBox["D", "2"]}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox["D", "2"], "-", "1"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox["D", "2"], "+", "1"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ImaginaryI]", 
+          RowBox[{"D", "+", "1"}]], " ", 
+         SuperscriptBox["2", 
+          RowBox[{
+           RowBox[{"-", "D"}], "-", "1"}]], " ", 
+         SuperscriptBox["\[Pi]", 
+          RowBox[{
+           RowBox[{"-", "D"}], "/", "2"}]], " ", 
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{"2", "-", "D"}],
+           TraditionalForm], ")"}], " ", 
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{"D", "-", "1"}],
+           TraditionalForm], ")"}], " ", 
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           FractionBox["D", "2"],
+           TraditionalForm], ")"}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["k",
+              TraditionalForm],
+             TraditionalForm], "2"], ")"}], 
+          RowBox[{"D", "-", "2"}]], " ", 
+         SuperscriptBox["g", 
+          RowBox[{
+           FormBox[
+            FormBox["\[Mu]",
+             TraditionalForm],
+            TraditionalForm], 
+           FormBox[
+            FormBox["\[Nu]",
+             TraditionalForm],
+            TraditionalForm]}]]}], 
+        RowBox[{
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{"2", "-", 
+            FractionBox["D", "2"]}],
+           TraditionalForm], ")"}], " ", 
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{
+            FractionBox[
+             RowBox[{"3", " ", "D"}], "2"], "-", "1"}],
+           TraditionalForm], ")"}]}]], "+", 
+       FractionBox[
+        RowBox[{
+         SuperscriptBox["\[ImaginaryI]", 
+          RowBox[{"D", "+", "1"}]], " ", 
+         SuperscriptBox["2", 
+          RowBox[{"-", "D"}]], " ", 
+         SuperscriptBox["\[Pi]", 
+          RowBox[{
+           RowBox[{"-", "D"}], "/", "2"}]], " ", 
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{"3", "-", "D"}],
+           TraditionalForm], ")"}], " ", 
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{
+            FractionBox["D", "2"], "+", "1"}],
+           TraditionalForm], ")"}], " ", 
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{"D", "-", "2"}],
+           TraditionalForm], ")"}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           SuperscriptBox[
+            FormBox[
+             FormBox["k",
+              TraditionalForm],
+             TraditionalForm], "2"], ")"}], 
+          RowBox[{"D", "-", "3"}]], " ", 
+         SuperscriptBox[
+          FormBox[
+           FormBox["k",
+            TraditionalForm],
+           TraditionalForm], 
+          FormBox[
+           FormBox["\[Mu]",
+            TraditionalForm],
+           TraditionalForm]], " ", 
+         SuperscriptBox[
+          FormBox[
+           FormBox["k",
+            TraditionalForm],
+           TraditionalForm], 
+          FormBox[
+           FormBox["\[Nu]",
+            TraditionalForm],
+           TraditionalForm]]}], 
+        RowBox[{
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{"2", "-", 
+            FractionBox["D", "2"]}],
+           TraditionalForm], ")"}], " ", 
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{
+            FractionBox[
+             RowBox[{"3", " ", "D"}], "2"], "-", "1"}],
+           TraditionalForm], ")"}]}]]}], ")"}]}]}], "+", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[ImaginaryI]", 
+      RowBox[{
+       RowBox[{"2", " ", "D"}], "+", "2"}]], " ", 
+     SuperscriptBox["2", 
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "D"}]], " ", 
+     SuperscriptBox["\[Pi]", 
+      RowBox[{"-", "D"}]], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"3", "-", "D"}],
+       TraditionalForm], ")"}], " ", 
+     SuperscriptBox[
+      RowBox[{"\[CapitalGamma]", "(", 
+       FormBox[
+        RowBox[{
+         FractionBox["D", "2"], "-", "1"}],
+        TraditionalForm], ")"}], "2"], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox["D", "2"], "+", "1"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "2"}],
+       TraditionalForm], ")"}], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["k",
+          TraditionalForm],
+         TraditionalForm], "2"], ")"}], 
+      RowBox[{"D", "-", "3"}]], " ", 
+     SuperscriptBox[
+      FormBox[
+       FormBox["k",
+        TraditionalForm],
+       TraditionalForm], 
+      FormBox[
+       FormBox["\[Mu]",
+        TraditionalForm],
+       TraditionalForm]], " ", 
+     SuperscriptBox[
+      FormBox[
+       FormBox["k",
+        TraditionalForm],
+       TraditionalForm], 
+      FormBox[
+       FormBox["\[Nu]",
+        TraditionalForm],
+       TraditionalForm]]}], 
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox["D",
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox[
+         RowBox[{"3", " ", "D"}], "2"], "-", "3"}],
+       TraditionalForm], ")"}]}]], "+", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[ImaginaryI]", 
+      RowBox[{
+       RowBox[{"2", " ", "D"}], "+", "2"}]], " ", 
+     SuperscriptBox["2", 
+      RowBox[{"1", "-", 
+       RowBox[{"2", " ", "D"}]}]], " ", 
+     SuperscriptBox["\[Pi]", 
+      RowBox[{"-", "D"}]], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"3", "-", "D"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "2"}],
+       TraditionalForm], ")"}], " ", 
+     SuperscriptBox[
+      RowBox[{"\[CapitalGamma]", "(", 
+       FormBox[
+        FractionBox["D", "2"],
+        TraditionalForm], ")"}], "3"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       SuperscriptBox[
+        FormBox[
+         FormBox["k",
+          TraditionalForm],
+         TraditionalForm], "2"], ")"}], 
+      RowBox[{"D", "-", "3"}]], " ", 
+     SuperscriptBox[
+      FormBox[
+       FormBox["k",
+        TraditionalForm],
+       TraditionalForm], 
+      FormBox[
+       FormBox["\[Mu]",
+        TraditionalForm],
+       TraditionalForm]], " ", 
+     SuperscriptBox[
+      FormBox[
+       FormBox["k",
+        TraditionalForm],
+       TraditionalForm], 
+      FormBox[
+       FormBox["\[Nu]",
+        TraditionalForm],
+       TraditionalForm]]}], 
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox["D",
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox[
+         RowBox[{"3", " ", "D"}], "2"], "-", "2"}],
+       TraditionalForm], ")"}]}]]}], TraditionalForm]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->547561932,ExpressionUUID->"88c1f6e8-ab74-4395-800f-9a34eb238b46"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QSimplify2", "[", "tmp2", "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->106462111,ExpressionUUID->"959888ae-f535-4df3-b394-5d5010574309"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     FormBox[
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         FormBox[
+          RowBox[{
+           RowBox[{"-", 
+            SuperscriptBox["\[ImaginaryI]", 
+             RowBox[{"2", " ", "D"}]]}], " ", 
+           SuperscriptBox["2", 
+            RowBox[{
+             RowBox[{"-", "2"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"D", "+", "1"}], ")"}]}]], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"D", "-", "2"}], ")"}], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"D", "-", "1"}], ")"}], " ", 
+           SuperscriptBox["\[Pi]", 
+            RowBox[{"-", "D"}]]}],
+          TraditionalForm], ")"}], " ", 
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox[
+          RowBox[{"2", "-", "D"}],
+          TraditionalForm], ")"}], " ", 
+        SuperscriptBox[
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{
+            FractionBox["D", "2"], "-", "1"}],
+           TraditionalForm], ")"}], "3"], " ", 
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox[
+          RowBox[{"D", "-", "1"}],
+          TraditionalForm], ")"}]}], 
+       RowBox[{
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox["D",
+          TraditionalForm], ")"}], " ", 
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox[
+          RowBox[{
+           FractionBox[
+            RowBox[{"3", " ", "D"}], "2"], "-", "1"}],
+          TraditionalForm], ")"}]}]],
+      TraditionalForm], ")"}], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      SuperscriptBox[
+       FormBox[
+        FormBox["k",
+         TraditionalForm],
+        TraditionalForm], "2"], ")"}], 
+     RowBox[{"D", "-", "2"}]], " ", 
+    SuperscriptBox["g", 
+     RowBox[{
+      FormBox[
+       FormBox["\[Mu]",
+        TraditionalForm],
+       TraditionalForm], 
+      FormBox[
+       FormBox["\[Nu]",
+        TraditionalForm],
+       TraditionalForm]}]]}], "+", 
+   RowBox[{
+    RowBox[{"(", 
+     FormBox[
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         FormBox[
+          RowBox[{
+           RowBox[{"-", 
+            SuperscriptBox["\[ImaginaryI]", 
+             RowBox[{"2", " ", "D"}]]}], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"D", "-", "2"}], ")"}], "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"D", "-", "1"}], ")"}], "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"4", " ", "\[Pi]"}], ")"}], 
+            RowBox[{"-", "D"}]]}],
+          TraditionalForm], ")"}], " ", 
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox[
+          RowBox[{"3", "-", "D"}],
+          TraditionalForm], ")"}], " ", 
+        SuperscriptBox[
+         RowBox[{"\[CapitalGamma]", "(", 
+          FormBox[
+           RowBox[{
+            FractionBox["D", "2"], "-", "1"}],
+           TraditionalForm], ")"}], "3"], " ", 
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox[
+          RowBox[{"D", "-", "2"}],
+          TraditionalForm], ")"}]}], 
+       RowBox[{
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox["D",
+          TraditionalForm], ")"}], " ", 
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox[
+          RowBox[{
+           FractionBox[
+            RowBox[{"3", " ", "D"}], "2"], "-", "1"}],
+          TraditionalForm], ")"}]}]],
+      TraditionalForm], ")"}], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      SuperscriptBox[
+       FormBox[
+        FormBox["k",
+         TraditionalForm],
+        TraditionalForm], "2"], ")"}], 
+     RowBox[{"D", "-", "3"}]], " ", 
+    SuperscriptBox[
+     FormBox[
+      FormBox["k",
+       TraditionalForm],
+      TraditionalForm], 
+     FormBox[
+      FormBox["\[Mu]",
+       TraditionalForm],
+      TraditionalForm]], " ", 
+    SuperscriptBox[
+     FormBox[
+      FormBox["k",
+       TraditionalForm],
+      TraditionalForm], 
+     FormBox[
+      FormBox["\[Nu]",
+       TraditionalForm],
+      TraditionalForm]]}]}], TraditionalForm]], "Output",
+ CellLabel->"Out[5]=",
+ CellID->328532422,ExpressionUUID->"32fc6828-4393-4733-89b1-6bbbe3b09a59"]
+}, Open  ]],
+
+Cell[TextData[{
+ "By default, all the terms irrelevant with Dot product, FA,  FAD, SP, SPD, \
+SUNT, DiracGamma, Eps, DiracSigma, qGamma will contained in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact2"]], "paclet:QSSRHelper/ref/qfact2"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "cf2875d1-e645-468c-af9a-506bf15c80f3"],
+ "; one can add a list of Symbols to indicate which should not included in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact2"]], "paclet:QSSRHelper/ref/qfact2"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "e6128c03-0cc5-4019-931d-4674bc024b45"],
+ " (hence not in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact1"]], "paclet:QSSRHelper/ref/qfact1"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "3bb17920-3057-4b45-8cb7-bb97306f9788"],
+ "):"
+}], "Text",
+ CellID->788138291,ExpressionUUID->"601e593b-c01f-455f-8b1a-171fd7bc6bad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tmp3", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Log", "[", "\[Mu]", "]"}], "termA", " ", 
+    RowBox[{"qGamma", "[", 
+     RowBox[{"D", "-", "3"}], "]"}], 
+    RowBox[{
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "-", "2"}], "]"}], "/", 
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "-", "6"}], "]"}]}]}], "+", 
+   RowBox[{
+    RowBox[{"Log", "[", "\[Mu]", "]"}], 
+    RowBox[{"qGamma", "[", 
+     RowBox[{"D", "-", "4"}], "]"}], 
+    RowBox[{
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "-", "2"}], "]"}], "/", 
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "-", "6"}], "]"}]}]}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->298988374,ExpressionUUID->"606d9c8a-a805-4eba-a9ef-e681a1b73233"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "4"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "2"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"log", "(", "\[Mu]", ")"}]}], 
+    RowBox[{"\[CapitalGamma]", "(", 
+     FormBox[
+      RowBox[{"D", "-", "6"}],
+      TraditionalForm], ")"}]], "+", 
+   FractionBox[
+    RowBox[{"termA", " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "3"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "2"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{"log", "(", "\[Mu]", ")"}]}], 
+    RowBox[{"\[CapitalGamma]", "(", 
+     FormBox[
+      RowBox[{"D", "-", "6"}],
+      TraditionalForm], ")"}]]}], TraditionalForm]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->91660602,ExpressionUUID->"9e8e689b-7796-4c63-a173-e94e3bac6d97"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QSimplify2", "[", "tmp3", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->75136907,ExpressionUUID->"b3ce769f-9534-4146-9669-9fe7980e1533"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"(", 
+   FormBox[
+    FractionBox[
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"\[CapitalGamma]", "(", 
+        FormBox[
+         RowBox[{"D", "-", "4"}],
+         TraditionalForm], ")"}], "2"], " ", 
+      RowBox[{"(", 
+       FormBox[
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"D", "-", "4"}], ")"}], " ", 
+         RowBox[{"(", 
+          RowBox[{"D", "-", "3"}], ")"}], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"D", "-", "4"}], ")"}], " ", "termA"}], "+", "1"}], 
+          ")"}], " ", 
+         RowBox[{"log", "(", "\[Mu]", ")"}]}],
+        TraditionalForm], ")"}]}], 
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{"D", "-", "6"}],
+       TraditionalForm], ")"}]],
+    TraditionalForm], ")"}], TraditionalForm]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->11684091,ExpressionUUID->"484b5877-4609-4bb3-a0f8-fcef27935e78"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Make the Log not included in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact2"]], "paclet:QSSRHelper/ref/qfact2"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "6fa89100-df78-4fd4-b6b5-cbf9d88afc05"],
+ ":"
+}], "Text",
+ CellID->24785499,ExpressionUUID->"0b30f7b2-a25b-4d38-a6bf-d3272011e634"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QSimplify2", "[", 
+  RowBox[{"tmp3", ",", 
+   RowBox[{"{", "Log", "}"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->127181456,ExpressionUUID->"b1b9364f-9be0-4ae6-a923-aa46c0bbe48f"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"log", "(", "\[Mu]", ")"}], " ", 
+   RowBox[{"(", 
+    FormBox[
+     FractionBox[
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"\[CapitalGamma]", "(", 
+         FormBox[
+          RowBox[{"D", "-", "4"}],
+          TraditionalForm], ")"}], "2"], " ", 
+       RowBox[{"(", 
+        FormBox[
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"D", "-", "4"}], ")"}], " ", 
+          RowBox[{"(", 
+           RowBox[{"D", "-", "3"}], ")"}], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"D", "-", "4"}], ")"}], " ", "termA"}], "+", "1"}], 
+           ")"}]}],
+         TraditionalForm], ")"}]}], 
+      RowBox[{"\[CapitalGamma]", "(", 
+       FormBox[
+        RowBox[{"D", "-", "6"}],
+        TraditionalForm], ")"}]],
+     TraditionalForm], ")"}]}], TraditionalForm]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->299915315,ExpressionUUID->"76d858f6-2aaa-4990-a6df-7cdbb94afef2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"af4c1067-d844-48e8-813b-d2d199a069ea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"59ea57c8-04e7-4c4f-ab96-af1e0f37e7e0"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"e77dc491-3c10-4b44-9420-a9a6a59e68d3"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact1"]], "paclet:QSSRHelper/ref/qfact1"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"b6ea4f2b-3b04-4c9d-81f4-bd038a9aff9f"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["qfact2"]], "paclet:QSSRHelper/ref/qfact2"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"f1780090-97d3-4f52-9fc7-3b820e683b46"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IndexSimplify"]], "paclet:QSSRHelper/ref/IndexSimplify"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"44db766a-4392-44bc-ba0f-9451fcc3e156"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QGather"]], "paclet:QSSRHelper/ref/QGather"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"3890383d-f223-4d0d-952a-969249e0ebb4"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"290b2fea-6a1e-44c8-9645-9528bcc114b7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"87f47de3-09e3-4075-82ad-0d116612ee83"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"a6ffd947-ae6c-4c8e-a9b5-e6990f1a6b9c"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"8500346f-36b8-4fda-83dd-5176ffc84ccd"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["QSSRHelper"]], "paclet:QSSRHelper/guide/QSSRHelper"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->567570686,ExpressionUUID->"09061448-b7b3-45ff-a3de-5ef94f76423a"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"309001c7-e2de-4ed0-806f-01493adc67dc"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{724.8, 750.},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"QSimplify2",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "QSSRHelper", ButtonData -> "paclet:QSSRHelper/guide/QSSRHelper", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 2, 24, 16, 23, 56.8600814}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Q S S R Helper Symbol", "language" -> "en", "paclet" -> "QSSRHelper", 
+    "status" -> "None", "summary" -> "QSimplify2[expr] Simplify the expr.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "QSimplify2", 
+    "titlemodifier" -> "", "windowtitle" -> "QSimplify2", "type" -> "Symbol", 
+    "uri" -> "QSSRHelper/ref/QSimplify2", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "12.1 for Microsoft Windows (64-bit) (June 9, 2020)", StyleDefinitions -> 
+  "Default.nb"],
+ExpressionUUID->"84506d32-055f-4e88-a872-81da99e4fdd8"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5934, 152, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"6f1ebed6-5e69-4dc9-8a0d-01c576d7f9dd",
+   CellTags->"PrimaryExamplesSection",
+   CellID->168255566]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 67419, 1971}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 4357, 98, 54, "AnchorBarGrid",ExpressionUUID->"d0afe970-3a2b-4f3d-92db-4e548cc34067",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4964, 123, 395, 9, 54, "ObjectNameGrid",ExpressionUUID->"4e7a77ea-ae84-4a6a-b1bd-1e1f672cf364"],
+Cell[5362, 134, 535, 13, 111, "Usage",ExpressionUUID->"74dd7cba-440f-402d-afaf-0e352537f15a",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5934, 152, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"6f1ebed6-5e69-4dc9-8a0d-01c576d7f9dd",
+ CellTags->"PrimaryExamplesSection",
+ CellID->168255566],
+Cell[CellGroupData[{
+Cell[6394, 167, 308, 7, 30, "ExampleSection",ExpressionUUID->"9771114a-5c55-4ba0-a75d-bb6d650b1373",
+ CellID->639478888],
+Cell[6705, 176, 127, 1, 36, "Text",ExpressionUUID->"2cd1683e-e61a-42ba-86a7-694ed24ff2b6",
+ CellID->98899780],
+Cell[CellGroupData[{
+Cell[6857, 181, 769, 24, 41, "Input",ExpressionUUID->"563f3f72-9f50-4ca6-9923-460f1ce52b75",
+ CellID->348000978],
+Cell[7629, 207, 1445, 54, 54, "Output",ExpressionUUID->"9c0a9732-65a4-45f5-8d72-65958572bc2c",
+ CellID->893615701]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9111, 266, 164, 3, 25, "Input",ExpressionUUID->"ab4a8157-2fc0-405a-8e1d-408858c0df80",
+ CellID->163624946],
+Cell[9278, 271, 998, 36, 56, "Output",ExpressionUUID->"ac9136c4-67b5-4e78-9921-c96a61e5942f",
+ CellID->277417448]
+}, Open  ]],
+Cell[10291, 310, 888, 27, 63, "Text",ExpressionUUID->"6f2dab66-8db0-4938-ae3d-f757b3b3e01c",
+ CellID->283113598],
+Cell[CellGroupData[{
+Cell[11204, 341, 195, 4, 25, "Input",ExpressionUUID->"40b4b697-a781-4e80-ac05-c4e57e8ebfed",
+ CellID->534673808],
+Cell[11402, 347, 31022, 786, 595, "Output",ExpressionUUID->"844869b1-af38-4de9-8f76-c4ed7f2e5db1",
+ CellID->749141065]
+}, Open  ]],
+Cell[42439, 1136, 162, 3, 70, "Text",ExpressionUUID->"8a102157-bbdb-4ec0-86b1-d3f2ad6fd48e",
+ CellID->87750020],
+Cell[CellGroupData[{
+Cell[42626, 1143, 685, 20, 70, "Input",ExpressionUUID->"ca8c96a9-7ee9-453f-861b-6797849f7570",
+ CellID->6734947],
+Cell[43314, 1165, 9482, 327, 315, "Output",ExpressionUUID->"88c1f6e8-ab74-4395-800f-9a34eb238b46",
+ CellID->547561932]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52833, 1497, 164, 3, 70, "Input",ExpressionUUID->"959888ae-f535-4df3-b394-5d5010574309",
+ CellID->106462111],
+Cell[53000, 1502, 4204, 144, 132, "Output",ExpressionUUID->"32fc6828-4393-4733-89b1-6bbbe3b09a59",
+ CellID->328532422]
+}, Open  ]],
+Cell[57219, 1649, 1022, 28, 70, "Text",ExpressionUUID->"601e593b-c01f-455f-8b1a-171fd7bc6bad",
+ CellID->788138291],
+Cell[CellGroupData[{
+Cell[58266, 1681, 731, 22, 70, "Input",ExpressionUUID->"606d9c8a-a805-4eba-a9ef-e681a1b73233",
+ CellID->298988374],
+Cell[59000, 1705, 1048, 34, 54, "Output",ExpressionUUID->"9e8e689b-7796-4c63-a173-e94e3bac6d97",
+ CellID->91660602]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60085, 1744, 163, 3, 70, "Input",ExpressionUUID->"b3ce769f-9534-4146-9669-9fe7980e1533",
+ CellID->75136907],
+Cell[60251, 1749, 977, 32, 57, "Output",ExpressionUUID->"484b5877-4609-4bb3-a0f8-fcef27935e78",
+ CellID->11684091]
+}, Open  ]],
+Cell[61243, 1784, 365, 11, 70, "Text",ExpressionUUID->"0b30f7b2-a25b-4d38-a6bf-d3272011e634",
+ CellID->24785499],
+Cell[CellGroupData[{
+Cell[61633, 1799, 213, 5, 70, "Input",ExpressionUUID->"b1b9364f-9be0-4ae6-a923-aa46c0bbe48f",
+ CellID->127181456],
+Cell[61849, 1806, 1013, 33, 57, "Output",ExpressionUUID->"76d858f6-2aaa-4990-a6df-7cdbb94afef2",
+ CellID->299915315]
+}, Open  ]]
+}, Open  ]],
+Cell[62889, 1843, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"af4c1067-d844-48e8-813b-d2d199a069ea"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63012, 1848, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"e77dc491-3c10-4b44-9420-a9a6a59e68d3",
+ CellID->1255426704],
+Cell[63275, 1857, 1477, 42, 70, "SeeAlso",ExpressionUUID->"290b2fea-6a1e-44c8-9645-9528bcc114b7",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64789, 1904, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"a6ffd947-ae6c-4c8e-a9b5-e6990f1a6b9c",
+ CellID->38303248],
+Cell[65058, 1913, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"8500346f-36b8-4fda-83dd-5176ffc84ccd"],
+Cell[65147, 1915, 234, 6, 70, "MoreAbout",ExpressionUUID->"09061448-b7b3-45ff-a3de-5ef94f76423a",
+ CellID->567570686]
+}, Open  ]],
+Cell[65396, 1924, 78, 0, 70, "FooterCell",ExpressionUUID->"309001c7-e2de-4ed0-806f-01493adc67dc"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

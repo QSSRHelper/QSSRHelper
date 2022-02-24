@@ -1,0 +1,628 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21656,        618]
+NotebookOptionsPosition[     16309,        501]
+NotebookOutlinePosition[     18671,        561]
+CellTagsIndexPosition[     18586,        556]
+WindowTitle->FourierPX
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["Q S S R HELPER SYMBOL", "PacletNameCell",ExpressionUUID->
+     "4340fa9a-9904-4357-be08-8a143fcb0ded"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Tutorials",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"162ba6e8-8949-4ec2-94ef-9d3a8ce5c3bf"],
+         TextCell[
+          Row[{"Tutorials", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Evaluation by Fourier Transformation\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/tutorial/Evaluation by Fourier Transformation"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"Tutorials"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "5237af63-7966-43da-a3e5-0af8e0ceda54"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"c6f16030-347d-4623-9383-6be7f93b8697"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FourierXP\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/FourierXP"], "\<\"IntegrateX\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/IntegrateX"], "\<\"IntegrateP\"\>":>
+       Documentation`HelpLookup["paclet:QSSRHelper/ref/IntegrateP"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "eb975d09-7e1e-4c00-adcc-e6468b58d451"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"454cf0d6-e08c-40f1-9c13-645b2c93a806"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/guide/QSSRHelper"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "c4bb72cf-c952-472d-b307-594a00f78f0c"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"93d36f56-1fc3-43d7-864d-2b7b855fbeba"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper/ref/FourierPX\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["QSSRHelper/ref/FourierPX"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/QSSRHelper/ref/\
+FourierPX.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]},
+             Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$9925], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "QSSRHelper/ref/FourierPX", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "254900cd-7bb5-4d97-80a6-8d18b6bb5579"]
+    }], "AnchorBar",ExpressionUUID->"84e9ce19-3801-49cd-aad7-6513c502cc19"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"d177d868-af1e-4e81-8990-d5c4bb7b5212"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["FourierPX", "ObjectName",ExpressionUUID->
+  "b443ec21-0951-48d7-a22e-434c7d8ea993"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"812eb92f-4919-443e-b39a-fea679ed99f2"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "c3d0e97b-b767-428b-9fdb-8990caf7f11c"]
+}], "ObjectNameGrid",ExpressionUUID->"edf4a552-a221-4b45-9485-99a0a6611a8b"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"FourierPX", "[", 
+       RowBox[{
+        StyleBox["expr", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["p", "TI"], ",", 
+          StyleBox["x", "TI"]}], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"149b8745-e5f7-4435-ac53-cc7db372d1e1"],
+     " \[LineSeparator]D-dimensional Fourier Transformation ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["\[Integral]", "TI"], 
+       RowBox[{
+        StyleBox[
+         FractionBox[
+          RowBox[{
+           SuperscriptBox["d", "D"], "p"}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"2", "\[Pi]"}], ")"}], "D"]], "TI"], 
+        SuperscriptBox["e", 
+         StyleBox[
+          RowBox[{"-", "ipx"}], "TI"]], 
+        StyleBox["expr", "TI"]}]}]],ExpressionUUID->
+      "e2c531ab-f595-4e1c-800b-7c10bbe07e1d"],
+     " transform the ",
+     StyleBox["expr", "TI"],
+     " from momentum space to coordinate space."
+    }],ExpressionUUID->"96ae15ac-785e-462a-86ec-bc529f856767"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436,ExpressionUUID->"5ef865bd-9ba5-4a0a-9cd1-d4f65855385e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"2af40d15-df49-4ec1-bd1e-5d3b027fd38a"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"29ad9ae2-ad2b-420a-b780-be941b05a375"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"801d1d8c-0b38-4b5f-948e-daf22506fef5"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->305388979,ExpressionUUID->"a94d066a-cec2-41f9-a8cc-faff0f93dfd2"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"aa2781fe-85be-4158-a583-f96c3d1e645b"],
+
+Cell[TextData[{
+ "Use identity",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    StyleBox["\[Integral]", "TI"], 
+    RowBox[{
+     StyleBox[
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["d", "D"], "p"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"2", "\[Pi]"}], ")"}], "D"]], "TI"], 
+     SuperscriptBox["e", 
+      StyleBox[
+       RowBox[{"-", "ipx"}], "TI"]], 
+     StyleBox[
+      FractionBox[
+       StyleBox["1", "TI"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         SuperscriptBox["p", "2"], ")"}], "n"]], "TI"]}]}], 
+   StyleBox["=", "TI"], 
+   RowBox[{
+    StyleBox["i", "TI"], 
+    StyleBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"-", "1"}], ")"}], "n"], "TI"], 
+    StyleBox[" ", "TI"], 
+    StyleBox[
+     SuperscriptBox["2", 
+      RowBox[{
+       RowBox[{"-", "2"}], "n"}]], "TI"], 
+    SuperscriptBox[
+     StyleBox["\[Pi]", "TI"], 
+     RowBox[{
+      RowBox[{"-", "D"}], "/", "2"}]], 
+    StyleBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"-", 
+        SuperscriptBox["x", "2"]}], ")"}], 
+      RowBox[{"n", "-", 
+       RowBox[{"D", "/", "2"}]}]], "TI"], 
+    StyleBox[
+     FractionBox[
+      RowBox[{"\[CapitalGamma]", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"D", "/", "2"}], "-", "n"}], ")"}]}], 
+      RowBox[{"\[CapitalGamma]", 
+       RowBox[{"(", "n", ")"}]}]], "TI"]}]}]],ExpressionUUID->
+  "461582da-3317-4c67-8aa5-5e294e52f64b"],
+ " by ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Ref"]], "https://doi.org/10.1002/prop.19840321102"},
+   "WebLink",
+   BaseStyle->{"Notes"}]],ExpressionUUID->
+  "51ccf8f9-24a1-4e1f-846e-2a851cc30526"],
+ ", in (+---) metric."
+}], "Notes",
+ CellID->1067943069,ExpressionUUID->"9b909f96-74ff-4562-97c4-e184c9017ca8"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"28e800e2-6fec-4193-aa07-c29e859d8501"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"aab8b36e-56c2-43b3-b587-3699553d0cb8"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "673a4f61-7d9d-4737-92c4-854c6ed52d30"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->467659186,ExpressionUUID->"f221683a-cf5d-480d-b997-b42ecfb0269d"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "c6d2beb3-da07-4358-90ac-90e761ca7f27"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->99491629,ExpressionUUID->"5ff21442-2cf1-4fd8-b672-54c5675ed800"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"propagator", "=", 
+  RowBox[{"I", " ", 
+   RowBox[{
+    RowBox[{"GSD", "[", "q", "]"}], "/", 
+    RowBox[{"SPD", "[", "q", "]"}]}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->174538634,ExpressionUUID->"bb7d7444-8279-4f0d-b2d1-5f42ee6093dc"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    FormBox[
+     RowBox[{"\[Gamma]", "\[CenterDot]", 
+      FormBox[
+       FormBox["q",
+        TraditionalForm],
+       TraditionalForm]}],
+     TraditionalForm]}], 
+   FormBox[
+    SuperscriptBox[
+     FormBox[
+      FormBox["q",
+       TraditionalForm],
+      TraditionalForm], "2"],
+    TraditionalForm]], TraditionalForm]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->1007048195,ExpressionUUID->"0195f867-a3a0-4142-bdee-6060053d8411"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FourierPX", "[", 
+  RowBox[{"propagator", ",", 
+   RowBox[{"{", 
+    RowBox[{"q", ",", 
+     RowBox[{"x", "-", "y"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->7383773,ExpressionUUID->"0e3338a3-eb3f-42d0-b73b-c11402294748"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   SuperscriptBox["\[ImaginaryI]", 
+    RowBox[{"1", "-", "D"}]], " ", 
+   SuperscriptBox["\[Pi]", 
+    RowBox[{
+     RowBox[{"-", "D"}], "/", "2"}]], " ", 
+   RowBox[{"\[CapitalGamma]", "(", 
+    FormBox[
+     FractionBox["D", "2"],
+     TraditionalForm], ")"}], " ", 
+   RowBox[{"\[Gamma]", "\[CenterDot]", "(", 
+    FormBox[
+     FormBox[
+      RowBox[{
+       FormBox["x",
+        TraditionalForm], "-", 
+       FormBox["y",
+        TraditionalForm]}],
+      TraditionalForm],
+     TraditionalForm], ")"}], " ", 
+   SuperscriptBox[
+    SuperscriptBox[
+     RowBox[{
+      FormBox["\<\"(\"\>",
+       TraditionalForm], 
+      FormBox[
+       FormBox[
+        RowBox[{
+         FormBox["x",
+          TraditionalForm], "-", 
+         FormBox["y",
+          TraditionalForm]}],
+        TraditionalForm],
+       TraditionalForm], 
+      FormBox["\<\")\"\>",
+       TraditionalForm]}], "2"], 
+    RowBox[{
+     RowBox[{"-", "D"}], "/", "2"}]]}], TraditionalForm]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->3157212,ExpressionUUID->"e92cdb32-1e30-4891-bc5d-9730430f0875"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"c8f20bc8-5a63-411a-8a6f-644ddd3fc739"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"144a96ac-bd5a-48e6-997a-492c029ff5ac"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"b030088a-f5b8-4d78-a337-eaede58996ea"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["FourierXP"]], "paclet:QSSRHelper/ref/FourierXP"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"6370f404-c984-41a5-af5f-2ab5baa070c1"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IntegrateX"]], "paclet:QSSRHelper/ref/IntegrateX"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"c7caafe3-1486-4512-9607-1223a9a47d7f"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IntegrateP"]], "paclet:QSSRHelper/ref/IntegrateP"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"e3c5015a-88f0-4dea-9596-795eaf646895"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"3e64fb83-b6cf-4740-a023-c4ee55870af3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"99b2da77-12a6-4961-b8e6-2069de301378"],
+ "Tutorials"
+}], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057,ExpressionUUID->"a5d94321-6c76-4d94-9a89-a66c56939d21"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"6b2ecc42-bce0-4b87-bf56-70cd3fd9b42f"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["Evaluation by Fourier Transformation"]], 
+   "paclet:QSSRHelper/tutorial/Evaluation by Fourier Transformation"},
+  "RefLink",
+  BaseStyle->"Tutorials"]], "Tutorials",
+ CellID->341631938,ExpressionUUID->"a861b32a-b1e8-4421-98fc-b88c01e2f61e"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"86b7eb1a-1858-4acd-b576-fb5f5b3fa387"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"232472fb-b9ed-4ec4-897b-c0bd49d633ae"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"dea80560-2232-410a-a978-7075c787c932"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"2b3dce35-a8ce-4fff-9a6f-6b84bcf2d939"],
+
+Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    TextData["QSSRHelper"]], "paclet:QSSRHelper/guide/QSSRHelper"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->100425272,ExpressionUUID->"a8e08db8-f4d6-4189-99cc-39b5ea10b49a"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"0d0cf7ea-5339-47e0-a0f1-9c6904b5d9e5"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{724.8, 750.},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"FourierPX",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "QSSRHelper", ButtonData -> "paclet:QSSRHelper/guide/QSSRHelper", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 2, 24, 16, 23, 40.2160539}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Q S S R Helper Symbol", "language" -> "en", "paclet" -> "QSSRHelper", 
+    "status" -> "None", "summary" -> 
+    "FourierPX[expr, {p, x}] D-dimensional Fourier Transformation \
+\\[Integral](d^D p)/((2 \\[Pi]) D) e -ipx expr transform the expr from \
+momentum space to coordinate space.", "synonyms" -> {}, "tabletags" -> {}, 
+    "title" -> "FourierPX", "titlemodifier" -> "", "windowtitle" -> 
+    "FourierPX", "type" -> "Symbol", "uri" -> "QSSRHelper/ref/FourierPX", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "12.1 for Microsoft Windows (64-bit) (June 9, 2020)", StyleDefinitions -> 
+  "Default.nb"],
+ExpressionUUID->"5545eac4-9947-406e-ae21-37b0593be8c6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10268, 290, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"f221683a-cf5d-480d-b997-b42ecfb0269d",
+   CellTags->"PrimaryExamplesSection",
+   CellID->467659186]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 18387, 549}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[581, 21, 5127, 117, 54, "AnchorBarGrid",ExpressionUUID->"d177d868-af1e-4e81-8990-d5c4bb7b5212",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5733, 142, 394, 9, 54, "ObjectNameGrid",ExpressionUUID->"edf4a552-a221-4b45-9485-99a0a6611a8b"],
+Cell[6130, 153, 1255, 35, 142, "Usage",ExpressionUUID->"5ef865bd-9ba5-4a0a-9cd1-d4f65855385e",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7422, 193, 855, 21, 36, "NotesSection",ExpressionUUID->"a94d066a-cec2-41f9-a8cc-faff0f93dfd2",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->305388979],
+Cell[8280, 216, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"aa2781fe-85be-4158-a583-f96c3d1e645b"],
+Cell[8369, 218, 1773, 65, 70, "Notes",ExpressionUUID->"9b909f96-74ff-4562-97c4-e184c9017ca8",
+ CellID->1067943069],
+Cell[10145, 285, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"28e800e2-6fec-4193-aa07-c29e859d8501"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10268, 290, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"f221683a-cf5d-480d-b997-b42ecfb0269d",
+ CellTags->"PrimaryExamplesSection",
+ CellID->467659186],
+Cell[CellGroupData[{
+Cell[10728, 305, 307, 7, 30, "ExampleSection",ExpressionUUID->"5ff21442-2cf1-4fd8-b672-54c5675ed800",
+ CellID->99491629],
+Cell[CellGroupData[{
+Cell[11060, 316, 267, 7, 25, "Input",ExpressionUUID->"bb7d7444-8279-4f0d-b2d1-5f42ee6093dc",
+ CellID->174538634],
+Cell[11330, 325, 512, 19, 54, "Output",ExpressionUUID->"0195f867-a3a0-4142-bdee-6060053d8411",
+ CellID->1007048195]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11879, 349, 265, 7, 25, "Input",ExpressionUUID->"0e3338a3-eb3f-42d0-b73b-c11402294748",
+ CellID->7383773],
+Cell[12147, 358, 1136, 42, 51, "Output",ExpressionUUID->"e92cdb32-1e30-4891-bc5d-9730430f0875",
+ CellID->3157212]
+}, Open  ]]
+}, Open  ]],
+Cell[13310, 404, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"c8f20bc8-5a63-411a-8a6f-644ddd3fc739"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13433, 409, 260, 7, 74, "SeeAlsoSection",ExpressionUUID->"b030088a-f5b8-4d78-a337-eaede58996ea",
+ CellID->1255426704],
+Cell[13696, 418, 1114, 31, 26, "SeeAlso",ExpressionUUID->"3e64fb83-b6cf-4740-a023-c4ee55870af3",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14847, 454, 262, 7, 74, "TutorialsSection",ExpressionUUID->"a5d94321-6c76-4d94-9a89-a66c56939d21",
+ CellID->250839057],
+Cell[15112, 463, 86, 0, 14, "SectionHeaderSpacer",ExpressionUUID->"6b2ecc42-bce0-4b87-bf56-70cd3fd9b42f"],
+Cell[15201, 465, 293, 7, 24, "Tutorials",ExpressionUUID->"a861b32a-b1e8-4421-98fc-b88c01e2f61e",
+ CellID->341631938],
+Cell[15497, 474, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"86b7eb1a-1858-4acd-b576-fb5f5b3fa387"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15620, 479, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"dea80560-2232-410a-a978-7075c787c932",
+ CellID->38303248],
+Cell[15889, 488, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"2b3dce35-a8ce-4fff-9a6f-6b84bcf2d939"],
+Cell[15978, 490, 234, 6, 70, "MoreAbout",ExpressionUUID->"a8e08db8-f4d6-4189-99cc-39b5ea10b49a",
+ CellID->100425272]
+}, Open  ]],
+Cell[16227, 499, 78, 0, 70, "FooterCell",ExpressionUUID->"0d0cf7ea-5339-47e0-a0f1-9c6904b5d9e5"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
