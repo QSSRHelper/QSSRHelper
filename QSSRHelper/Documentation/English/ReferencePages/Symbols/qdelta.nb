@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8210,        245]
+NotebookDataLength[      8209,        245]
 NotebookOptionsPosition[      5670,        186]
-NotebookOutlinePosition[      7515,        234]
-CellTagsIndexPosition[      7472,        231]
+NotebookOutlinePosition[      7514,        234]
+CellTagsIndexPosition[      7471,        231]
 WindowTitle->qdelta
 WindowFrame->Normal*)
 
@@ -60,7 +60,7 @@ html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible ->
           URL[
            StringJoin[
             If[
-             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15819], 
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$15363], 
              "http://reference.wolfram.com/system-modeler/", 
              "http://reference.wolfram.com/language/"], 
             "QSSRHelper/ref/qdelta", ".html"]], None}]}]},
@@ -199,7 +199,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2022, 2, 24, 18, 9, 44.1051462}", 
+   "built" -> "{2022, 3, 4, 20, 20, 2.7698518}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -233,20 +233,20 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[578, 21, 2282, 54, 70, "AnchorBarGrid",ExpressionUUID->"4372ba7e-d7e2-4d27-a50a-a2e4b376ba4b",
+Cell[578, 21, 2282, 54, 70, "AnchorBarGrid",ExpressionUUID->"679ee2cf-2f03-47e8-ae54-12a4b2bf35ae",
  CellID->1],
-Cell[2863, 77, 163, 6, 70, "ObjectNameGrid",ExpressionUUID->"1123e76f-3d7b-4023-8fbc-8f5c65de6841"],
+Cell[2863, 77, 163, 6, 70, "ObjectNameGrid",ExpressionUUID->"6b2d1b28-cdc2-466e-aef5-f05ca52012b1"],
 Cell[3029, 85, 370, 10, 70, "Usage",ExpressionUUID->"426ca7ae-6a19-47ca-a659-a931a9742219",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[3424, 99, 621, 19, 70, "NotesSection",ExpressionUUID->"fa96f21c-59a5-4f0f-853b-201bd8e1737a",
+Cell[3424, 99, 621, 19, 70, "NotesSection",ExpressionUUID->"18612cd7-a1be-4264-a9de-1a71b9bd22c1",
  CellGroupingRules->{"SectionGrouping", 50},
  CellID->1],
-Cell[4048, 120, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"bdc0bbca-9380-4458-90ff-f928e5ccf0dc"],
+Cell[4048, 120, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"ef730719-3cb6-4da1-bb2b-b8f8120091e4"],
 Cell[4082, 122, 1546, 59, 70, "Notes",ExpressionUUID->"7657c294-cad5-44bf-adf1-b872e079b327",
  CellID->1067943069]
 }, Closed]],
-Cell[5643, 184, 23, 0, 70, "FooterCell",ExpressionUUID->"57bee8a6-c2b8-4adb-b779-cb9d0ad33428"]
+Cell[5643, 184, 23, 0, 70, "FooterCell",ExpressionUUID->"dd90959e-a92b-4c01-9383-30236592f275"]
 }
 ]
 *)

@@ -10,85 +10,64 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7356,        208]
-NotebookOptionsPosition[      4998,        152]
-NotebookOutlinePosition[      6800,        199]
-CellTagsIndexPosition[      6757,        196]
+NotebookDataLength[      5475,        148]
+NotebookOptionsPosition[      3397,         98]
+NotebookOutlinePosition[      5194,        145]
+CellTagsIndexPosition[      5151,        142]
 WindowTitle->IndexSimplify
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[GridBox[{
-   {Cell["Q S S R HELPER SYMBOL", "PacletNameCell"], Cell[TextData[{
-     Cell[BoxData[
-      ActionMenuBox[
-       FrameBox[
-        InterpretationBox[Cell[TextData[{
-          "See Also",
-          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-           StripOnInput->False]
-         }]],
-         TextCell[
-          Row[{"See Also", 
-            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"QSimplify2\"\>":>Documentation`HelpLookup[
-       "paclet:QSSRHelper/ref/QSimplify2"], "\<\"QExpand\"\>":>
-       Documentation`HelpLookup["paclet:QSSRHelper/ref/QExpand"]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"SeeAlso"]],
-      LineSpacing->{1.4, 0}],
-     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
-\[ThickSpace]",
-     Cell[BoxData[
-      ActionMenuBox[
-       FrameBox[
-        InterpretationBox[Cell[TextData[{
-          "URL",
-          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
-           StripOnInput->False]
-         }]],
-         TextCell[
-          Row[{"URL", 
-            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
-        StripOnInput->False], {"\<\"QSSRHelper/ref/IndexSimplify\"\>":>
-       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell["QSSRHelper/ref/IndexSimplify"]}, Visible -> False]]; 
-        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
-       Delimiter, "\<\"Copy web URL\"\>":>
-       Module[{DocumentationSearch`Private`nb$}, 
-        DocumentationSearch`Private`nb$ = NotebookPut[
-           Notebook[{
-             Cell[
-              BoxData[
-               MakeBoxes[
-                Hyperlink[
-                "http://reference.wolfram.com/language/QSSRHelper/ref/\
+   {Cell["Q S S R HELPER SYMBOL", "PacletNameCell"], Cell[TextData[Cell[
+    BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"QSSRHelper/ref/IndexSimplify\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["QSSRHelper/ref/IndexSimplify"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/QSSRHelper/ref/\
 IndexSimplify.html"], StandardForm]], "Input", TextClipboardType -> 
-              "PlainText"]}, Visible -> False]]; 
-        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
-        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
-        NotebookClose[DocumentationSearch`Private`nb$]; 
-        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
-         NotebookLocate[{
-           URL[
-            StringJoin[
-             If[
-              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$12190], 
-              "http://reference.wolfram.com/system-modeler/", 
-              "http://reference.wolfram.com/language/"], 
-             "QSSRHelper/ref/IndexSimplify", ".html"]], None}]}]},
-       Appearance->None,
-       MenuAppearance->Automatic,
-       MenuStyle->"URLMenu"]],
-      LineSpacing->{1.4, 0}]
-    }], "AnchorBar"]}
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$11749], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "QSSRHelper/ref/IndexSimplify", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
      Scaled[0.65], {
@@ -107,46 +86,13 @@ Cell[TextData[{
 Cell[BoxData[GridBox[{
    {"", Cell[TextData[{
      Cell[BoxData[
-      RowBox[{"IndexSimplify", "[", 
-       StyleBox["expr", "TI"], "]"}]], "InlineFormula"],
-     " \[LineSeparator]IndexSimplify "
+      RowBox[{"IndexSimplify", "[", "]"}]], "InlineFormula"],
+     " \[LineSeparator]IndexSimplify"
     }]]}
   }]], "Usage",
  GridBoxOptions->{
  GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
  CellID->982511436],
-
-Cell[CellGroupData[{
-
-Cell[TextData[{
- Cell[BoxData[
-  TemplateBox[{6},
-   "Spacer1"]]],
- "See Also"
-}], "SeeAlsoSection",
- WholeCellGroupOpener->True,
- CellID->1255426704],
-
-Cell[TextData[{
- Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["QSimplify2"]], "paclet:QSSRHelper/ref/QSimplify2"},
-   "RefLink",
-   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"],
- "\[NonBreakingSpace]",
- StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
-  "InlineSeparator"],
- " ",
- Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["QExpand"]], "paclet:QSSRHelper/ref/QExpand"},
-   "RefLink",
-   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]
-}], "SeeAlso",
- CellID->929782353]
-}, Open  ]],
 
 Cell[" ", "FooterCell"]
 },
@@ -165,12 +111,12 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2022, 2, 24, 18, 9, 38.0501439}", 
+   "built" -> "{2022, 3, 4, 20, 19, 57.1061190}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
     "Q S S R Helper Symbol", "language" -> "en", "paclet" -> "QSSRHelper", 
-    "status" -> "None", "summary" -> "IndexSimplify[expr] IndexSimplify ", 
+    "status" -> "None", "summary" -> "IndexSimplify[] IndexSimplify", 
     "synonyms" -> {}, "tabletags" -> {}, "title" -> "IndexSimplify", 
     "titlemodifier" -> "", "windowtitle" -> "IndexSimplify", "type" -> 
     "Symbol", "uri" -> "QSSRHelper/ref/IndexSimplify"}},
@@ -198,18 +144,12 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[585, 21, 3127, 75, 70, "AnchorBarGrid",ExpressionUUID->"fbafdc09-3260-439c-ae0c-d4a968c37667",
+Cell[585, 21, 2311, 54, 70, "AnchorBarGrid",ExpressionUUID->"f71bf940-8700-4574-be46-867d1e46dd90",
  CellID->1],
-Cell[3715, 98, 170, 6, 70, "ObjectNameGrid",ExpressionUUID->"b2084997-9259-4ffb-bfab-4b770d57abea"],
-Cell[3888, 106, 328, 10, 70, "Usage",ExpressionUUID->"fd3c3a00-3a83-485a-9d69-656f00e498e9",
+Cell[2899, 77, 170, 6, 70, "ObjectNameGrid",ExpressionUUID->"f219cc3d-56d2-4f1a-89b0-5a1fef93bbd3"],
+Cell[3072, 85, 295, 9, 70, "Usage",ExpressionUUID->"0700c408-4e30-4ffc-97cd-519571a382ef",
  CellID->982511436],
-Cell[CellGroupData[{
-Cell[4241, 120, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"89ca2ed8-84a8-4191-a871-b1536e9533a9",
- CellID->1255426704],
-Cell[4394, 129, 562, 18, 70, "SeeAlso",ExpressionUUID->"08a203f7-5b27-4663-aafb-8098178c92e0",
- CellID->929782353]
-}, Open  ]],
-Cell[4971, 150, 23, 0, 70, "FooterCell",ExpressionUUID->"8197ac98-8db3-44eb-adcc-56612847d9d9"]
+Cell[3370, 96, 23, 0, 70, "FooterCell",ExpressionUUID->"68c24232-749c-4724-b619-555bb1c0f512"]
 }
 ]
 *)

@@ -191,7 +191,7 @@ If[FreeQ[tmp,Momentum[p,___]],
 		tf=If[tf==="ForcetoTable",True,False](* if just a scalar, not show as table *)
 	,
 		(* collect the terms only differ by the tensor structure *)
-		tmp=Flatten[Gather[tmp,(Expand[Plus@@(#1[[2]]+#2[[2]])]===0)||(Expand[Plus@@(#1[[2]]-#2[[2]])]===0)&],1]
+		tmp=Flatten[Gather[tmp,(Expand[Plus@@(#1[[2]])+Plus@@(#2[[2]])]===0)||(Expand[Plus@@(#1[[2]])-Plus@@(#2[[2]])]===0)&],1]
 	];
 	
 	

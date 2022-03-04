@@ -52,6 +52,10 @@ qTFI::usage = "qTFI[{u_,v_,r_,s_,t_},{v1_,v2_,v3_,v4_,v5_},{k1_,k2_,p_,{Rules___
 
 qdelta::usage = "Delta symbol used in FourierXP, FourierPX, QNormal, and QEvaluate."
 
+
+
+$AC::usage = "Head of dummy Color index which is automatically generated."
+
 (*-------------------------------------------------------------------------------------------*)
 
 Options[qGamma2]={
