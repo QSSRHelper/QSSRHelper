@@ -16,7 +16,12 @@ Begin["`Private`IndexSimplify`"]
 
 
 
-Options[IndexSimplify] = {Cyclic->False,NonCommutative->{},Contract->False}
+Options[IndexSimplify] = {
+	Cyclic->False,
+	NonCommutative->{},
+	Contract->False,
+	Lorentz->"Auto",
+	Color->"Auto"}
 
 
 
@@ -68,7 +73,7 @@ tmp=tmp/.{Eps->eps,DiracGamma->dgamma,DiracSigma->sigma,Pair->pair,SUNT->sunt,SU
 		{LorentzIndex->lindex,SUNIndex->sindex};
 
 
-tmp=gatherdummy[tmp,{sigma,eps,lindex,sindex,$AL}]/.{times->Times,tmp3->Times};
+tmp=gatherdummy[tmp,{sigma,eps,lindex,sindex,$AL},If[MatchQ[OptionValue[Lorentz],_List],OptionValue[Lorentz],"Auto"]]/.{times->Times,tmp3->Times};
 
 
 
@@ -77,7 +82,7 @@ tmp=gatherdummy[tmp,{sigma,eps,lindex,sindex,$AL}]/.{times->Times,tmp3->Times};
 tmp=tmp tmp3[null1]null1;
 tmp=tmp//.{tmp3[aa__]bb_sund:>tmp3[aa,bb],tmp3[aa__]bb_sunf:>tmp3[aa,bb]};
 tmp=Replace[tmp,Times->times,{3},Heads->True]/.null1->1;
-tmp=If[Length[#]>1,gatherdummy[#,{sunf,sund,sindex,lindex,$AC}],{#}]&/@tmp;
+tmp=If[Length[#]>1,gatherdummy[#,{sunf,sund,sindex,lindex,$AC},If[MatchQ[OptionValue[Color],_List],OptionValue[Color],"Auto"]],{{#}}]&/@tmp;
 
 
 
@@ -106,7 +111,7 @@ Plus@@(Simplify[#]&/@tmp)
 
 
 
-gatherdummy[expr_,{symm1_,symm2_,index_,index2_,aindex_}]:=Block[{tmp,tmp3,tmp4,times,sym1=symm1,sym2=symm2,
+gatherdummy[expr_,{symm1_,symm2_,index_,index2_,aindex_},dummy_]:=Block[{tmp,tmp3,tmp4,times,sym1=symm1,sym2=symm2,
 	indxx=index,indxx2=index2,function,lor,col,tmpindx,indxhead,indices,warning},
 
 
@@ -242,7 +247,13 @@ tmp=Gather[tmp,((#1[[2]]===#2[[2]])&&(#1[[3]]===#2[[3]]))&];
 
 (* rename the dummy indices *)
 tmp=If[Length[#]>1,
-		indices=Table[aindex[Unique[]],Length[#[[1,4]]]];
+		If[MatchQ[dummy,_List],
+			(* use specified dummy indices *)
+			indices=Join[dummy,Table[aindex[Unique[]],Length[#[[1,4]]]-Length[dummy]]]
+		,
+			indices=Table[aindex[Unique[]],Length[#[[1,4]]]]
+		];
+		
 		(#[[1]]/.Thread[Rule[#[[4]],indices]])&/@#
 	,
 		{#[[1,1]]}

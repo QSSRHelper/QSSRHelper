@@ -153,7 +153,7 @@ TaggingRules->{
     Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
   None, "RootCaptions" -> "", 
   "Metadata" -> {
-   "built" -> "{2022, 3, 4, 20, 20, 3.3303664}", 
+   "built" -> "{2022, 3, 5, 20, 0, 45.8473009}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -186,19 +186,19 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[582, 21, 3045, 74, 70, "AnchorBarGrid",ExpressionUUID->"ba6b81ba-352a-4f2c-9362-0feeacd9cb2d",
+Cell[582, 21, 3045, 74, 70, "AnchorBarGrid",ExpressionUUID->"2383c707-d0f7-4892-adbd-a2e830a176cb",
  CellID->1],
-Cell[3630, 97, 167, 6, 70, "ObjectNameGrid",ExpressionUUID->"080d6a3e-675c-4420-ad16-63767420a6a1"],
-Cell[3800, 105, 289, 9, 70, "Usage",ExpressionUUID->"f8ef2eab-fde2-43d2-8efd-509f273ac319",
+Cell[3630, 97, 167, 6, 70, "ObjectNameGrid",ExpressionUUID->"6b5f841b-1221-48ff-9782-43218068d0be"],
+Cell[3800, 105, 289, 9, 70, "Usage",ExpressionUUID->"753c7ed2-00ca-4c63-91da-0eafaa0c32e3",
  CellID->982511436],
 Cell[CellGroupData[{
-Cell[4114, 118, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"10cbe00c-5adc-406f-bd81-94f60a4264e1",
+Cell[4114, 118, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"dc34f491-0d3b-48af-80f8-73e0f378a8ae",
  CellID->38303248],
-Cell[4273, 127, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"7889da3b-e7a6-435a-94a8-f47a2e936f1b"],
-Cell[4307, 129, 171, 6, 70, "MoreAbout",ExpressionUUID->"e18763b9-7b76-4d7e-ae24-2533422a28d4",
+Cell[4273, 127, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"f7f63008-1126-4862-91d2-3de1fe51b0f6"],
+Cell[4307, 129, 171, 6, 70, "MoreAbout",ExpressionUUID->"ec922b3b-8fbc-418f-b11a-a24cda99d58b",
  CellID->1]
 }, Open  ]],
-Cell[4493, 138, 23, 0, 70, "FooterCell",ExpressionUUID->"8aa2c11c-de22-4d0b-9108-c53164117216"]
+Cell[4493, 138, 23, 0, 70, "FooterCell",ExpressionUUID->"e9d849e6-fc79-4243-afe0-1ff4c8b3d3cd"]
 }
 ]
 *)
