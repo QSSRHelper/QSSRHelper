@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Wolfram Language package *)
 
 (* Author: ShungHong Li *)
@@ -100,6 +102,9 @@ If[FreeQ[tmp,Momentum[p,___]],
 			
 			tmp=QGather[tmp,p,Subtract->OptionValue[Subtract],SelectD->True,Table->"ForcetoTable"];
 			
+			
+			(*
+			
 		(*  MTD[a,b]\[Rule] MTD[a,b] + FVD[p,a]FVD[p,b]/SPD[p], then MTD[a,b]\[Rule] MTD[a,b]- FVD[p,a]FVD[p,b]/SPD[p] in the end *)
 			tmp=tmp/.Pair[LorentzIndex[x_,dim___],LorentzIndex[y_,dim___]]:>
 					 null1[x,y] Pair[LorentzIndex[x,dim],LorentzIndex[y,dim]]+Pair[Momentum[p,dim],LorentzIndex[x,dim]]Pair[Momentum[p,dim],LorentzIndex[y,dim]]/Pair[Momentum[p,dim],Momentum[p,dim]];
@@ -127,7 +132,9 @@ If[FreeQ[tmp,Momentum[p,___]],
 			
 			tmp=tmp/.{Pair[LorentzIndex[x_,dim___],LorentzIndex[y_,dim___]]:>
 					Pair[LorentzIndex[x,dim],LorentzIndex[y,dim]]-Pair[Momentum[p,dim],LorentzIndex[x,dim]]Pair[Momentum[p,dim],LorentzIndex[y,dim]]/Pair[Momentum[p,dim],Momentum[p,dim]],null1[___]->1}
+			*)
 			
+			Plus@@((#[[1]]Plus@@#[[2]])&/@tmp)
 							
 		,
 			QEvaluate2[tmp,p,Order->OptionValue[Order],D->dimm,Subtract->OptionValue[Subtract],OnebyOne->OptionValue[OnebyOne]]

@@ -333,11 +333,11 @@
 		"BulkRetrievalOptimized" -> False
 	|>,
 	<|
-		"Name" -> "ExampleText",
+		"Name" -> "Text",
 		"Type" -> "Text",
-		"Weight" -> 0.05,
 		"Tokenized" -> True,
 		"Stored" -> False,
+		"Weight" -> 1,
 		"Searchable" -> True,
 		"Language" -> "English",
 		"IgnoreCase" -> True,
@@ -348,11 +348,11 @@
 		"BulkRetrievalOptimized" -> False
 	|>,
 	<|
-		"Name" -> "Text",
+		"Name" -> "ExampleText",
 		"Type" -> "Text",
+		"Weight" -> 0.05,
 		"Tokenized" -> True,
 		"Stored" -> False,
-		"Weight" -> 1,
 		"Searchable" -> True,
 		"Language" -> "English",
 		"IgnoreCase" -> True,
