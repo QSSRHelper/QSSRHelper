@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    212395,       5078]
+NotebookDataLength[    212396,       5078]
 NotebookOptionsPosition[    205506,       4929]
-NotebookOutlinePosition[    207963,       4989]
-CellTagsIndexPosition[    207920,       4986]
+NotebookOutlinePosition[    207964,       4989]
+CellTagsIndexPosition[    207921,       4986]
 WindowTitle->Evaluation by Fourier Transformation
 WindowFrame->Normal*)
 
@@ -21,7 +21,7 @@ WindowFrame->Normal*)
 Notebook[{
 Cell[BoxData[GridBox[{
    {Cell["Q S S R HELPER TUTORIAL", "PacletNameCell",ExpressionUUID->
-     "490de626-25c6-49d1-b51f-5909e70cefe8"], Cell[TextData[{
+     "33476cb3-8602-4cf5-a5f0-73ed7c6f66d5"], Cell[TextData[{
      Cell[BoxData[
       ActionMenuBox[
        FrameBox[
@@ -29,7 +29,7 @@ Cell[BoxData[GridBox[{
           "Related Tutorials",
           StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
            StripOnInput->False]
-         }],ExpressionUUID->"30f62184-f31b-4103-afd3-08e7a58b4da5"],
+         }],ExpressionUUID->"baa692be-a974-4999-8ebd-fe9136529a0d"],
          TextCell[
           Row[{"Related Tutorials", 
             Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
@@ -40,7 +40,7 @@ Cell[BoxData[GridBox[{
        MenuAppearance->Automatic,
        MenuStyle->"RelatedTutorialsSection"]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "4f3bb3e3-8a64-43ac-aec8-33df931a88c2"],
+      "f371293c-3769-4247-9dd9-fb45e6272c0e"],
      "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
 \[ThickSpace]",
      Cell[BoxData[
@@ -50,7 +50,7 @@ Cell[BoxData[GridBox[{
           "URL",
           StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
            StripOnInput->False]
-         }],ExpressionUUID->"bd9f8405-e3d6-4985-a73b-bcfb8815f233"],
+         }],ExpressionUUID->"62de5fa9-4a9d-4c0c-95b6-553408c69e3f"],
          TextCell[
           Row[{"URL", 
             Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
@@ -94,14 +94,14 @@ Evaluation by Fourier Transformation.html"], StandardForm]], "Input",
        MenuAppearance->Automatic,
        MenuStyle->"URLMenu"]],
       LineSpacing->{1.4, 0},ExpressionUUID->
-      "a57b4b91-351e-44e2-9b30-27cd6a7cc923"]
-    }], "AnchorBar",ExpressionUUID->"f8746821-d005-421c-9629-72bd5dbd6ffb"]}
+      "d7285a41-e43c-4eca-a625-5188560db545"]
+    }], "AnchorBar",ExpressionUUID->"cf079a43-5ce3-4b44-b0e1-00af35a7b12b"]}
   }]], "AnchorBarGrid",
  GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
      Scaled[0.65], {
       Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
    "RowsIndexed" -> {}}},
- CellID->1,ExpressionUUID->"e22756ca-9040-460b-9b4e-70249b721e02"],
+ CellID->1,ExpressionUUID->"69e30005-c0e8-4952-819e-436479a34d6a"],
 
 Cell[CellGroupData[{
 
@@ -4908,13 +4908,13 @@ Cell[CellGroupData[{
 Cell[TextData[{
  Cell[BoxData[
   TemplateBox[{6},
-   "Spacer1"]],ExpressionUUID->"8aeac0c1-9dbb-47a8-a68b-50942b62af56"],
+   "Spacer1"]],ExpressionUUID->"bc4a8882-70ff-4c75-ba16-2c5eb0016ba1"],
  "Related Tutorials"
 }], "RelatedTutorialsSection",
  WholeCellGroupOpener->True,
  CellID->415694126,ExpressionUUID->"994a116f-def5-4cf0-af21-0ede675b4844"],
 
-Cell["", "SectionHeaderSpacer",ExpressionUUID->"b00ee9db-e0a6-472e-848f-0a4c41c8dd0d"],
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"f2cc0510-42aa-4576-a5dd-8af2a6c3c26f"],
 
 Cell[TextData[ButtonBox["Evaluation by loop integral",
  BaseStyle->"Link",
@@ -4925,7 +4925,7 @@ Cell[TextData[ButtonBox["Evaluation by loop integral",
 }, Open  ]]
 }, Open  ]],
 
-Cell[" ", "FooterCell",ExpressionUUID->"fe645788-8606-4af4-a1da-6789e39cf11e"]
+Cell[" ", "FooterCell",ExpressionUUID->"a21573b3-43c4-4a7b-bc6f-75f3064a715a"]
 },
 Saveable->False,
 ScreenStyleEnvironment->"Working",
@@ -4941,7 +4941,7 @@ TaggingRules->{
          BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
     Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
   "", "Metadata" -> {
-   "built" -> "{2022, 3, 12, 13, 43, 7.1441840}", 
+   "built" -> "{2022, 3, 12, 16, 23, 15.9362058}", 
     "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
     "keywords" -> {}, "specialkeywords" -> {}, 
     "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
@@ -4975,7 +4975,7 @@ StyleDefinitions->Notebook[{
     CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
   FrontEndVersion -> "12.1 for Microsoft Windows (64-bit) (June 9, 2020)", 
   StyleDefinitions -> "Default.nb"],
-ExpressionUUID->"017b1e15-2e9e-4818-8d41-4ff663827113"
+ExpressionUUID->"8bd05e67-586b-4545-8d33-af48f2dda02f"
 ]
 (* End of Notebook Content *)
 
@@ -4988,7 +4988,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[608, 21, 3686, 82, 54, "AnchorBarGrid",ExpressionUUID->"e22756ca-9040-460b-9b4e-70249b721e02",
+Cell[608, 21, 3686, 82, 54, "AnchorBarGrid",ExpressionUUID->"69e30005-c0e8-4952-819e-436479a34d6a",
  CellID->1],
 Cell[CellGroupData[{
 Cell[4319, 107, 128, 1, 112, "Title",ExpressionUUID->"3cbe449b-a0a2-4257-aba8-2e92e11fc8cb",
@@ -5074,12 +5074,12 @@ Cell[200115, 4749, 4617, 152, 106, "Output",ExpressionUUID->"aa3e1e8a-4eeb-48f1-
 Cell[CellGroupData[{
 Cell[204781, 4907, 277, 7, 70, "RelatedTutorialsSection",ExpressionUUID->"994a116f-def5-4cf0-af21-0ede675b4844",
  CellID->415694126],
-Cell[205061, 4916, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"b00ee9db-e0a6-472e-848f-0a4c41c8dd0d"],
+Cell[205061, 4916, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"f2cc0510-42aa-4576-a5dd-8af2a6c3c26f"],
 Cell[205150, 4918, 247, 5, 70, "RelatedTutorials",ExpressionUUID->"92b52d10-53ea-42ec-b2b9-809b7ed60d48",
  CellID->806871991]
 }, Open  ]]
 }, Open  ]],
-Cell[205424, 4927, 78, 0, 70, "FooterCell",ExpressionUUID->"fe645788-8606-4af4-a1da-6789e39cf11e"]
+Cell[205424, 4927, 78, 0, 70, "FooterCell",ExpressionUUID->"a21573b3-43c4-4a7b-bc6f-75f3064a715a"]
 }
 ]
 *)
