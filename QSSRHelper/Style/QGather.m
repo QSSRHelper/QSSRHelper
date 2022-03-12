@@ -46,7 +46,7 @@ QGather[expr_List,p_,rules___Rule]/;And@@(MatchQ[#,{_,_List}]&/@expr):=Plus@@((#
 
 
 QGather[expr:Except[_List],p_,OptionsPattern[]]:=Block[
-{tmp,tmp2,tmplor,tmpcoe,tmprem,tmp0,list={},list2,nonc,dot,log,llog,null,null1,null0,null2,nulllor,i,n={},l,nn,m,k,ldim,lorentzIndex,tf=OptionValue[Table],separate=OptionValue[Transverse],subtract=OptionValue[Subtract],nullist,fact,spdfad=False,ord},
+{tmp,tmp2,tmplor,tmpcoe,tmprem,tmp0,list={},list2,count,dot,log,llog,null,null1,null0,null2,nulllor,i,n={},l,nn,m,k,ldim,lorentzIndex,tf=OptionValue[Table],separate=OptionValue[Transverse],subtract=OptionValue[Subtract],nullist,fact,spdfad=False,ord},
 tmp=expr//FCI//Expand;
 
 tmp2=Cases[tmp,LorentzIndex[lo_,___]:>lo,Infinity];
@@ -76,33 +76,22 @@ If[FreeQ[tmp,Momentum[p,___]],
 											FeynAmpDenominator[PropagatorDenominator[aa_ Momentum[bb_ p,di___],mass_]]:>
 												1/((aa bb)^2 Pair[Momentum[p,di],Momentum[p,di]])}
 	];
-*)	
+*)
 	
-			
-	(* check the number of Lorentz index *)
-	tmp=tmp//.{Eps[x___,LorentzIndex[lo_,di___],y___]:>null Eps[x,lorentzIndex[lo,di],y],Pair[LorentzIndex[lo_,di___],mom_]:>null Pair[lorentzIndex[lo,di],mom],
-				\!\(\*
-TagBox[
-StyleBox[
-RowBox[{"DiracGamma", "[", 
-RowBox[{
-RowBox[{"LorentzIndex", "[", 
-RowBox[{"lo_", ",", "di___"}], "]"}], ",", "di___"}], "]"}],
-ShowSpecialCharacters->False,
-ShowStringCharacters->True,
-NumberMarks->True],
-FullForm]\):>null DiracGamma[lorentzIndex[lo,di],di]};
-				
-	tmp=tmp/.Dot->dot;
-	tmp=tmp//.dot[aa___,null bb_DiracGamma,dd___]:>null dot[aa,bb,dd];
+	(*--- check the number of free Lorentz indeices ---*)
+	tmp=tmp//Expand;
+	If[Head[tmp]===Plus,
+		tmp=(# count[Cases[#,LorentzIndex[lo_,___]:>lo,Infinity]])&/@tmp;
+		tmp=tmp/.count[aa_]:>count^(2Length[DeleteDuplicates[aa]]-Length[aa])
+	];
 	
+	n=Exponent[tmp,count,List];
+	If[(Length[n]=!=1),Print["Lorentz structure inconsistent! make sure the input is correct."]];
+	n=n[[1]];
 	
-	n=Exponent[tmp,null,List][[1]];
-	If[(Length[Exponent[tmp,null,List]]=!=1)&&(n=!=0),Print["Lorentz structure inconsistent! make sure the input is correct."]];
+	tmp=tmp/.count->1;
 
 	
-	tmp=tmp/.{lorentzIndex->LorentzIndex,null->1};
-
 (*------------------------- refine the log term make it more compact as usuall form -------------------------------*)
 	tmp=tmp/.{Log[Power[Pair[Momentum[p,di___],Momentum[p,di___]],po_Integer]]/;Negative[po]:> -Log[Power[Pair[Momentum[p,D],Momentum[p,D]],-po]],
 						Log[aa_ Power[Pair[Momentum[p,di___],Momentum[p,di___]],po_Integer]]/;Negative[po]:> -Log[Power[Pair[Momentum[p,D],Momentum[p,D]],-po]/aa]};
@@ -145,30 +134,22 @@ FullForm]\):>null DiracGamma[lorentzIndex[lo,di],di]};
 	(* gather to a list *)
 	If[n>0,
 		tmp=tmp//Expand;
-		
-		(*If[Head[tmp]===Plus,
-			tmp=List@@tmp;
-			tmp=Gather[tmp,(Replace[#1,Except[_Eps|_Pair[LorentzIndex[__],_]|DiracGamma[LorentzIndex[__],_]|DiracGamma[Momentum[_,___],_]|_dot]->1,{1}]===
-							Replace[#2,Except[_Eps|_Pair[LorentzIndex[__],_]|DiracGamma[LorentzIndex[__],_]|DiracGamma[Momentum[_,___],_]|_dot]->1,{1}])&]
-		
-		];*)
-		
-		
+		tmp=tmp/.Dot->dot;
 		
 	(* //////// get the terms have same Lorentz structure with first term //////////*)
 		While[Head[tmp]===Plus,
-			tmpcoe=tmp[[1]]/.{Eps[__]:>1,Pair[LorentzIndex[__],_]:>1,DiracGamma[LorentzIndex[__],_]:>1,DiracGamma[Momentum[_,___],_]:>1}/._dot->1;
+			tmpcoe=tmp[[1]]/.{Eps[__]:>1,Pair[LorentzIndex[__],_]:>1,DiracGamma[LorentzIndex[__],___]:>1,DiracGamma[Momentum[_,___],___]:>1}/._dot->1;
 			tmplor=tmp[[1]]/tmpcoe;
 
 			tmprem=tmp/.tmplor:>0;
-			tmp0=tmp-tmprem/.{Eps[__]:>1,Pair[LorentzIndex[__],_]:>1,DiracGamma[LorentzIndex[__],_]:>1,DiracGamma[Momentum[_,___],_]:>1}/._dot->1;
+			tmp0=tmp-tmprem/.{Eps[__]:>1,Pair[LorentzIndex[__],_]:>1,DiracGamma[LorentzIndex[__],___]:>1,DiracGamma[Momentum[_,___],___]:>1}/._dot->1;
 
 			tmp=tmprem;
 			list=Append[list,{tmplor,tmp0}]
 			];
 
 		If[tmp=!=0,
-			tmpcoe=tmp/.{Eps[__]:>1,Pair[LorentzIndex[__],_]:>1,DiracGamma[LorentzIndex[__],_]:>1,DiracGamma[Momentum[_,___],_]:>1}/._dot->1;
+			tmpcoe=tmp/.{Eps[__]:>1,Pair[LorentzIndex[__],_]:>1,DiracGamma[LorentzIndex[__],___]:>1,DiracGamma[Momentum[_,___],___]:>1}/._dot->1;
 			tmplor=tmp/tmpcoe;
 			list=Append[list,{tmplor,tmpcoe}]
 			];
