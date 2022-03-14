@@ -82,7 +82,7 @@ tmp=gatherdummy[tmp,{sigma,eps,lindex,sindex,$AL},If[MatchQ[OptionValue[Lorentz]
 tmp=tmp tmp3[null1]null1;
 tmp=tmp//.{tmp3[aa__]bb_sund:>tmp3[aa,bb],tmp3[aa__]bb_sunf:>tmp3[aa,bb]};
 tmp=Replace[tmp,Times->times,{3},Heads->True]/.null1->1;
-tmp=If[Length[#]>1,gatherdummy[#,{sunf,sund,sindex,lindex,$AC},If[MatchQ[OptionValue[Color],_List],OptionValue[Color],"Auto"]],{{#}}]&/@tmp;
+tmp=If[Length[#]>1,gatherdummy[#,{sunf,sund,sindex,lindex,$AC},If[MatchQ[OptionValue[Color],_List],OptionValue[Color],"Auto"]],{#}]&/@tmp;
 
 
 
