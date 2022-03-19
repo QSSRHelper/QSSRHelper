@@ -81,8 +81,9 @@ tmp=tmp/.{Eps->eps,DiracGamma->dgamma,DiracSigma->sigma,Pair->pair,SUNT->sunt,SU
 
 
 (* options about symmetry *)
-If[!FreeQ[ToLowerCase[ToString[#]]&/@OptionValue[Symmetry],"cyclic"],symm=Append[symm,"cyclic"]];
-If[!FreeQ[ToLowerCase[ToString[#]]&/@OptionValue[Symmetry],"reverse"],symm=Append[symm,"reverse"]];
+
+If[(!FreeQ[ToLowerCase[ToString[#]]&/@OptionValue[Symmetry],"cyclic"])||(ToLowerCase[ToString[OptionValue[Symmetry]]]=="cyclic"),symm=Append[symm,"cyclic"]];
+If[(!FreeQ[ToLowerCase[ToString[#]]&/@OptionValue[Symmetry],"reverse"])||(ToLowerCase[ToString[OptionValue[Symmetry]]]=="reverse"),symm=Append[symm,"reverse"]];
 
 
 tmp=gatherdummy[tmp,{sigma,eps,lindex,sindex,$AL},If[MatchQ[OptionValue[Lorentz],_List],OptionValue[Lorentz],"Auto"],symm]/.{times->Times,tmp3->Times};
@@ -135,7 +136,7 @@ tmp=expr;
 
 
 
-(* brutely enumerate all possible situation *)
+(* brutely generate all terms differ by cyclic or reverse *)
 	(* if treat terms in dot[] differ by cyclic are equivalent *)
 If[!FreeQ[ToLowerCase[ToString[#]]&/@symmetry,"cyclic"],
 	tmp=(#/.bb_dot:>(n=Length[bb];dot2@@Join[n,Table[dot@@Join[List@@bb[[j+1;;]],List@@bb[[1;;j]]],{j,0,n-1}]]))&/@tmp;
@@ -158,14 +159,14 @@ If[!FreeQ[ToLowerCase[ToString[#]]&/@symmetry,"cyclic"],
 
 	(* if treat terms in dot[] differ by reverse are equivalent *)
 If[!FreeQ[ToLowerCase[ToString[#]]&/@symmetry,"reverse"],
-	tmp=(#/.bb_dot:>(n=Length[bb];dot2@@Join[n,Table[dot@@Join[List@@bb[[j+1;;]],List@@bb[[1;;j]]],{j,0,n-1}]]))&/@tmp;
+	tmp=(#/.bb_dot:>dot2[bb,Reverse[bb]])&/@tmp;
 		
 	tmp=(tmp2=If[Head[#]===List,#,{#}];
 		While[!FreeQ[tmp2,dot2],
 
 			tmp2=Flatten[
 				(position=FirstPosition[#,dot2];
-				Table[ReplacePart[#,position[[;;-2]]->Extract[#,Join[position[[;;-2]],{2,i}]]],{i,1,Extract[#,Join[position[[;;-2]],{1}]]}]
+				{ReplacePart[#,position[[;;-2]]->Extract[#,Join[position[[;;-2]],{1}]]],ReplacePart[#,position[[;;-2]]->Extract[#,Join[position[[;;-2]],{2}]]]}
 				)&/@tmp2]
 		
 		];tmp2)&/@tmp;
@@ -176,10 +177,10 @@ If[!FreeQ[ToLowerCase[ToString[#]]&/@symmetry,"reverse"],
 
 
 (* superficially gather the terms merely differ by dummy indices (with the free indices omitted) *)
-(* by #[[2]] and #[[3]] in {_,_,_,_} in the output of gatherdummy2 *)
+(* by #[[2]] in {_,_,_} in the output of gatherdummy2 *)
 If[!FreeQ[ToLowerCase[ToString[#]]&/@symmetry,"reverse"|"cyclic"],
 	(* brutely enumerate all possible situation to see whether exist terms differ by cyclic or reverse *)
-	tmp=((gatherdummy2[#,{symm1,symm2,index,index2,aindex},dummy]/.{aa_,bb_,cc_,dd_}:>{aa,{bb,cc},dd})&/@#)&/@tmp;
+	tmp=((gatherdummy2[#,{symm1,symm2,index,index2,aindex},dummy])&/@#)&/@tmp;
 
 	tmp2={};
 	While[Length[tmp]>0,
@@ -192,8 +193,8 @@ If[!FreeQ[ToLowerCase[ToString[#]]&/@symmetry,"reverse"|"cyclic"],
 		    {v,u,u,v}              {u,u,v,v}    choose the first matched case for each term
 		    {u,u,v,v}}             {u,v,v,u}} *)
 
-		(* extract the terms differ by cyclic or reverse of dot[...]; restore to the form of the output of gatherdummy2 *)
-		tmp2=Join[tmp2,{Replace[Extract[tmp,position],{aa_,bb_,cc_}:>{aa,bb[[1]],bb[[2]],cc},{1}]}];
+		(* extract the terms differ by cyclic or reverse of dot[...] *)
+		tmp2=Join[tmp2,{Extract[tmp,position]}];
 
 		(* remove equivalent terms *)
 		position={#[[1]]}&/@position;
@@ -207,7 +208,7 @@ If[!FreeQ[ToLowerCase[ToString[#]]&/@symmetry,"reverse"|"cyclic"],
 	(* if the order of terms in dot is relevant *)
 	tmp=gatherdummy2[#,{symm1,symm2,index,index2,aindex},dummy]&/@tmp;
 	
-	tmp=Gather[tmp,((#1[[2]]===#2[[2]])&&(#1[[3]]===#2[[3]]))&];
+	tmp=Gather[tmp,(#1[[2]]===#2[[2]])&];
 ];
 
 
@@ -218,16 +219,16 @@ If[!FreeQ[ToLowerCase[ToString[#]]&/@symmetry,"reverse"|"cyclic"],
 tmp=If[Length[#]>1,
 		If[MatchQ[dummy,_List],
 			(* use specified dummy indices *)
-			indices=If[Length[dummy]<Length[#[[1,4]]],
-						Join[dummy,Table[aindex[Unique[]],Length[#[[1,4]]]-Length[dummy]]]
+			indices=If[Length[dummy]<Length[#[[1,3]]],
+						Join[dummy,Table[aindex[Unique[]],Length[#[[1,3]]]-Length[dummy]]]
 					,
-						dummy[[;;Length[#[[1,4]]] ]]	
+						dummy[[;;Length[#[[1,3]]] ]]	
 					]
 		,
-			indices=Table[aindex[Unique[]],Length[#[[1,4]]]]
+			indices=Table[aindex[Unique[]],Length[#[[1,3]]]]
 		];
 		
-		(#[[1]]/.Thread[Rule[#[[4]],indices]])&/@#
+		(#[[1]]/.Thread[Rule[#[[3]],indices]])&/@#
 	,
 		{#[[1,1]]}
 	]&/@tmp
@@ -239,7 +240,7 @@ tmp=If[Length[#]>1,
 
 
 (* extract the sturcture of dummy indices *)
-(* the output has the form: {term, term that depress the indices and remove the commutative part, the position of dummy indices, dummy indices } *)
+(* the output has the form: {term, {term that depress the indices and remove the commutative part, the position of dummy indices}, dummy indices } *)
 
 gatherdummy2[expr_,{symm1_,symm2_,index_,index2_,aindex_},dummy_]:=Block[{tmp,tmp3,tmp4,times,sym1=symm1,sym2=symm2,
 	indxx=index,indxx2=index2,function,lor,col,tmpindx,indxhead,indices,warning},
@@ -368,7 +369,7 @@ tmp=tmp/.function[head_,indx_]:>function[head,indx/.{{sym1,aa_}:>{sym1,Times@@aa
 
 
 (* times -> Times to avoid discuss the order of functions *)
-tmp={#[[1]],#[[2]]/.times->Times,#[[3]]/.times->Times,#[[4]]}&@tmp
+tmp={#[[1]],{#[[2]]/.times->Times,#[[3]]/.times->Times},#[[4]]}&@tmp
 
 
 
