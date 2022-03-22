@@ -17,12 +17,13 @@ Begin["`Private`IndexSimplify`"]
 
 
 Options[IndexSimplify] = {
-	Cyclic->False,
 	NonCommutative->{},
 	Contract->False,
 	Lorentz->"Auto",
 	Color->"Auto",
-	Symmetry->"None"}
+	Symmetry->"None",
+	QSimplify2->False,
+	QSimplify2Rules->{"null"}}
 
 
 
@@ -112,8 +113,11 @@ tmp=tmp//.dot[aa___,bb_,cc___]/;FreeQ[nonc,Head[bb]]:>bb dot[aa,cc];
 tmp=tmp/.dot->Dot;
 
 
-
-tmp=(Plus@@(Simplify[Plus@@#]&/@#))&/@tmp;
+If[OptionValue[QSimplify2]===True,
+	tmp=(Plus@@(QSimplify2[Plus@@#,Separate->OptionValue[QSimplify2Rules]]&/@#))&/@tmp;
+,
+	tmp=(Plus@@(Simplify[Plus@@#]&/@#))&/@tmp;
+];
 
 
 Plus@@(Simplify[#]&/@tmp)

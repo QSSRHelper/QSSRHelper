@@ -14,23 +14,33 @@ QSimplify2::usage= "QSimplify2[expr_,ruless___] is a function to combine same Lo
 
 Begin["`Private`QSimplify2`"]
 
+
+Options[QSimplify2] = {
+	Separate->{"null"}}
+
+
 (*---------------------------------------------------------------*)
 
-QSimplify2[expr_,ruless_List:{nullr}]:=Block[{tmp,fact,const1,const2,const3,identity,rules0,rules,null,nogamm,dot,qamm1,qamm2},
+QSimplify2[expr_,OptionsPattern[]]:=Block[{tmp,fact,const1,const2,const3,identity,ruless=OptionValue[Separate],rules0,rules,null,nogamm,dot,qamm1,qamm2},
 
 	tmp=expr//FCI//Expand;
 	tmp=tmp/.Dot->dot;
-
+	(*
 	rules0=If[And@@(MatchQ[#,_Rule]&/@ruless),ruless, ToExpression[StringJoin[ToString[#],"[___]->1"]]&/@ruless];
 	
 	rules=Join[{Power[xx_,po_]/;!FreeQ[xx,Pair[___]|FeynAmpDenominator[___]]->1,Pair[___]->1,FeynAmpDenominator[___]->1,
 					SUNT[___]->1,DiracGamma[___]->1,Eps[___]->1,DiracSigma[___]->1,dot[___]->1},rules0]//DeleteDuplicates;
+	*)
 	
+	rules0=If[And@@(MatchQ[#,_Rule]&/@ruless),#[[1]]&/@ruless, ruless];
+	rules=Join[{Pair,FeynAmpDenominator,DiracGamma,DiracSigma,Eps,SUNT,SUND,SUNF,SUNDelta,dot},rules0]//DeleteDuplicates;
+	rules=DeleteCases[rules,_String];
 	
 	If[Head[tmp]===Plus,
 		tmp=List@@tmp;
+	(*tmp={Replace[#,rules,{1}],Replace[#,Except[Alternatives@@(#[[1]]&/@rules)]->1,{1}]}&/@tmp;*)
 	
-		tmp={Replace[#,rules,{1}],Replace[#,Except[Alternatives@@(#[[1]]&/@rules)]->1,{1}]}&/@tmp;
+		tmp={Replace[#,aa_/;!FreeQ[aa,Alternatives@@rules]->1,{1}],Replace[#,aa_/;FreeQ[aa,Alternatives@@rules]->1,{1}]}&/@tmp;
 		tmp=Gather[tmp,Last[#1]==Last[#2]&];
 	
 

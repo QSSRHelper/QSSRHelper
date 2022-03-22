@@ -1,0 +1,804 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24875,        794]
+NotebookOptionsPosition[     20349,        688]
+NotebookOutlinePosition[     22650,        747]
+CellTagsIndexPosition[     22565,        742]
+WindowTitle->QSimplify
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["Q S S R HELPER SYMBOL", "PacletNameCell",ExpressionUUID->
+     "881409cc-318b-4577-8bb4-a24957eb04f5"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"bcadadd0-7d93-4997-8f52-bce5184713cf"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSimplify2\"\>":>Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/QSimplify2"], "\<\"IndexSimplify\"\>":>
+       Documentation`HelpLookup[
+       "paclet:QSSRHelper/ref/IndexSimplify"], "\<\"QGather\"\>":>
+       Documentation`HelpLookup["paclet:QSSRHelper/ref/QGather"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "61620d98-db94-4990-8d58-90320c135327"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"d312709e-0910-4b78-b734-a938b645850f"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"QSSRHelper/ref/QSimplify\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["QSSRHelper/ref/QSimplify"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/QSSRHelper/ref/\
+QSimplify.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]},
+             Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$22709], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "QSSRHelper/ref/QSimplify", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "9cfb36dc-2485-440e-af68-3ccd7fd0b799"]
+    }], "AnchorBar",ExpressionUUID->"501837d7-f781-4799-8ac8-a95329ed3ddb"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"43b2f402-321f-4a68-bbcc-77f23f783555"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["QSimplify", "ObjectName",ExpressionUUID->
+  "0807fb80-c8f3-4e77-b03c-0cf9a93cbe4a"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"ece4ba01-88be-49b0-9319-2cc60740112d"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "6e3c0745-a701-4cfa-9423-b0045ddd1141"]
+}], "ObjectNameGrid",ExpressionUUID->"98189646-4196-44d3-8021-5fe03c88c7a1"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"QSimplify", "[", 
+       StyleBox["expr_", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+      "6384434e-bebc-4021-97f2-aff3e5bd3ca7"],
+     " \[LineSeparator]QSimplify is a specific Simplify function that \
+simplify the dummy indices and Gamma functions."
+    }],ExpressionUUID->"c81dff61-c6c0-4da0-a771-c04d19480a34"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{"Columns" -> {{None}}, "Rows" -> {{None}}}},
+ CellID->982511436,ExpressionUUID->"43b8f36e-6042-4561-9e1b-2a841ba8b31b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"977f1986-dbab-4add-9b4b-1a24f7ca7da2"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "a3d8781b-d81a-4b42-afb4-9cb15885573e"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->48531973,ExpressionUUID->"41f99b34-490a-4e3d-82df-9ffcff943786"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "697cc84c-6a51-4be1-9ffc-81fc59ae1e0d"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->49101949,ExpressionUUID->"309e94ab-a728-43c8-98ba-154bd60e2cfc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tmp", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"GAD", "[", 
+     RowBox[{"u", ",", "v", ",", "r"}], "]"}], 
+    RowBox[{"g", "[", 
+     RowBox[{"arg1", ",", 
+      RowBox[{"GAD", "[", 
+       RowBox[{"v", ",", "u"}], "]"}], ",", 
+      RowBox[{"FVD", "[", 
+       RowBox[{"q", ",", "r"}], "]"}]}], "]"}], 
+    RowBox[{
+     RowBox[{"qGamma", "[", 
+      RowBox[{
+       RowBox[{"D", "/", "2"}], "-", "1"}], "]"}], "/", 
+     RowBox[{"qGamma", "[", 
+      RowBox[{"3", 
+       RowBox[{"D", "/", "2"}]}], "]"}]}]}], "+", 
+   RowBox[{
+    RowBox[{"GAD", "[", 
+     RowBox[{"u1", ",", "v1", ",", "r2"}], "]"}], 
+    RowBox[{"g", "[", 
+     RowBox[{"arg1", ",", 
+      RowBox[{"GAD", "[", 
+       RowBox[{"v1", ",", "u1"}], "]"}], ",", 
+      RowBox[{"FVD", "[", 
+       RowBox[{"q", ",", "r2"}], "]"}]}], "]"}], 
+    RowBox[{
+     RowBox[{"qGamma", "[", 
+      RowBox[{"D", "/", "2"}], "]"}], "/", 
+     RowBox[{"qGamma", "[", 
+      RowBox[{"3", 
+       RowBox[{"D", "/", "2"}]}], "]"}]}]}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->261005816,ExpressionUUID->"d638c84f-a7b5-4002-85b8-d6c97a07f7dc"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox["D", "2"], "-", "1"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["u",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm], ".", 
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["v",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm], ".", 
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["r",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm]}], " ", 
+     RowBox[{"g", "(", 
+      RowBox[{"arg1", ",", 
+       RowBox[{
+        FormBox[
+         SuperscriptBox["\[Gamma]", 
+          FormBox[
+           FormBox["v",
+            TraditionalForm],
+           TraditionalForm]],
+         TraditionalForm], ".", 
+        FormBox[
+         SuperscriptBox["\[Gamma]", 
+          FormBox[
+           FormBox["u",
+            TraditionalForm],
+           TraditionalForm]],
+         TraditionalForm]}], ",", 
+       FormBox[
+        SuperscriptBox[
+         FormBox[
+          FormBox["q",
+           TraditionalForm],
+          TraditionalForm], 
+         FormBox[
+          FormBox["r",
+           TraditionalForm],
+          TraditionalForm]],
+        TraditionalForm]}], ")"}]}], 
+    RowBox[{"\[CapitalGamma]", "(", 
+     FormBox[
+      FractionBox[
+       RowBox[{"3", " ", "D"}], "2"],
+      TraditionalForm], ")"}]], "+", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       FractionBox["D", "2"],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["u1",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm], ".", 
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["v1",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm], ".", 
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["r2",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm]}], " ", 
+     RowBox[{"g", "(", 
+      RowBox[{"arg1", ",", 
+       RowBox[{
+        FormBox[
+         SuperscriptBox["\[Gamma]", 
+          FormBox[
+           FormBox["v1",
+            TraditionalForm],
+           TraditionalForm]],
+         TraditionalForm], ".", 
+        FormBox[
+         SuperscriptBox["\[Gamma]", 
+          FormBox[
+           FormBox["u1",
+            TraditionalForm],
+           TraditionalForm]],
+         TraditionalForm]}], ",", 
+       FormBox[
+        SuperscriptBox[
+         FormBox[
+          FormBox["q",
+           TraditionalForm],
+          TraditionalForm], 
+         FormBox[
+          FormBox["r2",
+           TraditionalForm],
+          TraditionalForm]],
+        TraditionalForm]}], ")"}]}], 
+    RowBox[{"\[CapitalGamma]", "(", 
+     FormBox[
+      FractionBox[
+       RowBox[{"3", " ", "D"}], "2"],
+      TraditionalForm], ")"}]]}], TraditionalForm]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->241559682,ExpressionUUID->"04211428-30fa-4ef1-904d-e3709e5459d5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tmp", "//", "Simplify"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->20202019,ExpressionUUID->"39e0e54a-e908-48c3-bcf4-a3ba9520ae77"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       RowBox[{
+        FractionBox["D", "2"], "-", "1"}],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["u",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm], ".", 
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["v",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm], ".", 
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["r",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm]}], " ", 
+     RowBox[{"g", "(", 
+      RowBox[{"arg1", ",", 
+       RowBox[{
+        FormBox[
+         SuperscriptBox["\[Gamma]", 
+          FormBox[
+           FormBox["v",
+            TraditionalForm],
+           TraditionalForm]],
+         TraditionalForm], ".", 
+        FormBox[
+         SuperscriptBox["\[Gamma]", 
+          FormBox[
+           FormBox["u",
+            TraditionalForm],
+           TraditionalForm]],
+         TraditionalForm]}], ",", 
+       FormBox[
+        SuperscriptBox[
+         FormBox[
+          FormBox["q",
+           TraditionalForm],
+          TraditionalForm], 
+         FormBox[
+          FormBox["r",
+           TraditionalForm],
+          TraditionalForm]],
+        TraditionalForm]}], ")"}]}], "+", 
+    RowBox[{
+     RowBox[{"\[CapitalGamma]", "(", 
+      FormBox[
+       FractionBox["D", "2"],
+       TraditionalForm], ")"}], " ", 
+     RowBox[{
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["u1",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm], ".", 
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["v1",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm], ".", 
+      FormBox[
+       SuperscriptBox["\[Gamma]", 
+        FormBox[
+         FormBox["r2",
+          TraditionalForm],
+         TraditionalForm]],
+       TraditionalForm]}], " ", 
+     RowBox[{"g", "(", 
+      RowBox[{"arg1", ",", 
+       RowBox[{
+        FormBox[
+         SuperscriptBox["\[Gamma]", 
+          FormBox[
+           FormBox["v1",
+            TraditionalForm],
+           TraditionalForm]],
+         TraditionalForm], ".", 
+        FormBox[
+         SuperscriptBox["\[Gamma]", 
+          FormBox[
+           FormBox["u1",
+            TraditionalForm],
+           TraditionalForm]],
+         TraditionalForm]}], ",", 
+       FormBox[
+        SuperscriptBox[
+         FormBox[
+          FormBox["q",
+           TraditionalForm],
+          TraditionalForm], 
+         FormBox[
+          FormBox["r2",
+           TraditionalForm],
+          TraditionalForm]],
+        TraditionalForm]}], ")"}]}]}], 
+   RowBox[{"\[CapitalGamma]", "(", 
+    FormBox[
+     FractionBox[
+      RowBox[{"3", " ", "D"}], "2"],
+     TraditionalForm], ")"}]], TraditionalForm]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->116950761,ExpressionUUID->"089634f0-7807-4396-a84e-0aa21f7946d5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tmp", "//", "QSimplify"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->130004793,ExpressionUUID->"89dd393e-9047-49cc-b445-9f36ec905d1e"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"(", 
+    FormBox[
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        FormBox[
+         FractionBox["D", "2"],
+         TraditionalForm], ")"}], " ", 
+       RowBox[{"\[CapitalGamma]", "(", 
+        FormBox[
+         RowBox[{
+          FractionBox["D", "2"], "-", "1"}],
+         TraditionalForm], ")"}]}], 
+      RowBox[{"\[CapitalGamma]", "(", 
+       FormBox[
+        FractionBox[
+         RowBox[{"3", " ", "D"}], "2"],
+        TraditionalForm], ")"}]],
+     TraditionalForm], ")"}], " ", 
+   RowBox[{
+    SuperscriptBox["\[Gamma]", 
+     FormBox[
+      FormBox[
+       RowBox[{"$AL", "\[InvisibleApplication]", 
+        RowBox[{"(", "$24", ")"}]}],
+       TraditionalForm],
+      TraditionalForm]], ".", 
+    SuperscriptBox["\[Gamma]", 
+     FormBox[
+      FormBox[
+       RowBox[{"$AL", "\[InvisibleApplication]", 
+        RowBox[{"(", "$25", ")"}]}],
+       TraditionalForm],
+      TraditionalForm]], ".", 
+    SuperscriptBox["\[Gamma]", 
+     FormBox[
+      FormBox[
+       RowBox[{"$AL", "\[InvisibleApplication]", 
+        RowBox[{"(", "$26", ")"}]}],
+       TraditionalForm],
+      TraditionalForm]]}], " ", 
+   RowBox[{"g", "(", 
+    RowBox[{"arg1", ",", 
+     RowBox[{
+      SuperscriptBox["\[Gamma]", 
+       FormBox[
+        FormBox[
+         RowBox[{"$AL", "\[InvisibleApplication]", 
+          RowBox[{"(", "$25", ")"}]}],
+         TraditionalForm],
+        TraditionalForm]], ".", 
+      SuperscriptBox["\[Gamma]", 
+       FormBox[
+        FormBox[
+         RowBox[{"$AL", "\[InvisibleApplication]", 
+          RowBox[{"(", "$24", ")"}]}],
+         TraditionalForm],
+        TraditionalForm]]}], ",", 
+     SuperscriptBox[
+      FormBox[
+       FormBox["q",
+        TraditionalForm],
+       TraditionalForm], 
+      FormBox[
+       FormBox[
+        RowBox[{"$AL", "\[InvisibleApplication]", 
+         RowBox[{"(", "$26", ")"}]}],
+        TraditionalForm],
+       TraditionalForm]]}], ")"}]}], TraditionalForm]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->113253355,ExpressionUUID->"ef0f042e-3513-4db5-a07f-add25af6fb98"]
+}, Open  ]],
+
+Cell[TextData[{
+ "All of the Options in ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IndexSimplify"]], "paclet:QSSRHelper/ref/IndexSimplify"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "7c0ce039-031d-426d-ab1e-27a641763669"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QSimplify2"]], "paclet:QSSRHelper/ref/QSimplify2"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "dcd50abf-ac0c-4943-90b5-ea0450a65054"],
+ " can be used in QSimplify."
+}], "Text",
+ CellID->599955928,ExpressionUUID->"72750a57-d905-4899-9176-f956ff095df2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QSimplify", "[", 
+  RowBox[{"tmp", ",", 
+   RowBox[{"Lorentz", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\[Mu]", ",", "\[Nu]", ",", "\[Rho]"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->8797411,ExpressionUUID->"f88668f5-4bda-408e-8c0a-030daa785850"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"(", 
+    FormBox[
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        FormBox[
+         FractionBox["D", "2"],
+         TraditionalForm], ")"}], " ", 
+       RowBox[{"\[CapitalGamma]", "(", 
+        FormBox[
+         RowBox[{
+          FractionBox["D", "2"], "-", "1"}],
+         TraditionalForm], ")"}]}], 
+      RowBox[{"\[CapitalGamma]", "(", 
+       FormBox[
+        FractionBox[
+         RowBox[{"3", " ", "D"}], "2"],
+        TraditionalForm], ")"}]],
+     TraditionalForm], ")"}], " ", 
+   RowBox[{
+    SuperscriptBox["\[Gamma]", 
+     FormBox[
+      FormBox["\[Mu]",
+       TraditionalForm],
+      TraditionalForm]], ".", 
+    SuperscriptBox["\[Gamma]", 
+     FormBox[
+      FormBox["\[Nu]",
+       TraditionalForm],
+      TraditionalForm]], ".", 
+    SuperscriptBox["\[Gamma]", 
+     FormBox[
+      FormBox["\[Rho]",
+       TraditionalForm],
+      TraditionalForm]]}], " ", 
+   RowBox[{"g", "(", 
+    RowBox[{"arg1", ",", 
+     RowBox[{
+      SuperscriptBox["\[Gamma]", 
+       FormBox[
+        FormBox["\[Nu]",
+         TraditionalForm],
+        TraditionalForm]], ".", 
+      SuperscriptBox["\[Gamma]", 
+       FormBox[
+        FormBox["\[Mu]",
+         TraditionalForm],
+        TraditionalForm]]}], ",", 
+     SuperscriptBox[
+      FormBox[
+       FormBox["q",
+        TraditionalForm],
+       TraditionalForm], 
+      FormBox[
+       FormBox["\[Rho]",
+        TraditionalForm],
+       TraditionalForm]]}], ")"}]}], TraditionalForm]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->125578425,ExpressionUUID->"8d42e381-3ed4-4d8d-ad6a-d9ed241bcb37"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"493536ee-4618-4d90-984d-eac5e17429a4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"664356c4-283c-4955-a3c4-c477df9a8229"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"55f4a135-e61f-4e7d-898e-8dc64b7351b5"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QSimplify2"]], "paclet:QSSRHelper/ref/QSimplify2"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"0390f12b-e620-4a77-bcc4-3e11e2b7d337"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["IndexSimplify"]], "paclet:QSSRHelper/ref/IndexSimplify"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"d2471aba-0de9-4c50-96c7-92f80f76f6cb"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["QGather"]], "paclet:QSSRHelper/ref/QGather"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"2ef46268-3077-4eee-9e16-0b7bd9c65c3d"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"3ed2b93a-552d-4d04-b99f-9387ce03c037"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"165f3509-e078-40b7-b82b-c12cd41281b8"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{724.8, 750.},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"QSimplify",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "QSSRHelper", ButtonData -> "paclet:QSSRHelper/guide/QSSRHelper", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2022, 3, 22, 17, 5, 59.3457995}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "QSSRHelper`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Q S S R Helper Symbol", "language" -> "en", "paclet" -> "QSSRHelper", 
+    "status" -> "None", "summary" -> 
+    "QSimplify[expr_] QSimplify is a specific Simplify function that simplify \
+the dummy indices and Gamma functions.", "synonyms" -> {}, "tabletags" -> {}, 
+    "title" -> "QSimplify", "titlemodifier" -> "", "windowtitle" -> 
+    "QSimplify", "type" -> "Symbol", "uri" -> "QSSRHelper/ref/QSimplify", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "12.1 for Microsoft Windows (64-bit) (June 9, 2020)", StyleDefinitions -> 
+  "Default.nb"],
+ExpressionUUID->"c0568bd5-8bf6-4226-903f-be9f7b2bc4b1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5239, 133, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"41f99b34-490a-4e3d-82df-9ffcff943786",
+   CellTags->"PrimaryExamplesSection",
+   CellID->48531973]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 22368, 735}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[581, 21, 3620, 80, 54, "AnchorBarGrid",ExpressionUUID->"43b2f402-321f-4a68-bbcc-77f23f783555",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4226, 105, 394, 9, 54, "ObjectNameGrid",ExpressionUUID->"98189646-4196-44d3-8021-5fe03c88c7a1"],
+Cell[4623, 116, 579, 12, 111, "Usage",ExpressionUUID->"43b8f36e-6042-4561-9e1b-2a841ba8b31b",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5239, 133, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"41f99b34-490a-4e3d-82df-9ffcff943786",
+ CellTags->"PrimaryExamplesSection",
+ CellID->48531973],
+Cell[CellGroupData[{
+Cell[5698, 148, 307, 7, 30, "ExampleSection",ExpressionUUID->"309e94ab-a728-43c8-98ba-154bd60e2cfc",
+ CellID->49101949],
+Cell[CellGroupData[{
+Cell[6030, 159, 1124, 35, 41, "Input",ExpressionUUID->"d638c84f-a7b5-4002-85b8-d6c97a07f7dc",
+ CellID->261005816],
+Cell[7157, 196, 3324, 127, 71, "Output",ExpressionUUID->"04211428-30fa-4ef1-904d-e3709e5459d5",
+ CellID->241559682]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10518, 328, 156, 3, 25, "Input",ExpressionUUID->"39e0e54a-e908-48c3-bcf4-a3ba9520ae77",
+ CellID->20202019],
+Cell[10677, 333, 3162, 121, 71, "Output",ExpressionUUID->"089634f0-7807-4396-a84e-0aa21f7946d5",
+ CellID->116950761]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13876, 459, 158, 3, 25, "Input",ExpressionUUID->"89dd393e-9047-49cc-b445-9f36ec905d1e",
+ CellID->130004793],
+Cell[14037, 464, 2094, 73, 71, "Output",ExpressionUUID->"ef0f042e-3513-4db5-a07f-add25af6fb98",
+ CellID->113253355]
+}, Open  ]],
+Cell[16146, 540, 641, 19, 37, "Text",ExpressionUUID->"72750a57-d905-4899-9176-f956ff095df2",
+ CellID->599955928],
+Cell[CellGroupData[{
+Cell[16812, 563, 296, 8, 25, "Input",ExpressionUUID->"f88668f5-4bda-408e-8c0a-030daa785850",
+ CellID->8797411],
+Cell[17111, 573, 1612, 61, 71, "Output",ExpressionUUID->"8d42e381-3ed4-4d8d-ad6a-d9ed241bcb37",
+ CellID->125578425]
+}, Open  ]]
+}, Open  ]],
+Cell[18750, 638, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"493536ee-4618-4d90-984d-eac5e17429a4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18873, 643, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"55f4a135-e61f-4e7d-898e-8dc64b7351b5",
+ CellID->1255426704],
+Cell[19136, 652, 1116, 31, 70, "SeeAlso",ExpressionUUID->"3ed2b93a-552d-4d04-b99f-9387ce03c037",
+ CellID->929782353]
+}, Open  ]],
+Cell[20267, 686, 78, 0, 70, "FooterCell",ExpressionUUID->"165f3509-e078-40b7-b82b-c12cd41281b8"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

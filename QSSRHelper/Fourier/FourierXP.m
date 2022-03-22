@@ -102,7 +102,7 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 
 (*-------------- gather the terms have same lorentz structure;  Simplify Gamma functions -----------------*)
 	If[(Head[tmp]===Plus)&&OptionValue[Simplify],
-		tmp=QSimplify2[tmp,{null2->1,nulllo[___]->1,nullpo[___]->1}]	
+		tmp=QSimplify2[tmp,Separate->{null2,nulllo,nullpo}]	
 	];
 
 (*-------------------------------*)
@@ -172,7 +172,7 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 		(*result=Contract[result/.qfact1[___]->0]+Replace[result,Except[aa_ qfact1[bb_]|qfact1[bb_]]->0,{1}]/.aa_ qfact1[bb_]:>Contract[aa]qfact1[bb]//Expand;*)
 	
 			If[Head[result]===Plus,
-				result=QSimplify2[result,{null2->1,nulllo[___]->1,nullpo[___]->1}]
+				result=QSimplify2[result,Separate->{null2,nulllo,nullpo}]
 			];	
 		];
 

@@ -240,7 +240,7 @@ If[OptionValue[Simplify],
 	
 	If[Head[result]===Plus,
 	
-		result=QSimplify2[result,{Power[xx_,po_]/;!FreeQ[xx,Pair[___]]->1,Pair[___]->1,DiracGamma[___]->1,Eps[___]->1,DiracSigma[___]->1}]
+		result=QSimplify2[result,Separate->{Pair,DiracGamma,Eps,DiracSigma}]
 	];
 ];
 
