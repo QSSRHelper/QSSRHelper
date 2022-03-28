@@ -35,7 +35,7 @@ QSimplify[expr_,OptionsPattern[]]:=IndexSimplify[expr,
 	Lorentz->OptionValue[Lorentz],
 	Color->OptionValue[Color],
 	Symmetry->OptionValue[Symmetry],
-	QSimplify2Rules->OptionValue[Separate]]
+	QSimplify2Rules->OptionValue[Separate]]/.qfact2[aa_]:>qfact2[aa//Simplify]
 	
 
 
