@@ -45,10 +45,11 @@ If[ToLowerCase[ToString[OptionValue[Contract]]]=="true",tmp=Contract[tmp]//Expan
 
 
 (* extract commutative objects in noncommutative product *)
-
+tmp=tmp//QExpand2;
 tmp=tmp/.Dot->dot;
-tmp=tmp//.dot[aa___,bb0_ bb1_,cc___]/;FreeQ[nonc,Head[bb0]]:>bb0 dot[aa,bb1,cc];
-tmp=tmp//.dot[aa___,bb_,cc___]/;FreeQ[nonc,Head[bb]]:>bb dot[aa,cc];
+tmp=tmp//.dot[aa___,bb0_ bb1_,cc___]/;And@@(FreeQ[bb0,#]&/@nonc):>bb0 dot[aa,bb1,cc];
+tmp=tmp//.dot[aa___,bb_,cc___]/;And@@(FreeQ[bb,#]&/@nonc):>bb dot[aa,cc];
+
 tmp=tmp//.{dot[aa___,bb_DiracGamma,cc_SUNT,dd___]:>dot[aa,cc,bb,dd],dot[aa___,bb_DiracSigma,cc_SUNT,dd___]:>dot[aa,cc,bb,dd]};
 (* separate color and lorentz space *)
 tmp=tmp/.dot[aa___,bb__SUNT,cc__DiracGamma,dd___]:>dot[bb]dot[aa,cc,dd];
