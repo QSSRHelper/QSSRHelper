@@ -198,7 +198,7 @@ result
 (*-------------------------------------------------------------------------------------------*)
 (* show the TFI with momentum k1, k2, p and perhaps the rules of shift and/or rescale the k1, k2, to indicate how this 2-loop integral getted *)
 qTFI[list1_,list2_,{k1_,k2_,p_,rules_List}]/;!FreeQ[rules,List,{2}]:=
-	If[Plus@@list1==0,
+	If[Plus@@list1===0,
 		qTFI[Tarcer`TFI[D,(p/.{-aa_:>aa,aa_+bb_/;!FreeQ[aa,-1]&&!FreeQ[bb,-1]:>-aa-bb})^2,list2],
 				{k1,k2,p/.{-aa_:>aa,aa_+bb_/;!FreeQ[aa,-1]&&!FreeQ[bb,-1]:>-aa-bb},DeleteCases[Flatten[rules],Rule[a_,a_]]}]
 																	

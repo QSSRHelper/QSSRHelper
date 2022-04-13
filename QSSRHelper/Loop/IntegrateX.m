@@ -47,6 +47,11 @@ li,times,plus,mdim,momentum,pair2,test,wrong,pair,tttmp,rulem11,rulem12,fact,idp
 
 tmp=(expr//FCI)//Expand;
 
+
+If[!FreeQ[tmp,aa_DiracTrace/;!FreeQ[aa,x]],
+	Print["DiracTrace involved but haven't been evaluated!"];Abort[]
+];
+
 (*-------------------------- seprate commutate part and none-commutate part --------------------------*)
 tmp=tmp//.a___ . (b_+c_) . d___:>a . b . d+a . c . d;
 tmp=tmp//.a___ . (-1b_) . d___:> -a . b . d;

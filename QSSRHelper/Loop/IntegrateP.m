@@ -1,3 +1,5 @@
+(* ::Package:: *)
+
 (* Wolfram Language package *)
 
 (* Author: ShungHong Li *)
@@ -29,9 +31,6 @@ IntegrateP[expr_,x_,y__/;FreeQ[{y},Rule],opts___Rule]:=IntegrateP[IntegrateP[exp
 
 
 
-
-
-
 (* if directely act IntegrateP[] on the output of TryReduce[] *)
 IntegrateP[{nn_Integer/;nn>0,moms_List,expr_}]:=If[!FreeQ[moms,0],0,If[nn==2&&moms==={1},expr/.{Tarcer`TFI->QTFI,qTFI->QTFI},IntegrateP@@Prepend[moms,expr]]]
 IntegrateP[expr_List/;And@@(MatchQ[#,{_Integer,_List,_}]&/@expr)]:=QSimplify2[Plus@@(IntegrateP[#]&/@(expr//.{ll0___,{n_,list_List,aa_},ll1___,{n_,list_List,bb_},ll2___}:>{ll0,{n,list,aa+bb},ll1,ll2}))]
@@ -44,11 +43,14 @@ IntegrateP[expr:Except[_List],{p_},opts___Rule]:=IntegrateP[expr,p,opts]
 
 
 
-
-
 IntegrateP[expr:Except[_List],pp_List/;Length[pp]>1,opts___Rule]:=Module[{tmp,tmp0,tmp2,options={opts},steps=ToLowerCase[ToString[OptionValue[ShowSteps]]]},
 
 tmp=expr//FCI;
+
+
+If[!FreeQ[tmp,aa_DiracTrace/;(Or@@(!FreeQ[aa,#]&/@pp))],
+	Print["DiracTrace involved but haven't been evaluated!"];Abort[]
+];
 
 (*--- if invole noncommutative product ---*)
 If[!FreeQ[tmp,DiracTrace[a_]/;!FreeQ[a,DiracGamma[Momentum[aa_/;!And@@(FreeQ[aa,#]&/@pp),dim___],dim___]]],

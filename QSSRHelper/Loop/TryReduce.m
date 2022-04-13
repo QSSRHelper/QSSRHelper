@@ -29,9 +29,8 @@ Begin["`Private`TryReduce`"]
 Options[TryReduce] = {
 	toTFI->True,
 	EvaluateTwoLoop->False,
-	ShowSteps->False}
-
-
+	ShowSteps->False,
+	Contract->True}
 
 
 
@@ -40,7 +39,8 @@ TryReduce[expr_,p_Symbol,rules___Rule]:=TryReduce[expr,{p},rules]
 
 
 
-TryReduce[expr_,mom_List,OptionsPattern[]]:=Block[{numerator,tmp,pair2,head,null,count,list,mom1=mom,mom0,tmp2loop,tmp2=1,tmp22,tmp3,tmp4,i,tmprule,mom00,tarcer,
+
+TryReduce[expr_,mom_List,OptionsPattern[]]:=Block[{numerator,numerator2,tmp,pair2,head,null,count,list,mom1=mom,mom0,tmp2loop,tmp2=1,tmp22,tmp3,tmp4,i,tmprule,mom00,tarcer,
 tnumerator,twoloopm,twoloopm2,tarcer2,null0,pp,$AM,tmp5,mom05,m,list1={},reducible=1,tadpole=False,mom2,mom3,jacobi,
 totfi=ToLowerCase[ToString[OptionValue[toTFI]]],e2loop=ToLowerCase[ToString[OptionValue[EvaluateTwoLoop]]],steps=ToLowerCase[ToString[OptionValue[ShowSteps]]]},
 
@@ -56,6 +56,11 @@ If[!FreeQ[tmp,PropagatorDenominator[bb_/;!And@@(FreeQ[bb,#]&/@mom1),aa_/;aa=!=0]
 If[!FreeQ[tmp,DiracTrace[a_]/;!FreeQ[a,DiracGamma[Momentum[aa_/;!And@@(FreeQ[aa,#]&/@mom1),dim___],dim___]]],
 	If[steps=="true",Print["Evaluate the DiracTrace..."]];
 	tmp=tmp/.DiracTrace[aa_]:>DiracTrace[aa,DiracTraceEvaluate->True]
+];
+
+(* if GammaScheme not specified, the DiracTrace may not evaluated *)
+If[!FreeQ[tmp,aa_DiracTrace/;(Or@@(!FreeQ[aa,#]&/@pp))],
+	Print["DiracTrace involved but haven't been evaluated!"];Abort[]
 ];
 
 
@@ -100,6 +105,21 @@ If[ToString[Head[tmp]]=="Plus",
 	tmp=tmp/.Power[mom0[aa1_,aa2_,aa3_],power_]:>mom0[aa1,aa2^(2power),aa3 power];
 
 	numerator=tmp/.{mom0[___]->1};
+	
+	
+	(* Expand D-4 or 4 dimensional momenrum to D dimensional momentum with D-4 or 4 dimensional metirc *)
+	numerator=numerator/.{Power[bb_Pair,po_]/;Or@@(!FreeQ[bb,Momentum[#,D-4]|Momentum[#,4]]&/@mom):>QExpand[bb^po,mom],bb_Pair/;Or@@(!FreeQ[bb,Momentum[#,D-4]|Momentum[#,4]]&/@mom):>QExpand[bb,mom]};
+	
+	numerator=numerator/.aa_Eps/;Or@@(!FreeQ[aa,Momentum[#,___]]&/@mom):>QExpand[aa,mom];
+	
+	
+	
+	(* isloate the terms inolve loop momentums *)
+	numerator2=Replace[null null0 numerator,aa_/;Or@@(!FreeQ[aa,Momentum[#,___]]&/@mom)->1,{1}]/.{null->1,null0->1};(* terms without loop momentums *)
+	numerator=Replace[null null0 numerator,aa_/;And@@(FreeQ[aa,Momentum[#,___]]&/@mom)->1,{1}]/.{null->1,null0->1};(* terms involve loop momentums *)
+	
+	
+	
 	tmp=List@@Replace[null tmp,Except[mom0[___]]->1,{1}];
 
 
@@ -109,7 +129,7 @@ If[ToString[Head[tmp]]=="Plus",
 						mom0[aa_ b1_+ aaa_ b2_,cc_,dd_]/;(aaa/aa==-1):>mom0[b1-b2,cc aa^(2dd),dd]};
 
 
-
+	
 (*--- count the involved propagators for each loop momentum ---*)
 
 	count=Outer[!FreeQ[#1,#2|-#2]&,tmp,mom1]//Boole//Transpose;
@@ -290,7 +310,8 @@ If[ToString[Head[tmp]]=="Plus",
 		numerator=numerator//.Pair[Momentum[aa_+bb_,dim___],cc_]/;Or@@((!FreeQ[aa,#[[1]]]&&!FreeQ[bb,#[[2]]])&/@twoloopm):>(Pair[Momentum[aa,dim],cc]+Pair[Momentum[bb,dim],cc]);
 
 	];
-
+	
+	
 
 
 (**---------------------------------------------------------------------------**)
@@ -364,12 +385,19 @@ If[ToString[Head[tmp]]=="Plus",
 
 
 (**-----------------------------------------------**)
+		(* TryReduce for each term *)
 		tmp=DeleteCases[List@@(null0 + null0^2 + Expand[tmp tmp2/.{tarcer[ll0_,___]:>ll0,mom00[___]->1}]),null0|null0^2];
 
-(* a list of results *)
+		(* give a list of results *)
 		If[steps=="true",Print["Check reducibility for each term..."]];
-	
-		DeleteCases[TryReduce[#,mom]&/@tmp,0|{_,_,0}]
+		
+		If[OptionValue[Contract]===True,
+			
+			{#[[1]],#[[2]],Contract[numerator2 #[[3]],ExpandScalarProduct->False]}&/@DeleteCases[TryReduce[#,mom]&/@tmp,0|{_,_,0}]
+			(* It find that recover the numerator2 before TryReduce for each term make the evaluation very solw *)
+		,
+			{#[[1]],#[[2]],numerator2 #[[3]]}&/@DeleteCases[TryReduce[#,mom]&/@tmp,0|{_,_,0}]
+		]
 
 	,
 
@@ -478,12 +506,17 @@ If[ToString[Head[tmp]]=="Plus",
 (*-----------------------------*)
 		tmp={reducible,
 			list1,
-			(tmp tmp2//.{Pair[Momentum[aa_,dim___],LorentzIndex[lo_,dim___]]bb_/;!FreeQ[bb,DiracGamma[LorentzIndex[lo,dim],dim]]:>
+			(* recover the numerator and Contract terms like y^u p_u *)
+			If[OptionValue[Contract]===True,
+				Contract[numerator2 tmp tmp2,ExpandScalarProduct->False]/.{mom00[___]->1,qfact2[aa_]:>qfact2[Simplify[aa]]}
+			,
+				(numerator2 tmp tmp2//.{Pair[Momentum[aa_,dim___],LorentzIndex[lo_,dim___]]bb_/;!FreeQ[bb,DiracGamma[LorentzIndex[lo,dim],dim]]:>
 							(bb/.DiracGamma[LorentzIndex[lo,dim],dim]->DiracGamma[Momentum[aa,dim],dim]),
 							Pair[LorentzIndex[lo1_,dim___],LorentzIndex[lo2_,dim___]]bb_/;!FreeQ[bb,DiracGamma[LorentzIndex[lo1,dim],dim]]&&!FreeQ[bb,DiracGamma[LorentzIndex[lo2,dim],dim]]:>
 							(bb/.LorentzIndex[lo2,dim]->LorentzIndex[lo1,dim])})/.
 							{Pair[Momentum[aa1_,dim___],LorentzIndex[lo_,dim___]]Pair[Momentum[aa2_,dim___],LorentzIndex[lo_,dim___]]:>Pair[Momentum[aa1,dim],Momentum[aa2,dim]],
 							Power[Pair[Momentum[aa1_,dim___],LorentzIndex[lo_,dim___]],2]:>Pair[Momentum[aa1,dim],Momentum[aa1,dim]]}/.{mom00[___]->1,qfact2[aa_]:>qfact2[Simplify[aa]]}
+			]
 			};
 						
 
@@ -496,7 +529,10 @@ If[ToString[Head[tmp]]=="Plus",
 	(* show the 2-loop as qTFI or Tarcer`TFI *)
 			If[totfi=="false",
 			
-				tmp/.tarcer[cc___]:>1/(4Pi)^D qTFI[cc]
+				If[jacobi=!=1,
+						tmp/.tarcer[cc1_,cc2_,cc3_]:>1/(4Pi)^D qTFI[cc1,cc1,{cc3[[1]],cc3[[2]],cc3[[3]],Append[cc3[[4]],"Jacobi"->jacobi]}],
+						tmp/.tarcer[cc___]:>1/(4Pi)^D qTFI[cc]
+					]
 
 			,
 	
@@ -511,6 +547,8 @@ If[ToString[Head[tmp]]=="Plus",
 
 
 ]
+
+
 
 
 
