@@ -12,6 +12,16 @@ FourierXP::usage =
 "FourierXP[expr,{x,p}] is D-dimensional Fourier Transformation from
 coordinate space {x} to momentum space {p}";
 
+
+FourierXP::argerr="The `1` doesn't found in expression, check the input!"
+
+FourierXP::masswarn="Mass involved, which will be ignore!"
+
+FourierXP::err="`1` type propagator involved, stop evaluation."
+
+FourierXP::exprwarn="Constant terms involved, which will be set to 0 by default, make sure the input is correct!"
+
+
 Begin["`Private`FourierXP`"]
 
 
@@ -37,8 +47,8 @@ inverse=OptionValue[Inverse],sign=-1,null2,null,null5,nulllo,nullpo,nullindx,Fli
 
 tmp=expr//FCI;
 
-If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[PropagatorDenominator[Momentum[x,___],___]]]||(!FreeQ[tmp,pp]),
-	Print["No ",ToString[x]," involved in input!"];
+If[(tmp=!=0)&&FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[PropagatorDenominator[Momentum[x,___],___]]],
+	Message[FourierXP::argerr,x];
 	tmp
 ,
 	
@@ -46,7 +56,7 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 (*---------------------------------deal with input--------------------------------*)
 	If[!FreeQ[tmp,FeynAmpDenominator],
 		tmp=FeynAmpDenominatorSplit[tmp]/.FeynAmpDenominator[PropagatorDenominator[Momentum[x,dim___],mass_]]:>
-		(If[mass!=0,Print["mass in denorminator will be ignore!"]];1/Pair[Momentum[x,dim],Momentum[x,dim]])
+		(If[mass!=0,Message[FourierXP::masswarn]];1/Pair[Momentum[x,dim],Momentum[x,dim]])
 	];(* FAD[x] \[Rule] 1/SPD[x] *)
 
 
@@ -54,7 +64,7 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 	
 	
 (* stop when 1/(xz)^n involved *)
-	test=tmp/.Pair[Momentum[x,dim___],Momentum[l_,dim___]]^power_Integer?Negative/;ToString[l]!=ToString[x]:>(Print[Pair[Momentum[x,dim],Momentum[l,dim]]^power," involved!"];Abort[]);
+	test=tmp/.Pair[Momentum[x,dim___],Momentum[l_,dim___]]^power_Integer?Negative/;ToString[l]!=ToString[x]:>(Message[FourierXP::err,Pair[Momentum[x,dim],Momentum[l,dim]]^power];Abort[]);
 
 
 (*-----------------------------------Expand numerator; get the vector ------------------------------------------*)
@@ -87,7 +97,7 @@ If[FreeQ[tmp,Pair[Momentum[x,___],Momentum[x,___]]|FeynAmpDenominator[Propagator
 
 
 	If[(Or@@tmpcc)&&(ToLowerCase[ToString[OptionValue[Continue]]]==="false"), 
-		Print["Constant terms involved, which will be set to 0 by default, make sure the input is correct!"];
+		Message[FourierXP::exprwarn];
 		(* ~0 since 1/Gamma[0] = 0 *)
 		If[showsteps,
 			Print["There are:\n",DeleteCases[Boole[tmpcc]tmpc,0]]
@@ -201,7 +211,7 @@ getfourier[d_,n_,x_,p_,inver_]:=Block[{findex=-d,tmp2,tmp3,dindex={},sign=-1,fac
 	{0,0}
 ,*)
 	If[inver==True,sign=1;factor=(2Pi)^(-D)];
-	If[d==0,Print["terms with no ",SuperscriptBox[x,2]//DisplayForm," involved, please make sure the input is correct!"]];
+	(*If[d==0,Print["terms with no ",SuperscriptBox[x,2]//DisplayForm," involved, please make sure the input is correct!"]];*)
 
 	(*  simplify (-1)^n i^m *)
 	tmp2=Expand[findex]/.D->0/.bb_+aa_/;NumberQ[aa]:>bb;

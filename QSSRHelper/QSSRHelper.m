@@ -63,9 +63,6 @@ Options[qGamma2]={
 	Expand->False};
 
 
-Options[AgammaD] = {
-	Dimension->D}
-
 (*-------------------------------------------------------------------------------------------*)
 Begin["`Private`"]
 (* Implementation of the package *)

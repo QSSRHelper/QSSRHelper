@@ -197,17 +197,22 @@ If[FreeQ[tmp,Momentum[p,___]],
 	tmp=list/.{null1->Identity,log->Log,Pair[Momentum[p,D],LorentzIndex[nulllor,D]]->1};
 	
 
-	If[Length[tmp]==1&&NumberQ[tmp[[1,1]]],
-		tf=False;(* if just a scalar, not show as table *)
-	,
-		(* collect the terms only differ by the tensor structure *)
+	If[!(Length[tmp]==1&&NumberQ[tmp[[1,1]]]),
+		(* if it is not a scalar, collect the terms only differ by the tensor structure *)
 		tmp=Flatten[Gather[tmp,(Expand[Plus@@(#1[[2]])+Plus@@(#2[[2]])]===0)||(Expand[Plus@@(#1[[2]])-Plus@@(#2[[2]])]===0)&],1]
 	];
 	
 	
 
 	(*------ whether show as a table ------*)
-	If[tf==="ForcetoTable",tf=True];
+	If[tf==="ForcetoTable",
+		tf=True
+	,
+		If[Length[tmp]==1&&NumberQ[tmp[[1,1]]],tf=False](* for scalar, not show it as table by default *)
+	];
+	
+	
+	
 	
 	If[tf===True,
  	   tmp
